@@ -10,7 +10,12 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "vue": "^2.2.2"
+    "bootstrap": "3.3.7",
+    "jquery": "3.1.1",
+    "plantuml-encoder": "1.2.4",
+    "vue": "2.2.2",
+    "vue2-ace": "1.0.4",
+    "vuex": "2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
