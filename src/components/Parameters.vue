@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'uml',
+  name: 'parameters',
   computed: {
     umlWidth: {
       get () {
