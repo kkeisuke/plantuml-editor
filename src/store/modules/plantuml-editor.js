@@ -36,6 +36,7 @@ const mutations = {
 
 const actions = {
   renderUML: function (context, text) {
+    context.commit('setText', text)
     context.commit('renderUML', text)
     context.commit('setLocalStrage', text)
   }
