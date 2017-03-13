@@ -5,7 +5,7 @@
       <input type="number" id="umlWidth" step="10" max="100" min="10" v-model="umlWidth" class="form-control">
     </div>
     <div class="form-group">
-      <label for="umlExtension">extension</label>
+      <label for="umlExtension">img</label>
       <select id="umlExtension" v-model="umlExtension" class="form-control">
         <option v-for="option in umlExtensions" :value="option.value">
           {{ option.text }}
@@ -56,4 +56,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.form-inline .form-group {
+  margin-right: 10px;
+}
 </style>
