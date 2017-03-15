@@ -12,6 +12,9 @@
         </option>
       </select>
     </div>
+    <div class="form-group pull-right">
+      <a :href="src" class="btn btn-success" download>Download</a>
+    </div>
   </form>
 </template>
 
@@ -19,6 +22,9 @@
 export default {
   name: 'parameters',
   computed: {
+    src () {
+      return this.$store.state.plantumlEditor.src
+    },
     umlWidth: {
       get () {
         return this.$store.state.plantumlEditor.umlWidth
