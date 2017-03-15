@@ -59,11 +59,12 @@ export default {
   },
   data () {
     return {
-      // リサイズ等は考慮していません
-      height: window.innerHeight - 70 + 'px'
+      height: '0px'
     }
   },
   created () {
+    this.setHeight()
+    this.resize()
     this.$store.commit('getLocalStrage')
     this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
   },
@@ -71,6 +72,24 @@ export default {
     this.$on('editor-update', (text) => {
       this.$store.dispatch('renderUML', text)
     })
+  },
+  methods: {
+    setHeight () {
+      this.height = window.innerHeight - 70 + 'px'
+    },
+    resize () {
+      let timer = null
+      // FPS 30
+      const interval = Math.floor(1000 / 30 * 10)
+      window.addEventListener('resize', () => {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          this.setHeight()
+        }, interval)
+      })
+    }
   }
 }
 </script>
