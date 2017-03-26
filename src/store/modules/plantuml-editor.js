@@ -1,8 +1,9 @@
 const plantumlEncoder = require('plantuml-encoder')
 
 const state = {
-  url: 'http://www.plantuml.com/',
+  official: 'http://plantuml.com/',
   plantuml: 'plantuml',
+  server: 'https://plantuml-server.herokuapp.com/',
   defaultText: '@startuml\n\nA -> B: Hello\n\n@enduml',
   text: '',
   src: '',
@@ -21,7 +22,7 @@ const mutations = {
     state.text = text
   },
   renderUML: function (state, text) {
-    state.src = state.url + state.plantuml + '/' + state.umlExtension + '/' + plantumlEncoder.encode(text)
+    state.src = state.server + state.umlExtension + '/' + plantumlEncoder.encode(text)
   },
   setLocalStrage: function (state, text) {
     if (window.localStorage) {

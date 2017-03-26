@@ -1,9 +1,18 @@
 <template>
   <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
+      <div class="navbar-header">
+        <p class="navbar-text">
+          <a :href="official" class="navbar-link" target="_blank">{{official}}</a>
+        </p>
+      </div>
       <div class="navbar-right">
         <p class="navbar-text">
-          <a :href="url" class="navbar-link" target="_blank">{{url}}</a>
+          <a href="https://twitter.com/kkeisuke" class="twitter-follow-button" data-show-count="false">Follow @kkeisuke</a>
+          <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" title="このエントリーをはてなブックマークに追加">
+            <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" />
+          </a>
+          <a class="github-button" href="https://github.com/kkeisuke/plantuml-editor" data-icon="octicon-star" data-count-href="/kkeisuke/plantuml-editor/stargazers" data-count-api="/repos/kkeisuke/plantuml-editor#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star kkeisuke/plantuml-editor on GitHub">Star</a>
         </p>
       </div>
     </div>
@@ -14,8 +23,8 @@
 export default {
   name: 'footerNavbar',
   computed: {
-    url () {
-      return this.$store.state.plantumlEditor.url
+    official () {
+      return this.$store.state.plantumlEditor.official
     }
   }
 }
