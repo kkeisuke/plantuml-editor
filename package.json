@@ -13,9 +13,9 @@
     "bootstrap": "3.3.7",
     "jquery": "3.1.1",
     "plantuml-encoder": "1.2.4",
-    "vue": "2.2.4",
+    "vue": "2.2.6",
     "vue2-ace": "1.0.4",
-    "vuex": "2.2.1"
+    "vuex": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -52,9 +52,9 @@
     "ora": "^1.1.0",
     "rimraf": "^2.6.0",
     "url-loader": "^0.5.7",
-    "vue-loader": "^11.1.4",
-    "vue-style-loader": "^2.0.0",
-    "vue-template-compiler": "^2.2.1",
+    "vue-loader": "11.3.4",
+    "vue-style-loader": "2.0.5",
+    "vue-template-compiler": "2.2.6",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
