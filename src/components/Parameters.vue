@@ -13,7 +13,14 @@
       </select>
     </div>
     <div class="form-group pull-right">
-      <a :href="src" class="btn btn-success" download>Download</a>
+      <a :href="src" class="btn btn-info" download>
+        <span class="glyphicon glyphicon-save-file"></span> download
+      </a>
+    </div>
+    <div class="form-group pull-right">
+      <button type="button" class="btn btn-success" @click="save">
+        <span class="glyphicon glyphicon-plus"></span> save
+      </button>
     </div>
   </form>
 </template>
@@ -55,6 +62,11 @@ export default {
           value: 'img'
         }
       ]
+    }
+  },
+  methods: {
+    save: function (event) {
+      this.$store.dispatch('save', this.$store.state.plantumlEditor)
     }
   }
 }

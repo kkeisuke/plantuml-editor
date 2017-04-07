@@ -3,10 +3,13 @@
     <headerNavbar></headerNavbar>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-4 col-ace">
-          <editor :content="text" :theme="'solarized_dark'" :lang="'tcl'" :height="height"></editor>
+        <div class="col-sm-2">
+          <historyList :height="historyH"></historyList>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-4 col-ace">
+          <editor :content="text" :theme="'solarized_dark'" :lang="'tcl'" :height="height" :sync="true"></editor>
+        </div>
+        <div class="col-sm-6">
           <div class="row form-group">
             <div class="col-sm-12">
               <parameters></parameters>
@@ -36,6 +39,7 @@ import store from './store'
 import HeaderNavbar from './components/HeaderNavbar'
 import FooterNavbar from './components/FooterNavbar'
 import Parameters from './components/Parameters'
+import HistoryList from './components/HistoryList'
 import Uml from './components/Uml'
 import editor from 'vue2-ace'
 // 一番それっぽいシンタックスハイライト
@@ -49,6 +53,7 @@ export default {
     HeaderNavbar,
     FooterNavbar,
     Parameters,
+    HistoryList,
     Uml,
     editor
   },
@@ -59,7 +64,8 @@ export default {
   },
   data () {
     return {
-      height: '0px'
+      height: '0px',
+      historyH: '0px'
     }
   },
   created () {
@@ -67,6 +73,7 @@ export default {
     this.resize()
     this.$store.commit('getLocalStrage')
     this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+    this.$store.dispatch('defineScheme')
   },
   mounted () {
     this.$on('editor-update', (text) => {
@@ -76,6 +83,7 @@ export default {
   methods: {
     setHeight () {
       this.height = window.innerHeight - 70 + 'px'
+      this.historyH = window.innerHeight - 105 + 'px'
     },
     resize () {
       let timer = null
