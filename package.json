@@ -16,7 +16,7 @@
     "jquery": "3.1.1",
     "plantuml-encoder": "1.2.4",
     "vue": "2.2.6",
-    "vuex": "^2.2.1"
+    "vuex": "2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

@@ -63,7 +63,7 @@ export default {
   created () {
     this.setHeight()
     this.resize()
-    this.$store.commit('getLocalStrage')
+    this.$store.dispatch('getLocalStrage')
     this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
     this.$store.dispatch('defineScheme')
   },

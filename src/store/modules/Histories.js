@@ -1,4 +1,4 @@
-const Dexie = require('dexie')
+import Dexie from 'dexie'
 
 const state = {
   db: new Dexie(),

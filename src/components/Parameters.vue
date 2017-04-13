@@ -37,7 +37,7 @@ export default {
         return this.$store.state.plantumlEditor.umlWidth
       },
       set (value) {
-        this.$store.commit('setUmlWidth', value)
+        this.$store.dispatch('setUmlWidth', value)
       }
     },
     umlExtension: {
@@ -45,7 +45,7 @@ export default {
         return this.$store.state.plantumlEditor.umlExtension
       },
       set (value) {
-        this.$store.commit('setUmlExtension', value)
+        this.$store.dispatch('setUmlExtension', value)
         this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
       }
     }

@@ -1,4 +1,4 @@
-const plantumlEncoder = require('plantuml-encoder')
+import plantumlEncoder from 'plantuml-encoder'
 
 const state = {
   official: 'http://plantuml.com/',
@@ -43,11 +43,20 @@ const mutations = {
 }
 
 const actions = {
+  setUmlWidth: function (context, umlWidth) {
+    context.commit('setUmlWidth', umlWidth)
+  },
+  setUmlExtension: function (context, umlExtension) {
+    context.commit('setUmlExtension', umlExtension)
+  },
   setEditor: function (context, editor) {
     context.commit('setEditor', editor)
   },
   setEditorText: function (context) {
     context.commit('setEditorText')
+  },
+  getLocalStrage: function (context) {
+    context.commit('getLocalStrage')
   },
   renderUML: function (context, text) {
     context.commit('setText', text)
