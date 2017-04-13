@@ -5,6 +5,7 @@ const state = {
   plantuml: 'plantuml',
   server: 'https://plantuml-server.herokuapp.com/',
   defaultText: '@startuml\n\nA -> B: Hello\n\n@enduml',
+  editor: null,
   text: '',
   src: '',
   umlWidth: 50,
@@ -17,6 +18,12 @@ const mutations = {
   },
   setUmlExtension: function (state, umlExtension) {
     state.umlExtension = umlExtension
+  },
+  setEditor: function (state, editor) {
+    state.editor = editor
+  },
+  setEditorText: function () {
+    state.editor.setValue(state.text, 1)
   },
   setText: function (state, text) {
     state.text = text
@@ -36,6 +43,12 @@ const mutations = {
 }
 
 const actions = {
+  setEditor: function (context, editor) {
+    context.commit('setEditor', editor)
+  },
+  setEditorText: function (context) {
+    context.commit('setEditorText')
+  },
   renderUML: function (context, text) {
     context.commit('setText', text)
     context.commit('renderUML', text)

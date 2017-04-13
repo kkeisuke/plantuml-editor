@@ -7,7 +7,7 @@
           <historyList :height="historyH"></historyList>
         </div>
         <div class="col-sm-4 col-ace">
-          <editor :content="text" :theme="'solarized_dark'" :lang="'tcl'" :height="height" :sync="true"></editor>
+          <editor :height="height"></editor>
         </div>
         <div class="col-sm-6">
           <div class="row form-group">
@@ -41,10 +41,7 @@ import FooterNavbar from './components/FooterNavbar'
 import Parameters from './components/Parameters'
 import HistoryList from './components/HistoryList'
 import Uml from './components/Uml'
-import editor from 'vue2-ace'
-// 一番それっぽいシンタックスハイライト
-import 'brace/mode/tcl'
-import 'brace/theme/solarized_dark'
+import Editor from './components/Editor'
 
 export default {
   name: 'app',
@@ -55,12 +52,7 @@ export default {
     Parameters,
     HistoryList,
     Uml,
-    editor
-  },
-  computed: {
-    text () {
-      return this.$store.state.plantumlEditor.text
-    }
+    Editor
   },
   data () {
     return {
@@ -74,11 +66,6 @@ export default {
     this.$store.commit('getLocalStrage')
     this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
     this.$store.dispatch('defineScheme')
-  },
-  mounted () {
-    this.$on('editor-update', (text) => {
-      this.$store.dispatch('renderUML', text)
-    })
   },
   methods: {
     setHeight () {
