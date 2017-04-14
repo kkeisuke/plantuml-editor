@@ -12,15 +12,15 @@
         </option>
       </select>
     </div>
-    <div class="form-group pull-right">
-      <a :href="src" class="btn btn-info" download>
-        <span class="glyphicon glyphicon-save-file"></span> download
-      </a>
-    </div>
-    <div class="form-group pull-right">
-      <button type="button" class="btn btn-success" @click="save">
-        <span class="glyphicon glyphicon-plus"></span> save
-      </button>
+    <div class="form-group">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" @click="save" data-toggle="tooltip" data-placement="bottom" title="save" data-container="body">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+        <a :href="src" class="btn btn-default" download data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
+          <span class="glyphicon glyphicon-download-alt"></span>
+        </a>
+      </div>
     </div>
   </form>
 </template>

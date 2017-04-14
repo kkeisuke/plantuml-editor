@@ -67,6 +67,9 @@ export default {
     this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
     this.$store.dispatch('defineScheme')
   },
+  mounted () {
+    window.$('[data-toggle="tooltip"]').tooltip()
+  },
   methods: {
     setHeight () {
       this.height = window.innerHeight - 70 + 'px'
