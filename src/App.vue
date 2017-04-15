@@ -3,10 +3,10 @@
     <headerNavbar></headerNavbar>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-2 col-historyList">
           <historyList :height="historyH"></historyList>
         </div>
-        <div class="col-sm-4 col-ace">
+        <div class="col-sm-4 col-editor">
           <editor :height="height"></editor>
         </div>
         <div class="col-sm-6">
@@ -96,8 +96,11 @@ export default {
 /* Bootstrap */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-.col-ace {
+.col-editor {
   margin-top: -20px;
   padding: 0;
+}
+.col-historyList {
+  padding-right: 0;
 }
 </style>
