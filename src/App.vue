@@ -23,6 +23,7 @@
         </div>
       </div>
     </div>
+    <helpModal></helpModal>
     <footerNavbar></footerNavbar>
   </div>
 </template>
@@ -38,6 +39,7 @@ import store from './store'
 // components
 import HeaderNavbar from './components/HeaderNavbar'
 import FooterNavbar from './components/FooterNavbar'
+import HelpModal from './components/HelpModal'
 import Parameters from './components/Parameters'
 import HistoryList from './components/HistoryList'
 import Uml from './components/Uml'
@@ -49,6 +51,7 @@ export default {
   components: {
     HeaderNavbar,
     FooterNavbar,
+    HelpModal,
     Parameters,
     HistoryList,
     Uml,

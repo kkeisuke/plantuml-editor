@@ -1,11 +1,6 @@
 <template>
   <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <p class="navbar-text">
-          <a :href="official" class="navbar-link" target="_blank">{{official}}</a>
-        </p>
-      </div>
       <div class="navbar-right">
         <p class="navbar-text">
           <a href="https://twitter.com/kkeisuke" class="twitter-follow-button" data-show-count="false">Follow @kkeisuke</a>
@@ -21,12 +16,7 @@
 
 <script>
 export default {
-  name: 'footerNavbar',
-  computed: {
-    official () {
-      return this.$store.state.plantumlEditor.official
-    }
-  }
+  name: 'footerNavbar'
 }
 </script>
 
