@@ -3,7 +3,7 @@
     <headerNavbar></headerNavbar>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-2 col-historyList">
+        <div class="col-sm-2">
           <historyList :height="historyH"></historyList>
         </div>
         <div class="col-sm-4 col-editor">
@@ -102,8 +102,5 @@ export default {
 .col-editor {
   margin-top: -20px;
   padding: 0;
-}
-.col-historyList {
-  padding-right: 0;
 }
 </style>
