@@ -48,13 +48,7 @@
           </div>
           <ul>
             <li>
-              <a href="https://twitter.com/kkeisuke" target="_blank">twitter</a>
-            </li>
-            <li>
-              <a href="http://qiita.com/kkeisuke" target="_blank">qiita</a>
-            </li>
-            <li>
-              <a href="http://b.hatena.ne.jp/kkeisuke" target="_blank">はてなブックマーク</a>
+              <a href="http://kkeisuke.com" target="_blank">kkeisuke.com</a>
             </li>
           </ul>
         </div>
