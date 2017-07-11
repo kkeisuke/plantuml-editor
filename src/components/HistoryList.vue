@@ -42,12 +42,12 @@ export default {
     this.$store.dispatch('getHistories')
   },
   methods: {
-    del: function (id, event) {
+    del (id, event) {
       if (window.confirm(this.deleteMessage)) {
         this.$store.dispatch('delete', id)
       }
     },
-    read: function (text, event) {
+    read (text, event) {
       if (window.confirm(this.editMessage)) {
         this.$store.dispatch('renderUML', text)
         this.$store.dispatch('setEditorText')

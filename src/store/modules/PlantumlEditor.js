@@ -13,52 +13,52 @@ const state = {
 }
 
 const mutations = {
-  setUmlWidth: function (state, umlWidth) {
+  setUmlWidth (state, umlWidth) {
     state.umlWidth = umlWidth
   },
-  setUmlExtension: function (state, umlExtension) {
+  setUmlExtension (state, umlExtension) {
     state.umlExtension = umlExtension
   },
-  setEditor: function (state, editor) {
+  setEditor (state, editor) {
     state.editor = editor
   },
-  setEditorText: function () {
+  setEditorText () {
     state.editor.setValue(state.text, 1)
   },
-  setText: function (state, text) {
+  setText (state, text) {
     state.text = text
   },
-  renderUML: function (state, text) {
+  renderUML (state, text) {
     state.src = state.server + state.umlExtension + '/' + plantumlEncoder.encode(text)
   },
-  setLocalStrage: function (state, text) {
+  setLocalStrage (state, text) {
     if (window.localStorage) {
       window.localStorage.setItem(state.plantuml, text)
     }
   },
-  getLocalStrage: function (state) {
+  getLocalStrage (state) {
     const text = window.localStorage ? window.localStorage.getItem(state.plantuml) : ''
     state.text = text !== null && text !== '' ? text : state.defaultText
   }
 }
 
 const actions = {
-  setUmlWidth: function (context, umlWidth) {
+  setUmlWidth (context, umlWidth) {
     context.commit('setUmlWidth', umlWidth)
   },
-  setUmlExtension: function (context, umlExtension) {
+  setUmlExtension (context, umlExtension) {
     context.commit('setUmlExtension', umlExtension)
   },
-  setEditor: function (context, editor) {
+  setEditor (context, editor) {
     context.commit('setEditor', editor)
   },
-  setEditorText: function (context) {
+  setEditorText (context) {
     context.commit('setEditorText')
   },
-  getLocalStrage: function (context) {
+  getLocalStrage (context) {
     context.commit('getLocalStrage')
   },
-  renderUML: function (context, text) {
+  renderUML (context, text) {
     context.commit('setText', text)
     context.commit('renderUML', text)
     context.commit('setLocalStrage', text)

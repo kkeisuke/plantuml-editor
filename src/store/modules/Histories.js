@@ -8,12 +8,12 @@ const state = {
 }
 
 const mutations = {
-  defineScheme: function (state) {
+  defineScheme (state) {
     state.db.version(state.version).stores({
       plantuml: state.scheme
     })
   },
-  getHistories: function (state) {
+  getHistories (state) {
     state.db.plantuml
     .reverse()
     .toArray()
@@ -21,30 +21,30 @@ const mutations = {
       state.data = data
     })
   },
-  save: function (state, plantumlEditor) {
+  save (state, plantumlEditor) {
     state.db.plantuml.add({
       text: plantumlEditor.text,
       src: plantumlEditor.src,
       created: new Date().toLocaleString()
     })
   },
-  delete: function (state, id) {
+  delete (state, id) {
     state.db.plantuml.delete(id)
   }
 }
 
 const actions = {
-  defineScheme: function (context) {
+  defineScheme (context) {
     context.commit('defineScheme')
   },
-  getHistories: function (context) {
+  getHistories (context) {
     context.commit('getHistories')
   },
-  save: function (context, plantumlEditor) {
+  save (context, plantumlEditor) {
     context.commit('save', plantumlEditor)
     context.commit('getHistories')
   },
-  delete: function (context, id) {
+  delete (context, id) {
     context.commit('delete', id)
     context.commit('getHistories')
   }
