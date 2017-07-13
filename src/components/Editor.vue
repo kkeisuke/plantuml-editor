@@ -33,14 +33,21 @@ export default {
       this.editor.$blockScrolling = Infinity
       this.editor.setTheme('ace/theme/' + this.theme)
       this.editor.getSession().setMode('ace/mode/' + this.lang)
+      this.editor.commands.addCommand({
+        name: 'renderUML',
+        bindKey: {
+          'win': this.$store.state.plantumlEditor.renderUMLKey.win,
+          'mac': this.$store.state.plantumlEditor.renderUMLKey.mac
+        },
+        exec: (editor) => {
+          this.$store.dispatch('renderUML', this.editor.getValue())
+        }
+      })
     },
     dispatch () {
       this.$store.dispatch('setEditor', this.editor)
       this.$store.dispatch('setEditorText')
-      // イベント設定
-      this.editor.on('change', () => {
-        this.$store.dispatch('renderUML', this.editor.getValue())
-      })
+      this.$store.dispatch('renderUML', this.editor.getValue())
     }
   }
 }

@@ -4,12 +4,16 @@ const state = {
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
   server: 'https://plantuml-server.herokuapp.com/',
-  defaultText: '@startuml\n\nA -> B: Hello\n\n@enduml',
+  defaultText: '@startuml\n\nactor User\n\nUser -right-> (select template)\nUser -down-> (write uml diagram)\n\n@enduml',
   editor: null,
   text: '',
   src: '',
   umlWidth: 50,
-  umlExtension: 'svg'
+  umlExtension: 'svg',
+  renderUMLKey: {
+    'win': 'Ctrl-Enter',
+    'mac': 'Command-Enter'
+  }
 }
 
 const mutations = {

@@ -10,6 +10,14 @@
           <editor :height="height"></editor>
         </div>
         <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                Preview Keybindings are { win:'{{winKey}}', mac:'{{macKey}}' } .
+              </div>
+            </div>
+          </div>
           <div class="row form-group">
             <div class="col-sm-12">
               <parameters></parameters>
@@ -60,7 +68,9 @@ export default {
   data () {
     return {
       height: '0px',
-      historyH: '0px'
+      historyH: '0px',
+      winKey: this.$store.state.plantumlEditor.renderUMLKey.win,
+      macKey: this.$store.state.plantumlEditor.renderUMLKey.mac
     }
   },
   created () {
