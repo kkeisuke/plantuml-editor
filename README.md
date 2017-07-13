@@ -1,6 +1,8 @@
-# plantuml-editor
+# PlantUML Editor
 
 > A Vue.js project
+
+![PlantUML Editor](capture1.png)
 
 ## Build Setup
 
