@@ -7,7 +7,9 @@
       <umlTemplate></umlTemplate>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#" data-toggle="modal" data-target="#help"><span class="glyphicon glyphicon-question-sign"></span> HELP</a>
+          <a href="#" data-toggle="modal" data-target="#help">
+            <span class="glyphicon glyphicon-question-sign"></span> HELP
+          </a>
         </li>
       </ul>
     </div>

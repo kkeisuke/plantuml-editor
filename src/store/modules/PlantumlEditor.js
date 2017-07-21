@@ -42,7 +42,7 @@ const mutations = {
   },
   getLocalStrage (state) {
     const text = window.localStorage ? window.localStorage.getItem(state.plantuml) : ''
-    state.text = text !== null && text !== '' ? text : state.defaultText
+    state.text = text || state.defaultText
   }
 }
 
