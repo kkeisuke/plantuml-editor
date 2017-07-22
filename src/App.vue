@@ -32,6 +32,7 @@
       </div>
     </div>
     <helpModal></helpModal>
+    <gistModal></gistModal>
     <footerNavbar></footerNavbar>
   </div>
 </template>
@@ -48,6 +49,7 @@ import store from './store'
 import HeaderNavbar from './components/HeaderNavbar'
 import FooterNavbar from './components/FooterNavbar'
 import HelpModal from './components/HelpModal'
+import GistModal from './components/GistModal'
 import Parameters from './components/Parameters'
 import HistoryList from './components/HistoryList'
 import Uml from './components/Uml'
@@ -60,6 +62,7 @@ export default {
     HeaderNavbar,
     FooterNavbar,
     HelpModal,
+    GistModal,
     Parameters,
     HistoryList,
     Uml,

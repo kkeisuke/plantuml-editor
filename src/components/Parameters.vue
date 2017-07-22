@@ -20,6 +20,9 @@
         <a :href="src" class="btn btn-default" download data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
           <span class="glyphicon glyphicon-download-alt"></span>
         </a>
+        <button type="button" class="btn btn-default" @click="showGistModal" data-toggle="tooltip" data-placement="bottom" title="share" data-container="body">
+          <span class="glyphicon glyphicon-share-alt"></span>
+        </button>
       </div>
     </div>
   </form>
@@ -67,6 +70,10 @@ export default {
   methods: {
     save (event) {
       this.$store.dispatch('save', this.$store.state.plantumlEditor)
+    },
+    showGistModal ($event) {
+      window.$('#gist').modal('show')
+      window.$('[data-toggle="tooltip"]').tooltip('hide')
     }
   }
 }

@@ -13,11 +13,13 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "axios": "0.16.2",
     "bootstrap": "3.3.7",
     "brace": "0.10.0",
     "dexie": "1.5.1",
     "jquery": "3.1.1",
     "plantuml-encoder": "1.2.4",
+    "vee-validate": "2.0.0-rc.7",
     "vue": "2.3.3",
     "vuex": "2.3.1"
   },
