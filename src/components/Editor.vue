@@ -25,6 +25,7 @@ export default {
   },
   mounted () {
     this.init()
+    this.setEvent()
     this.dispatch()
   },
   methods: {
@@ -42,6 +43,11 @@ export default {
         exec: (editor) => {
           this.$store.dispatch('renderUML', this.editor.getValue())
         }
+      })
+    },
+    setEvent () {
+      this.editor.on('change', () => {
+        this.$store.dispatch('syncText', this.editor.getValue())
       })
     },
     dispatch () {

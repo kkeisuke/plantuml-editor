@@ -62,6 +62,10 @@ const actions = {
   getLocalStrage (context) {
     context.commit('getLocalStrage')
   },
+  syncText (context, text) {
+    context.commit('setText', text)
+    context.commit('setLocalStrage', text)
+  },
   renderUML (context, text) {
     context.commit('setText', text)
     context.commit('renderUML', text)

@@ -14,6 +14,9 @@
     </div>
     <div class="form-group">
       <div class="btn-group">
+        <button type="button" class="btn btn-default" @click="renderUML" data-toggle="tooltip" data-placement="bottom" title="refresh" data-container="body">
+          <span class="glyphicon glyphicon-refresh"></span>
+        </button>
         <button type="button" class="btn btn-default" @click="save" data-toggle="tooltip" data-placement="bottom" title="save" data-container="body">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
@@ -68,6 +71,9 @@ export default {
     }
   },
   methods: {
+    renderUML (event) {
+      this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+    },
     save (event) {
       this.$store.dispatch('save', this.$store.state.plantumlEditor)
     },
