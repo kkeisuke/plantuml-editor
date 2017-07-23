@@ -20,6 +20,10 @@ const state = {
         return !/^.*[(\s|\\|/|'|"|?|<|>|:|*)].*$/.test(value)
       }
     }
+  },
+  ext: {
+    'txt': 'plantuml',
+    'svg': 'svg'
   }
 }
 
@@ -50,9 +54,9 @@ const mutations = {
   resetFiles () {
     state.gist.files = {}
   },
-  addSvgTxt (state, data) {
+  addTxtUML (state, data) {
     if (data) {
-      data.ext = 'txt'
+      data.ext = state.ext.txt
       mutations.addFiles(state, data)
     }
   },
@@ -60,7 +64,7 @@ const mutations = {
     return axios.get(data.src || '')
     .then((response) => {
       if (response && response.data) {
-        data.ext = 'svg'
+        data.ext = state.ext.svg
         data.text = response.data
         mutations.addFiles(state, data)
       }
@@ -75,7 +79,7 @@ const mutations = {
     mutations.resetFiles()
 
     // テキスト追加
-    mutations.addSvgTxt(state, data)
+    mutations.addTxtUML(state, data)
 
     // svg 再取得
     axios.all([mutations.addSvgUML(state, data)])

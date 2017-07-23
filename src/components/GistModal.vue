@@ -23,10 +23,10 @@
                   {{errors.first('fileName')}}
                 </span>
                 <span class="help-block" v-else-if="fileName">
-                  file name are <code>{{fileName}}.svg</code>, <code>{{fileName}}.txt</code> .
+                  file name are <code>{{fileName}}.{{ext.svg}}</code>, <code>{{fileName}}.{{ext.txt}}</code> .
                 </span>
                 <span class="help-block" v-else>
-                  svg and txt file name
+                  <code>.{{ext.svg}}</code> and <code>.{{ext.txt}}</code> file name
                 </span>
               </div>
             </div>
@@ -118,6 +118,9 @@ export default {
       set (value) {
         this.$store.dispatch('setToken', value)
       }
+    },
+    ext () {
+      return this.$store.state.gistApi.ext
     },
     gistUrl () {
       return this.$store.state.gistApi.gistUrl
