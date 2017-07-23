@@ -68,7 +68,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-success" @click="createGist()" :disabled="gistApiInValid">Create a gist</button>
+                <button type="button" class="btn btn-success" @click="createGist()" :disabled="gistApiInValid">Create a gist</button>
               </div>
             </div>
             <div class="row">
@@ -153,6 +153,8 @@ export default {
     },
     setEvent () {
       window.$('#gist').on('shown.bs.modal hidden.bs.modal', () => {
+        this.$validator.errorBag.clear()
+        this.fileName = ''
         this.$store.dispatch('resetGist')
       })
     },
