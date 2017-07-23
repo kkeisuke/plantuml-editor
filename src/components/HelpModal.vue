@@ -16,14 +16,27 @@
           <div class="page-header">
             <span class="h4">Cheat Sheet</span>
           </div>
-          <ul>
-            <li>
-              <a href="http://qiita.com/ogomr/items/0b5c4de7f38fd1482a48" target="_blank">Japanese</a>
-            </li>
-            <li>
-              <a href="http://ogom.github.io/draw_uml/plantuml" target="_blank">English</a>
-            </li>
-          </ul>
+          <dl>
+            <dt>PlantUML</dt>
+            <dd>
+              <ul>
+                <li>
+                  <a href="http://qiita.com/ogomr/items/0b5c4de7f38fd1482a48" target="_blank">Japanese</a>
+                </li>
+                <li>
+                  <a href="http://ogom.github.io/draw_uml/plantuml" target="_blank">English</a>
+                </li>
+              </ul>
+            </dd>
+            <dt>Ace</dt>
+            <dd>
+              <ul>
+                <li>
+                  <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">Default Keyboard Shortcuts</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
           <div class="page-header">
             <span class="h4">GitHub</span>
           </div>
