@@ -6,6 +6,6 @@ describe('HeaderNavbar.vue', () => {
     const Constructor = Vue.extend(HeaderNavbar)
     const vm = new Constructor().$mount()
     expect(vm.$el.querySelector('.navbar-brand').textContent)
-      .to.equal('PlantUML Editor')
+      .to.equal('PlantUML Editor beta')
   })
 })
