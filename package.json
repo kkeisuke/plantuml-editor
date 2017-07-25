@@ -17,6 +17,7 @@
     "bootstrap": "3.3.7",
     "brace": "0.10.0",
     "dexie": "1.5.1",
+    "font-awesome": "4.7.0",
     "jquery": "3.1.1",
     "plantuml-encoder": "1.2.4",
     "vee-validate": "2.0.0-rc.7",

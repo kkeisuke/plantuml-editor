@@ -23,11 +23,7 @@
               <parameters></parameters>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <uml></uml>
-            </div>
-          </div>
+          <uml></uml>
         </div>
       </div>
     </div>
@@ -109,6 +105,8 @@ export default {
 </script>
 
 <style>
+/* font-awesome */
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
 /* Bootstrap */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
