@@ -68,7 +68,9 @@
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="button" class="btn btn-success" @click="createGist()" :disabled="gistApiInValid">Create a gist</button>
+                <button type="button" class="btn btn-success" @click="createGist()" :disabled="gistApiInValid">
+                  Create a gist <i class="fa fa-circle-o-notch fa-spin fa-lg fa-fw" v-show="isSending"></i>
+                </button>
               </div>
             </div>
             <div class="row">
@@ -127,6 +129,9 @@ export default {
     },
     errorMsg () {
       return this.$store.state.gistApi.errorMsg
+    },
+    isSending () {
+      return this.$store.state.gistApi.isSending
     },
     gistApiInValid () {
       // 「ファイル名が空 or GistのURL取得済み or バリデーションエラーがある or 送信中」場合は投稿できない
