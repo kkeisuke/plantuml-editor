@@ -1,0 +1,22 @@
+[ignore]
+.*/build/.*
+.*/config/.*
+.*/docs/.*
+.*/node_modules/.*
+.*/static/.*
+.*/test/.*
+.*/assets/.*
+
+[include]
+
+[libs]
+./decls
+
+[options]
+module.file_ext=.js
+# https://github.com/facebook/flow/issues/2691
+# eslint、babel は通るけど、肝心の型チェック(flow check)が No errors! になる。
+# ハック的なやり方でチェックすることもできるけど、However this is dirty. 
+module.file_ext=.vue
+
+[lints]

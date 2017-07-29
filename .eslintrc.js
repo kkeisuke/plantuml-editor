@@ -13,10 +13,20 @@ module.exports = {
   extends: 'standard',
   // required to lint *.vue files
   plugins: [
+    'flowtype',
     'html'
   ],
   // add your custom rules here
   'rules': {
+    'flowtype/boolean-style': 2,
+    'flowtype/define-flow-type': 2,
+    'flowtype/no-dupe-keys': 2,
+    'flowtype/no-primitive-constructor-types': 2,
+    'flowtype/require-parameter-type': 2,
+    'flowtype/require-return-type': 2,
+    'flowtype/require-valid-file-annotation': 2,
+    'flowtype/require-variable-type': 2,
+    'flowtype/use-flow-type': 2,
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

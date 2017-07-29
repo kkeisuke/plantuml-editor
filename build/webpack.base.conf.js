@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var FlowtypePlugin = require('flowtype-loader/plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -37,6 +38,12 @@ module.exports = {
         }
       },
       {
+        test: /\.(js|vue)$/,
+        loader: 'flowtype-loader',
+        enforce: 'pre',
+        exclude: /node_modules/
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
@@ -63,5 +70,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new FlowtypePlugin()
+  ]
 }

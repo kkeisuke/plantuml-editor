@@ -3,7 +3,11 @@
     ["env", { "modules": false }],
     "stage-2"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+    "syntax-flow",
+    "transform-flow-strip-types",
+    "transform-runtime",
+  ],
   "comments": false,
   "env": {
     "test": {
