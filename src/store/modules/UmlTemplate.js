@@ -1,11 +1,13 @@
-const actions = {
-  selectTemplate (context, prop) {
+/* @flow */
+
+const actions: any = {
+  selectTemplate (context: any, prop: string) {
     context.dispatch('renderUML', context.state[prop])
     context.dispatch('setEditorText')
   }
 }
 
-const state = {
+const state: any = {
   useCase:
 `@startuml
 

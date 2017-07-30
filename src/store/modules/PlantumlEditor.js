@@ -1,6 +1,8 @@
+/* @flow */
+
 import plantumlEncoder from 'plantuml-encoder'
 
-const state = {
+const state: any = {
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
   server: 'https://plantuml-server.herokuapp.com/',
@@ -16,57 +18,57 @@ const state = {
   }
 }
 
-const mutations = {
-  setUmlWidth (state, umlWidth) {
+const mutations: any = {
+  setUmlWidth (state: any, umlWidth: number) {
     state.umlWidth = umlWidth
   },
-  setUmlExtension (state, umlExtension) {
+  setUmlExtension (state: any, umlExtension: string) {
     state.umlExtension = umlExtension
   },
-  setEditor (state, editor) {
+  setEditor (state: any, editor: any) {
     state.editor = editor
   },
   setEditorText () {
     state.editor.setValue(state.text, 1)
   },
-  setText (state, text) {
+  setText (state: any, text: string) {
     state.text = text
   },
-  renderUML (state, text) {
+  renderUML (state: any, text: string) {
     state.src = state.server + state.umlExtension + '/' + plantumlEncoder.encode(text)
   },
-  setLocalStrage (state, text) {
+  setLocalStrage (state: any, text: string) {
     if (window.localStorage) {
       window.localStorage.setItem(state.plantuml, text)
     }
   },
-  getLocalStrage (state) {
-    const text = window.localStorage ? window.localStorage.getItem(state.plantuml) : ''
+  getLocalStrage (state: any) {
+    const text: string = window.localStorage ? window.localStorage.getItem(state.plantuml) : ''
     state.text = text || state.defaultText
   }
 }
 
-const actions = {
-  setUmlWidth (context, umlWidth) {
+const actions: any = {
+  setUmlWidth (context: any, umlWidth: number) {
     context.commit('setUmlWidth', umlWidth)
   },
-  setUmlExtension (context, umlExtension) {
+  setUmlExtension (context: any, umlExtension: string) {
     context.commit('setUmlExtension', umlExtension)
   },
-  setEditor (context, editor) {
+  setEditor (context: any, editor: any) {
     context.commit('setEditor', editor)
   },
-  setEditorText (context) {
+  setEditorText (context: any) {
     context.commit('setEditorText')
   },
-  getLocalStrage (context) {
+  getLocalStrage (context: any) {
     context.commit('getLocalStrage')
   },
-  syncText (context, text) {
+  syncText (context: any, text: string) {
     context.commit('setText', text)
     context.commit('setLocalStrage', text)
   },
-  renderUML (context, text) {
+  renderUML (context: any, text: string) {
     context.commit('setText', text)
     context.commit('renderUML', text)
     context.commit('setLocalStrage', text)

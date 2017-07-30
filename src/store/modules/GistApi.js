@@ -1,6 +1,8 @@
+/* @flow */
+
 import axios from 'axios'
 
-const state = {
+const state: any = {
   api: 'https://api.github.com/gists',
   token: '',
   isSending: false,
@@ -13,10 +15,10 @@ const state = {
   },
   validation: {
     'fileName': {
-      getMessage (field) {
+      getMessage (field: string): string {
         return `The ${field} field contains characters that can not be used in the ${field}.`
       },
-      validate (value) {
+      validate (value: string): boolean {
         return !/^.*[(\s|\\|/|'|"|?|<|>|:|*)].*$/.test(value)
       }
     }
@@ -27,24 +29,24 @@ const state = {
   }
 }
 
-const mutations = {
-  setToken (state, token) {
+const mutations: any = {
+  setToken (state: any, token: string) {
     state.token = token
     if (window.localStorage) {
       window.localStorage.setItem(state.api, token)
     }
   },
-  getToken (state) {
-    const token = window.localStorage ? window.localStorage.getItem(state.api) : ''
+  getToken (state: any) {
+    const token: string = window.localStorage ? window.localStorage.getItem(state.api) : ''
     state.token = token || ''
   },
-  setDescription (state, description) {
+  setDescription (state: any, description: string) {
     state.gist.description = description
   },
-  setPublic (state, isPublic) {
+  setPublic (state: any, isPublic: boolean) {
     state.gist.public = isPublic
   },
-  addFiles (state, data) {
+  addFiles (state: any, data: any) {
     if (data && data.fileName && data.text && data.ext) {
       state.gist.files[`${data.fileName}.${data.ext}`] = {
         'content': data.text
@@ -54,15 +56,15 @@ const mutations = {
   resetFiles () {
     state.gist.files = {}
   },
-  addTxtUML (state, data) {
+  addTxtUML (state: any, data: any) {
     if (data) {
       data.ext = state.ext.txt
       mutations.addFiles(state, data)
     }
   },
-  addSvgUML (state, data) {
+  addSvgUML (state: any, data: any): any {
     return axios.get(data.src || '')
-    .then((response) => {
+    .then((response: any) => {
       if (response && response.data) {
         data.ext = state.ext.svg
         data.text = response.data
@@ -70,7 +72,7 @@ const mutations = {
       }
     })
   },
-  createGist (state, data) {
+  createGist (state: any, data: any) {
     // 送信中フラグ ON
     state.isSending = true
 
@@ -88,11 +90,11 @@ const mutations = {
       if (Object.keys(state.gist.files).length >= 2) {
         // Gist 投稿
         axios.post(`${state.api}?access_token=${state.token}`, state.gist)
-        .then((response) => {
+        .then((response: any) => {
           state.gistUrl = response.data.html_url
           state.isSending = false
         })
-        .catch((error) => {
+        .catch((error: any) => {
           state.errorMsg = `${error.response.status} ${error.response.statusText} ${error.response.data.message}`
           state.isSending = false
         })
@@ -114,23 +116,23 @@ const mutations = {
   }
 }
 
-const actions = {
-  setToken (context, token) {
+const actions: any = {
+  setToken (context: any, token: string) {
     context.commit('setToken', token)
   },
-  getToken (context) {
+  getToken (context: any) {
     context.commit('getToken')
   },
-  setDescription (context, description) {
+  setDescription (context: any, description: string) {
     context.commit('setDescription', description)
   },
-  setPublic (context, isPublic) {
+  setPublic (context: any, isPublic: boolean) {
     context.commit('setPublic', isPublic)
   },
-  createGist (context, data) {
+  createGist (context: any, data: any) {
     context.commit('createGist', data)
   },
-  resetGist (context) {
+  resetGist (context: any) {
     context.commit('resetGist')
   }
 }
