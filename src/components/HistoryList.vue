@@ -22,19 +22,21 @@
 </template>
 
 <script>
+/* @flow */
+
 export default {
   name: 'historyList',
   props: [
     'height'
   ],
-  data () {
+  data (): any {
     return {
       deleteMessage: 'Can I delete it?',
       editMessage: 'Do you want to edit it?'
     }
   },
   computed: {
-    histories () {
+    histories (): any {
       return this.$store.state.histories.data
     }
   },
@@ -42,12 +44,12 @@ export default {
     this.$store.dispatch('getHistories')
   },
   methods: {
-    del (id, event) {
+    del (id: number, event: any) {
       if (window.confirm(this.deleteMessage)) {
         this.$store.dispatch('delete', id)
       }
     },
-    read (text, event) {
+    read (text: string, event: any) {
       if (window.confirm(this.editMessage)) {
         this.$store.dispatch('renderUML', text)
         this.$store.dispatch('setEditorText')

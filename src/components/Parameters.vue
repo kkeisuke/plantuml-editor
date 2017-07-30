@@ -32,31 +32,33 @@
 </template>
 
 <script>
+/* @flow */
+
 export default {
   name: 'parameters',
   computed: {
-    src () {
+    src (): string {
       return this.$store.state.plantumlEditor.src
     },
     umlWidth: {
-      get () {
+      get (): number {
         return this.$store.state.plantumlEditor.umlWidth
       },
-      set (value) {
+      set (value: number) {
         this.$store.dispatch('setUmlWidth', value)
       }
     },
     umlExtension: {
-      get () {
+      get (): string {
         return this.$store.state.plantumlEditor.umlExtension
       },
-      set (value) {
+      set (value: string) {
         this.$store.dispatch('setUmlExtension', value)
         this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
       }
     }
   },
-  data () {
+  data (): any {
     return {
       umlExtensions: [
         {
@@ -71,13 +73,13 @@ export default {
     }
   },
   methods: {
-    renderUML (event) {
+    renderUML (event: any) {
       this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
     },
-    save (event) {
+    save (event: any) {
       this.$store.dispatch('save', this.$store.state.plantumlEditor)
     },
-    showGistModal ($event) {
+    showGistModal ($event: any) {
       window.$('#gist').modal('show')
       window.$('[data-toggle="tooltip"]').tooltip('hide')
     }

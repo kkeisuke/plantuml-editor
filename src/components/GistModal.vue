@@ -94,55 +94,57 @@
 </template>
 
 <script>
+/* @flow */
+
 export default {
   name: 'GistModal',
   computed: {
     description: {
-      get () {
+      get (): string {
         return this.$store.state.gistApi.gist.description
       },
-      set (value) {
+      set (value: string) {
         this.$store.dispatch('setDescription', value)
       }
     },
     isPublic: {
-      get () {
+      get (): boolean {
         return this.$store.state.gistApi.gist.public
       },
-      set (value) {
+      set (value: boolean) {
         this.$store.dispatch('setPublic', value)
       }
     },
     token: {
-      get () {
+      get (): string {
         return this.$store.state.gistApi.token
       },
-      set (value) {
+      set (value: string) {
         this.$store.dispatch('setToken', value)
       }
     },
-    ext () {
+    ext (): any {
       return this.$store.state.gistApi.ext
     },
-    gistUrl () {
+    gistUrl (): string {
       return this.$store.state.gistApi.gistUrl
     },
-    errorMsg () {
+    errorMsg (): string {
       return this.$store.state.gistApi.errorMsg
     },
-    isSending () {
+    isSending (): boolean {
       return this.$store.state.gistApi.isSending
     },
-    gistApiInValid () {
+    gistApiInValid (): boolean {
       // 「ファイル名が空 or GistのURL取得済み or バリデーションエラーがある or 送信中」場合は投稿できない
-      const result = this.fileName === '' ||
+      const result: boolean = this.fileName === '' ||
         Boolean(this.$store.state.gistApi.gistUrl) ||
         Boolean(this.$validator.errorBag.count()) ||
         this.$store.state.gistApi.isSending
       return result
     }
   },
-  data () {
+  data (): any {
     return {
       fileName: ''
     }

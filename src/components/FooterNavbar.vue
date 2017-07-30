@@ -15,6 +15,8 @@
 </template>
 
 <script>
+/* @flow */
+
 export default {
   name: 'footerNavbar'
 }

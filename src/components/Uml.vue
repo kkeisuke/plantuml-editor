@@ -12,17 +12,19 @@
 </template>
 
 <script>
+/* @flow */
+
 export default {
   name: 'uml',
   computed: {
-    src () {
+    src (): string {
       return this.$store.state.plantumlEditor.src
     },
-    umlWidth () {
+    umlWidth (): number {
       return this.$store.state.plantumlEditor.umlWidth
     }
   },
-  data () {
+  data (): any {
     return {
       isLoading: false,
       loadingDelay: 500

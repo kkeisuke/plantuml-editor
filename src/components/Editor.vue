@@ -3,6 +3,8 @@
 </template>
 
 <script>
+/* @flow */
+
 import ace from 'brace'
 // 一番それっぽいシンタックスハイライト
 import 'brace/mode/tcl'
@@ -16,7 +18,7 @@ export default {
       default: '100%'
     }
   },
-  data () {
+  data (): any {
     return {
       editor: null,
       theme: 'solarized_dark',
@@ -40,7 +42,7 @@ export default {
           'win': this.$store.state.plantumlEditor.renderUMLKey.win,
           'mac': this.$store.state.plantumlEditor.renderUMLKey.mac
         },
-        exec: (editor) => {
+        exec: (editor: any) => {
           this.$store.dispatch('renderUML', this.editor.getValue())
         }
       })

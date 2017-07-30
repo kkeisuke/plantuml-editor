@@ -74,10 +74,12 @@
 </template>
 
 <script>
+/* @flow */
+
 export default {
   name: 'HelpModal',
   computed: {
-    official () {
+    official (): string {
       return this.$store.state.plantumlEditor.official
     }
   }

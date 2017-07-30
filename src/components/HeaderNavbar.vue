@@ -17,6 +17,8 @@
 </template>
 
 <script>
+/* @flow */
+
 import UmlTemplate from './UmlTemplate'
 
 export default {

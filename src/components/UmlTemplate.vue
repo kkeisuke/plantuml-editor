@@ -20,18 +20,20 @@
 </template>
 
 <script>
+/* @flow */
+
   export default {
     name: 'umlTemplate',
     props: [],
     mounted () {
     },
-    data () {
+    data (): any {
       return {
         selectMessage: 'Do you want to select a template?'
       }
     },
     methods: {
-      selectTemplate (prop, event) {
+      selectTemplate (prop: string, event: any) {
         if (window.confirm(this.selectMessage)) {
           this.$store.dispatch('selectTemplate', prop)
         }
@@ -39,7 +41,7 @@
     },
     computed: {
     }
-}
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -34,6 +34,8 @@
 </template>
 
 <script>
+/* @flow */
+
 // Bootstrap
 window.$ = window.jQuery = require('jquery')
 require('bootstrap')
@@ -64,7 +66,7 @@ export default {
     Uml,
     Editor
   },
-  data () {
+  data (): any {
     return {
       height: '0px',
       historyH: '0px',
@@ -88,9 +90,9 @@ export default {
       this.historyH = window.innerHeight - 105 + 'px'
     },
     resize () {
-      let timer = null
+      let timer: any = null
       // FPS 30
-      const interval = Math.floor(1000 / 30 * 10)
+      let interval: number = Math.floor(1000 / 30 * 10)
       window.addEventListener('resize', () => {
         if (timer) {
           clearTimeout(timer)
