@@ -12,6 +12,7 @@ const state: any = {
   src: '',
   umlWidth: 50,
   umlExtension: 'svg',
+  isLoading: false,
   renderUMLKey: {
     'win': 'Ctrl-Enter',
     'mac': 'Command-Enter'
@@ -19,8 +20,16 @@ const state: any = {
 }
 
 const mutations: any = {
+  getUmlWidthFromLocalStorage () {
+    if (window.localStorage && window.localStorage.getItem('umlWidth')) {
+      state.umlWidth = window.localStorage.getItem('umlWidth')
+    }
+  },
   setUmlWidth (state: any, umlWidth: number) {
     state.umlWidth = umlWidth
+    if (window.localStorage) {
+      window.localStorage.setItem('umlWidth', state.umlWidth)
+    }
   },
   setUmlExtension (state: any, umlExtension: string) {
     state.umlExtension = umlExtension
@@ -45,6 +54,9 @@ const mutations: any = {
   getLocalStrage (state: any) {
     const text: string = window.localStorage ? window.localStorage.getItem(state.plantuml) : ''
     state.text = text || state.defaultText
+  },
+  setIsLoading (state: any, isLoading: boolean) {
+    state.isLoading = isLoading
   }
 }
 
@@ -55,6 +67,9 @@ const actions: any = {
   setUmlExtension (context: any, umlExtension: string) {
     context.commit('setUmlExtension', umlExtension)
   },
+  setIsLoading (context: any, isLoading: boolean) {
+    context.commit('setIsLoading', isLoading)
+  },
   setEditor (context: any, editor: any) {
     context.commit('setEditor', editor)
   },
@@ -63,6 +78,7 @@ const actions: any = {
   },
   getLocalStrage (context: any) {
     context.commit('getLocalStrage')
+    context.commit('getUmlWidthFromLocalStorage')
   },
   syncText (context: any, text: string) {
     context.commit('setText', text)

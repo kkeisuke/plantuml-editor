@@ -23,7 +23,7 @@
               <parameters></parameters>
             </div>
           </div>
-          <uml></uml>
+          <uml :height="umlH"></uml>
         </div>
       </div>
     </div>
@@ -70,6 +70,7 @@ export default {
     return {
       height: '0px',
       historyH: '0px',
+      umlH: '0px',
       winKey: this.$store.state.plantumlEditor.renderUMLKey.win,
       macKey: this.$store.state.plantumlEditor.renderUMLKey.mac
     }
@@ -88,6 +89,7 @@ export default {
     setHeight () {
       this.height = window.innerHeight - 70 + 'px'
       this.historyH = window.innerHeight - 105 + 'px'
+      this.umlH = window.innerHeight - 290 + 'px'
     },
     resize () {
       let timer: any = null

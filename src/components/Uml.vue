@@ -1,12 +1,9 @@
 <template>
   <div class="row">
     <div class="col-sm-12">
-      <div class="thumbnail">
+      <div class="umlImage text-center" :style="{height:height}">
         <img :src="src" :width="umlWidth+'%'" @load="loadedImg">
       </div>
-      <p v-show="isLoading">
-        <i class="fa fa-refresh fa-spin fa-lg fa-fw"></i> loading ...
-      </p>
     </div>
   </div>
 </template>
@@ -16,6 +13,9 @@
 
 export default {
   name: 'uml',
+  props: [
+    'height'
+  ],
   computed: {
     src (): string {
       return this.$store.state.plantumlEditor.src
@@ -26,24 +26,23 @@ export default {
   },
   data (): any {
     return {
-      isLoading: false,
       loadingDelay: 500
     }
   },
   created () {
-    this.isLoading = true
+    this.$store.dispatch('setIsLoading', true)
   },
   watch: {
     src () {
       if (this.src) {
-        this.isLoading = true
+        this.$store.dispatch('setIsLoading', true)
       }
     }
   },
   methods: {
     loadedImg () {
       window.setTimeout(() => {
-        this.isLoading = false
+        this.$store.dispatch('setIsLoading', false)
       }, this.loadingDelay)
     }
   }
@@ -52,4 +51,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.umlImage {
+  overflow: scroll;
+  width: 100%;
+}
 </style>

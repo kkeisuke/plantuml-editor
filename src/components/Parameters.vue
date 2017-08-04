@@ -2,7 +2,7 @@
   <form class="form-inline">
     <div class="form-group">
       <label for="umlWidth">size</label>
-      <input type="number" id="umlWidth" step="10" max="100" min="10" v-model="umlWidth" class="form-control">
+      <input type="number" id="umlWidth" step="10" max="300" min="10" v-model="umlWidth" class="form-control">
     </div>
     <div class="form-group">
       <label for="umlExtension">img</label>
@@ -15,7 +15,7 @@
     <div class="form-group">
       <div class="btn-group">
         <button type="button" class="btn btn-default" @click="renderUML" data-toggle="tooltip" data-placement="bottom" title="refresh" data-container="body">
-          <span class="glyphicon glyphicon-refresh"></span>
+          <span class="glyphicon glyphicon-refresh" :class="{'fa-spin':isLoading}"></span>
         </button>
         <button type="button" class="btn btn-default" @click="save" data-toggle="tooltip" data-placement="bottom" title="save" data-container="body">
           <span class="glyphicon glyphicon-plus"></span>
@@ -39,6 +39,9 @@ export default {
   computed: {
     src (): string {
       return this.$store.state.plantumlEditor.src
+    },
+    isLoading (): boolean {
+      return this.$store.state.plantumlEditor.isLoading
     },
     umlWidth: {
       get (): number {
