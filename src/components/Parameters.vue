@@ -23,7 +23,7 @@
         <a :href="src" class="btn btn-default" @click.prevent="download" data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
           <span class="glyphicon glyphicon-download-alt"></span>
         </a>
-        <button type="button" class="btn btn-default" @click="showGistModal" data-toggle="tooltip" data-placement="bottom" title="share" data-container="body">
+        <button type="button" class="btn btn-default" @click="showGistModal" :disabled="umlExtension!='svg'" data-toggle="tooltip" data-placement="bottom" title="share" data-container="body">
           <span class="glyphicon glyphicon-share-alt"></span>
         </button>
       </div>
