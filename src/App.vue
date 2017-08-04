@@ -89,7 +89,7 @@ export default {
     setHeight () {
       this.height = window.innerHeight - 70 + 'px'
       this.historyH = window.innerHeight - 105 + 'px'
-      this.umlH = window.innerHeight - 290 + 'px'
+      this.umlH = window.innerHeight - 270 + 'px'
     },
     resize () {
       let timer: any = null
