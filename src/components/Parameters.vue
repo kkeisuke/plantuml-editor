@@ -20,7 +20,7 @@
         <button type="button" class="btn btn-default" @click="save" data-toggle="tooltip" data-placement="bottom" title="save" data-container="body">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
-        <a :href="src" class="btn btn-default" download data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
+        <a :href="src" class="btn btn-default" @click.prevent="download" data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
           <span class="glyphicon glyphicon-download-alt"></span>
         </a>
         <button type="button" class="btn btn-default" @click="showGistModal" data-toggle="tooltip" data-placement="bottom" title="share" data-container="body">
@@ -51,6 +51,9 @@ export default {
         this.$store.dispatch('setUmlWidth', value)
       }
     },
+    umlExtensions (): any {
+      return this.$store.state.plantumlEditor.umlExtensions
+    },
     umlExtension: {
       get (): string {
         return this.$store.state.plantumlEditor.umlExtension
@@ -59,20 +62,6 @@ export default {
         this.$store.dispatch('setUmlExtension', value)
         this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
       }
-    }
-  },
-  data (): any {
-    return {
-      umlExtensions: [
-        {
-          text: 'svg',
-          value: 'svg'
-        },
-        {
-          text: 'png',
-          value: 'png'
-        }
-      ]
     }
   },
   methods: {
@@ -86,6 +75,9 @@ export default {
     showGistModal ($event: any) {
       window.$('#gist').modal('show')
       window.$('[data-toggle="tooltip"]').tooltip('hide')
+    },
+    download () {
+      this.$store.dispatch('download')
     }
   }
 }

@@ -20,6 +20,7 @@
     "dexie": "1.5.1",
     "font-awesome": "4.7.0",
     "jquery": "3.1.1",
+    "lodash": "4.17.4",
     "plantuml-encoder": "1.2.4",
     "vee-validate": "2.0.0-rc.7",
     "vue": "2.4.2",

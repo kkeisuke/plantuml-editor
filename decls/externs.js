@@ -21,3 +21,11 @@ declare module 'dexie' {
 declare module 'axios' {
   declare var exports: any;
 }
+
+declare module 'lodash' {
+  declare var exports: any;
+}
+
+declare module '_' {
+  declare var exports: any;
+}

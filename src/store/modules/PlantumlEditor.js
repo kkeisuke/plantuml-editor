@@ -1,6 +1,9 @@
 /* @flow */
 
 import plantumlEncoder from 'plantuml-encoder'
+import axios from 'axios'
+import lodash from 'lodash'
+const _: any = lodash
 
 const state: any = {
   official: 'http://plantuml.com/',
@@ -12,6 +15,20 @@ const state: any = {
   src: '',
   umlWidth: 50,
   umlExtension: 'svg',
+  umlExtensions: [
+    {
+      'text': 'svg',
+      'value': 'svg',
+      'fileType': 'image/svg+xml',
+      'responseType': 'text'
+    },
+    {
+      'text': 'png',
+      'value': 'png',
+      'fileType': 'image/png',
+      'responseType': 'arraybuffer'
+    }
+  ],
   isLoading: false,
   colSize: {
     'history': 2,
@@ -73,6 +90,24 @@ const mutations: any = {
   },
   setIsLoading (state: any, isLoading: boolean) {
     state.isLoading = isLoading
+  },
+  download (state: any) {
+    const ext: any = mutations.getExtFromText()
+    axios.get(state.src || '', {
+      'responseType': ext.responseType
+    })
+    .then((response: any) => {
+      if (response && response.data) {
+        let downLoadLink: any = document.createElement('a')
+        downLoadLink.download = `${state.plantuml}.${state.umlExtension}`
+        downLoadLink.href = URL.createObjectURL(new Blob([response.data], {type: ext.fileType}))
+        downLoadLink.dataset.downloadurl = `${ext.fileType}:${downLoadLink.download}:${downLoadLink.href}`
+        downLoadLink.click()
+      }
+    })
+  },
+  getExtFromText (): any {
+    return _.find(state.umlExtensions, {'text': state.umlExtension})
   }
 }
 
@@ -114,6 +149,9 @@ const actions: any = {
     context.commit('setText', text)
     context.commit('renderUML', text)
     context.commit('setLocalStrage', text)
+  },
+  download (context: any) {
+    context.commit('download')
   }
 }
 
