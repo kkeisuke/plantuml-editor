@@ -3,13 +3,13 @@
     <headerNavbar></headerNavbar>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-2">
+        <div :class="[historyCol ? 'col-sm-'+historyCol : 'col-sm-2']" v-show="Boolean(historyCol)">
           <historyList :height="historyH"></historyList>
         </div>
-        <div class="col-sm-4 col-editor">
+        <div class="col-editor" :class="[editorCol ? 'col-sm-'+editorCol : 'col-sm-4']">
           <editor :height="height"></editor>
         </div>
-        <div class="col-sm-6">
+        <div :class="[umlCol ? 'col-sm-'+umlCol : 'col-sm-6']">
           <div class="row">
             <div class="col-sm-12">
               <div class="alert alert-info alert-dismissible">
@@ -65,6 +65,17 @@ export default {
     HistoryList,
     Uml,
     Editor
+  },
+  computed: {
+    historyCol (): number {
+      return this.$store.state.plantumlEditor.colSize.history
+    },
+    editorCol (): number {
+      return this.$store.state.plantumlEditor.colSize.editor
+    },
+    umlCol (): number {
+      return this.$store.state.plantumlEditor.colSize.uml
+    }
   },
   data (): any {
     return {

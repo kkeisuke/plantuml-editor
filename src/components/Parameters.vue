@@ -81,6 +81,7 @@ export default {
     },
     save (event: any) {
       this.$store.dispatch('save', this.$store.state.plantumlEditor)
+      this.$store.dispatch('resetColSize')
     },
     showGistModal ($event: any) {
       window.$('#gist').modal('show')
