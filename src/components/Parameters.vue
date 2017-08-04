@@ -69,8 +69,8 @@ export default {
           value: 'svg'
         },
         {
-          text: 'img',
-          value: 'img'
+          text: 'png',
+          value: 'png'
         }
       ]
     }
