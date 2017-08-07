@@ -14,6 +14,7 @@ module.exports = {
   // required to lint *.vue files
   plugins: [
     'flowtype',
+    'flowtype-errors',
     'html'
   ],
   // add your custom rules here
@@ -27,6 +28,7 @@ module.exports = {
     'flowtype/require-valid-file-annotation': 2,
     'flowtype/require-variable-type': 2,
     'flowtype/use-flow-type': 2,
+    'flowtype-errors/show-errors': 2,
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

@@ -38,9 +38,9 @@ module.exports = {
         }
       },
       {
-        test: /\.(js|vue)$/,
+        // vue ファイルは eslint-plugin-flowtype-errors で行う
+        test: /\.js$/,
         loader: 'flowtype-loader',
-        enforce: 'pre',
         exclude: /node_modules/
       },
       {

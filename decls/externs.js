@@ -29,3 +29,23 @@ declare module 'lodash' {
 declare module '_' {
   declare var exports: any;
 }
+
+declare module 'jquery' {
+  declare var exports: any;
+}
+
+declare module 'bootstrap' {
+  declare var exports: any;
+}
+
+declare module 'brace' {
+  declare var exports: any;
+}
+
+declare module 'brace/mode/tcl' {
+  declare var exports: any;
+}
+
+declare module 'brace/theme/solarized_dark' {
+  declare var exports: any;
+}
