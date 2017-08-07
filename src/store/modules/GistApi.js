@@ -32,13 +32,6 @@ const state: any = {
 const mutations: any = {
   setToken (state: any, token: string) {
     state.token = token
-    if (window.localStorage) {
-      window.localStorage.setItem(state.api, token)
-    }
-  },
-  getToken (state: any) {
-    const token: string = window.localStorage ? window.localStorage.getItem(state.api) : ''
-    state.token = token || ''
   },
   setDescription (state: any, description: string) {
     state.gist.description = description
@@ -119,9 +112,6 @@ const mutations: any = {
 const actions: any = {
   setToken (context: any, token: string) {
     context.commit('setToken', token)
-  },
-  getToken (context: any) {
-    context.commit('getToken')
   },
   setDescription (context: any, description: string) {
     context.commit('setDescription', description)

@@ -65,6 +65,9 @@
                 <span class="help-block" v-if="errors.has('token')">
                   {{errors.first('token')}}<br>
                 </span>
+                <span class="help-block">
+                  <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/" target="_blank">Creating a personal access token</a>
+                </span>
               </div>
             </div>
             <div class="form-group">
@@ -153,7 +156,10 @@ export default {
   mounted () {
     this.setValidation()
     this.setEvent()
-    this.dispatch()
+    // TODO しばらく残しておく 2017/08/07
+    if (window.localStorage) {
+      window.localStorage.removeItem(this.$store.state.gistApi.api)
+    }
   },
   methods: {
     setValidation () {
@@ -165,9 +171,6 @@ export default {
         this.fileName = ''
         this.$store.dispatch('resetGist')
       })
-    },
-    dispatch () {
-      this.$store.dispatch('getToken')
     },
     submit () {
       // 誤送信を防ぐために無効化する
