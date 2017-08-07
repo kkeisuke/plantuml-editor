@@ -66,7 +66,6 @@ export default {
   padding-top: 20px;
   overflow-y: scroll;
   background-color: #002B36;
-
 }
 .historyList .thumbnail {
   background-color: #fffff;

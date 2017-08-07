@@ -43,11 +43,12 @@
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" v-model="isPublic"> public
-                  </label>
-                </div>
+                <label class="radio-inline">
+                  <input type="radio" name="isPublic" :value="true" v-model="isPublic"> public
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="isPublic" :value="false" v-model="isPublic"> secret
+                </label>
               </div>
             </div>
             <div class="form-group" :class="{'has-error':errors.has('token')}">
