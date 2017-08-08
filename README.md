@@ -2,7 +2,17 @@
 
 > A Vue.js project
 
+PlantUML online demo client
+
 ![PlantUML Editor](capture1.png)
+
+## Features
+
+- multiple PlantUML templates
+- zoom & scroll
+- supports SVG & PNG
+- save texts
+- create gists
 
 ## Build Setup
 
