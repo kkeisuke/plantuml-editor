@@ -4,11 +4,12 @@
 
 PlantUML online demo client
 
-![PlantUML Editor](capture1.png)
+![PlantUML Editor](capture1_20170809.png)
 
 ## Features
 
 - multiple PlantUML templates
+- cheat sheet
 - zoom & scroll
 - supports SVG & PNG
 - save texts
