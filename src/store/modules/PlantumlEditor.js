@@ -33,6 +33,7 @@ const state: any = {
   colSize: {
     'history': 2,
     'editor': 4,
+    'cheatSheet': 0,
     'uml': 6
   },
   renderUMLKey: {
@@ -62,6 +63,9 @@ const mutations: any = {
     }
     if (colSize.editor || colSize.editor === 0) {
       state.colSize.editor = colSize.editor
+    }
+    if (colSize.cheatSheet || colSize.cheatSheet === 0) {
+      state.colSize.cheatSheet = colSize.cheatSheet
     }
     if (colSize.uml || colSize.uml === 0) {
       state.colSize.uml = colSize.uml
@@ -128,6 +132,7 @@ const actions: any = {
     context.commit('setColSize', {
       'history': 2,
       'editor': 4,
+      'cheatSheet': 0,
       'uml': 6
     })
   },

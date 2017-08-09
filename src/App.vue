@@ -9,12 +9,15 @@
         <div class="col-editor" :class="[editorCol ? 'col-sm-'+editorCol : 'col-sm-4']">
           <editor :height="height"></editor>
         </div>
+        <div class="col-cheatSheet" :class="[cheatSheetCol ? 'col-sm-'+cheatSheetCol : 'col-sm-3']" v-show="Boolean(cheatSheetCol)">
+          <cheatSheet :height="cheatSheetH"></cheatSheet>
+        </div>
         <div :class="[umlCol ? 'col-sm-'+umlCol : 'col-sm-6']">
           <div class="row">
             <div class="col-sm-12">
-              <div class="alert alert-info alert-dismissible">
+              <div class="alert alert-default alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-                Preview Keybindings are { win:'{{winKey}}', mac:'{{macKey}}' } .
+                Preview are win <kbd>{{winKey}}</kbd> , mac <kbd>{{macKey}}</kbd> .
               </div>
             </div>
           </div>
@@ -50,6 +53,7 @@ import HelpModal from './components/HelpModal'
 import GistModal from './components/GistModal'
 import Parameters from './components/Parameters'
 import HistoryList from './components/HistoryList'
+import CheatSheet from './components/CheatSheet'
 import Uml from './components/Uml'
 import Editor from './components/Editor'
 
@@ -63,6 +67,7 @@ export default {
     GistModal,
     Parameters,
     HistoryList,
+    CheatSheet,
     Uml,
     Editor
   },
@@ -73,6 +78,9 @@ export default {
     editorCol (): number {
       return this.$store.state.plantumlEditor.colSize.editor
     },
+    cheatSheetCol (): number {
+      return this.$store.state.plantumlEditor.colSize.cheatSheet
+    },
     umlCol (): number {
       return this.$store.state.plantumlEditor.colSize.uml
     }
@@ -82,6 +90,7 @@ export default {
       height: '0px',
       historyH: '0px',
       umlH: '0px',
+      cheatSheetH: '0px',
       winKey: this.$store.state.plantumlEditor.renderUMLKey.win,
       macKey: this.$store.state.plantumlEditor.renderUMLKey.mac
     }
@@ -101,6 +110,7 @@ export default {
       this.height = window.innerHeight - 70 + 'px'
       this.historyH = window.innerHeight - 105 + 'px'
       this.umlH = window.innerHeight - 270 + 'px'
+      this.cheatSheetH = window.innerHeight - 130 + 'px'
     },
     resize () {
       let timer: any = null
@@ -128,5 +138,10 @@ export default {
 .col-editor {
   margin-top: -20px;
   padding: 0;
+}
+
+.alert-default {
+  background-color: #f5f5f5;
+  border-color: #ddd;
 }
 </style>
