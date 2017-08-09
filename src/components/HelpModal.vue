@@ -49,13 +49,26 @@
             </li>
           </ul>
           <div class="page-header">
-            <span class="h4">Qiita</span>
+            <span class="h4">Article</span>
           </div>
-          <ul>
-            <li>
-              <a href="http://qiita.com/kkeisuke/items/45f4725d41dd789061a2" target="_blank">vue-cli (vuex) で PlantUML エディターを作ってみた</a>
-            </li>
-          </ul>
+          <dl>
+            <dt>Qiita</dt>
+            <dd>
+              <ul>
+                <li>
+                  <a href="http://qiita.com/kkeisuke/items/45f4725d41dd789061a2" target="_blank">vue-cli (vuex) で PlantUML エディターを作ってみた</a>
+                </li>
+              </ul>
+            </dd>
+            <dt>hatenablog</dt>
+            <dd>
+              <ul>
+                <li>
+                  <a href="http://kkeisuke.hatenablog.com/entry/2017/08/07/160845" target="_blank">PlantUML Editor の要求/要件定義</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
           <div class="page-header">
             <span class="h4">kkeisuke</span>
           </div>
