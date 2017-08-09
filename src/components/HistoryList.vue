@@ -1,7 +1,7 @@
 <template>
   <div class="row historyList" :style="{'height':height}">
     <div class="col-sm-12">
-      <div class="alert alert-info" v-if="!histories.length">
+      <div class="alert alert-default" v-if="!histories.length">
         When you press the Save button, it will be added to the history.
       </div>
       <div class="thumbnail" v-for="history in histories">
