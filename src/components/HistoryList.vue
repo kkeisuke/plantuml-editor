@@ -1,5 +1,5 @@
 <template>
-  <div class="row historyList" :style="{height:height}">
+  <div class="row historyList" :style="{'height':height}">
     <div class="col-sm-12">
       <div class="alert alert-info" v-if="!histories.length">
         When you press the Save button, it will be added to the history.
@@ -26,9 +26,12 @@
 
 export default {
   name: 'historyList',
-  props: [
-    'height'
-  ],
+  props: {
+    height: {
+      type: String,
+      default: '100%'
+    }
+  },
   data (): any {
     return {
       deleteMessage: 'Can I delete it?',
@@ -64,7 +67,7 @@ export default {
 .historyList {
   margin-top: -20px;
   padding-top: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: #002B36;
 }
 .historyList .thumbnail {

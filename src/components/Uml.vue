@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-sm-12">
-      <div class="umlImage text-center" :style="{height:height}">
+      <div class="umlImage text-center" :style="{'height':height}">
         <img :src="src" :width="umlWidth+'%'" @load="loadedImg">
       </div>
     </div>
@@ -13,9 +13,12 @@
 
 export default {
   name: 'uml',
-  props: [
-    'height'
-  ],
+  props: {
+    height: {
+      type: String,
+      default: '100%'
+    }
+  },
   computed: {
     src (): string {
       return this.$store.state.plantumlEditor.src
@@ -52,7 +55,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .umlImage {
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
 }
 </style>

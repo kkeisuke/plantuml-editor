@@ -44,16 +44,19 @@ stop
   Activity:
 `@startuml
 
-(*) -down-> "step 1"
+start
 
-if "action" then
-  -down->[true] "step 2"
-  -down-> "step 3"
-  -down->[End] (*)
-else
-  -right->[false] "error"
-  -up-> "step 1"
+:step 1;
+
+if (try) then (true)
+  :step 2;
+  :step 3;
+else (false)
+  :error;
+  end
 endif
+
+stop
 
 @enduml`,
   Sequence:

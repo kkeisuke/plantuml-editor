@@ -36,6 +36,7 @@ export default {
       this.editor.$blockScrolling = Infinity
       this.editor.setTheme('ace/theme/' + this.theme)
       this.editor.getSession().setMode('ace/mode/' + this.lang)
+      this.editor.setOption('scrollPastEnd', true)
       this.editor.commands.addCommand({
         name: 'renderUML',
         bindKey: {

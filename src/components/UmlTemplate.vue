@@ -22,26 +22,21 @@
 <script>
 /* @flow */
 
-  export default {
-    name: 'umlTemplate',
-    props: [],
-    mounted () {
-    },
-    data (): any {
-      return {
-        selectMessage: 'Do you want to select a template?'
+export default {
+  name: 'umlTemplate',
+  data (): any {
+    return {
+      selectMessage: 'Do you want to select a template?'
+    }
+  },
+  methods: {
+    selectTemplate (prop: string, event: any) {
+      if (window.confirm(this.selectMessage)) {
+        this.$store.dispatch('selectTemplate', prop)
       }
-    },
-    methods: {
-      selectTemplate (prop: string, event: any) {
-        if (window.confirm(this.selectMessage)) {
-          this.$store.dispatch('selectTemplate', prop)
-        }
-      }
-    },
-    computed: {
     }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

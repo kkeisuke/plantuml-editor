@@ -9,7 +9,7 @@
         </li>
       </ul>
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">PlantUML Editor <span class="h6">beta</span></a>
+        <a class="navbar-brand" href="#" @click.prevent>PlantUML Editor <span class="h6">beta</span></a>
       </div>
       <umlTemplate></umlTemplate>
       <ul class="nav navbar-nav">
