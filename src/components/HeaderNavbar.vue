@@ -72,6 +72,10 @@ export default {
         'cheatSheet': 3,
         'uml': 5
       })
+      // 強制的にハッシュ削除
+      window.setTimeout(() => {
+        location.hash = ''
+      }, 300)
     }
   }
 }
