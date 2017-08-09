@@ -13,6 +13,10 @@
             <td><code>title</code> Title</td>
           </tr>
           <tr>
+            <th>direction</th>
+            <td><code>left to right direction</code></td>
+          </tr>
+          <tr>
             <th>label</th>
             <td><code>:</code> label</td>
           </tr>
