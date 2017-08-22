@@ -13,13 +13,13 @@
           <cheatSheet :height="cheatSheetH"></cheatSheet>
         </div>
         <div :class="[umlCol ? 'col-sm-'+umlCol : 'col-sm-6']">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="alert alert-default alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-                Preview are win <kbd>{{winKey}}</kbd> , mac <kbd>{{macKey}}</kbd> .
-              </div>
-            </div>
+          <div class="alert alert-warning alert-dismissible" v-if="!isHTTPS">
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+            Please go to <a :href="url">{{url}}</a>
+          </div>
+          <div class="alert alert-default alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+            Preview are win <kbd>{{winKey}}</kbd> , mac <kbd>{{macKey}}</kbd> .
           </div>
           <div class="row form-group">
             <div class="col-sm-12">
@@ -72,6 +72,12 @@ export default {
     Editor
   },
   computed: {
+    isHTTPS (): boolean {
+      return this.$store.state.plantumlEditor.isHTTPS
+    },
+    url (): string {
+      return this.$store.state.plantumlEditor.url
+    },
     historyCol (): number {
       return this.$store.state.plantumlEditor.colSize.history
     },

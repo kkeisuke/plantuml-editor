@@ -6,6 +6,8 @@ import lodash from 'lodash'
 const _: any = lodash
 
 const state: any = {
+  isHTTPS: location.protocol === 'https:',
+  url: 'https://plantuml-editor.kkeisuke.com/',
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
   server: 'https://plantuml-server.herokuapp.com/',
