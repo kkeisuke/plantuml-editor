@@ -4,7 +4,7 @@
 
 PlantUML online demo client
 
-![PlantUML Editor](capture1_20170809.png)
+![PlantUML Editor](static/capture1_20170809.png)
 
 ## Features
 
