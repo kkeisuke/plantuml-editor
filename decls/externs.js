@@ -30,6 +30,10 @@ declare module '_' {
   declare var exports: any;
 }
 
+declare module 'marked' {
+  declare var exports: any;
+}
+
 declare module 'jquery' {
   declare var exports: any;
 }

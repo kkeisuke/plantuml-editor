@@ -1,8 +1,14 @@
 <template>
   <div class="row">
     <div class="col-sm-12">
-      <div class="umlImage text-center" :style="{'height':height}">
-        <img :src="src" :width="umlWidth+'%'" @load="loadedImg">
+      <div class="umlImage" :style="{'height':height}">
+        <div v-html="preMarkdown"></div>
+        <div class="text-center">
+          <p>
+            <img :src="src" :width="umlWidth+'%'" @load="loadedImg">
+          </p>
+        </div>
+        <div v-html="afterMarkdown"></div>
       </div>
     </div>
   </div>
@@ -23,6 +29,12 @@ export default {
     src (): string {
       return this.$store.state.plantumlEditor.src
     },
+    preMarkdown (): string {
+      return this.$store.state.plantumlEditor.preMarkdown
+    },
+    afterMarkdown (): string {
+      return this.$store.state.plantumlEditor.afterMarkdown
+    },
     umlWidth (): number {
       return this.$store.state.plantumlEditor.umlWidth
     }
@@ -33,6 +45,7 @@ export default {
     }
   },
   created () {
+    this.$store.dispatch('setMarked')
     this.$store.dispatch('setIsLoading', true)
   },
   watch: {

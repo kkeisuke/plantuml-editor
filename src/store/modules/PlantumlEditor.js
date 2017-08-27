@@ -3,6 +3,7 @@
 import plantumlEncoder from 'plantuml-encoder'
 import axios from 'axios'
 import lodash from 'lodash'
+import marked from 'marked'
 const _: any = lodash
 
 const state: any = {
@@ -11,10 +12,14 @@ const state: any = {
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
   server: 'https://plantuml-server.herokuapp.com/',
+  startuml: '@startuml',
+  enduml: '@enduml',
   defaultText: '@startuml\n\nactor User\n\nUser -right-> (select template)\nUser -down-> (write uml diagram)\n\n@enduml',
   editor: null,
   text: '',
   src: '',
+  preMarkdown: '',
+  afterMarkdown: '',
   umlWidth: 50,
   umlExtension: 'svg',
   umlExtensions: [
@@ -83,7 +88,14 @@ const mutations: any = {
     state.text = text
   },
   renderUML (state: any, text: string) {
-    state.src = state.server + state.umlExtension + '/' + plantumlEncoder.encode(text)
+    const uml: string = `${state.startuml}${String(text.split(state.startuml)[1]).split(state.enduml)[0] || ''}${state.enduml}`
+    state.src = state.server + state.umlExtension + '/' + plantumlEncoder.encode(uml)
+  },
+  renderMarkdown (state: any, text: string) {
+    const pre: string = text.split(state.startuml)[0] || ''
+    const after: string = text.split(state.enduml)[1] || ''
+    state.preMarkdown = marked(pre)
+    state.afterMarkdown = marked(after)
   },
   setLocalStrage (state: any, text: string) {
     if (window.localStorage) {
@@ -152,9 +164,17 @@ const actions: any = {
     context.commit('setText', text)
     context.commit('setLocalStrage', text)
   },
+  setMarked (context: any) {
+    const renderer: any = new marked.Renderer()
+    renderer.table = function (header: string, body: string): string {
+      return `<table class="table table-striped table-bordered"><thead>${header}</thead><tbody>${body}</tbody></table>`
+    }
+    marked.setOptions({'renderer': renderer})
+  },
   renderUML (context: any, text: string) {
     context.commit('setText', text)
     context.commit('renderUML', text)
+    context.commit('renderMarkdown', text)
     context.commit('setLocalStrage', text)
   },
   download (context: any) {

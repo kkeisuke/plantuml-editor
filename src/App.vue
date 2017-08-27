@@ -115,7 +115,7 @@ export default {
     setHeight () {
       this.height = window.innerHeight - 70 + 'px'
       this.historyH = window.innerHeight - 105 + 'px'
-      this.umlH = window.innerHeight - 270 + 'px'
+      this.umlH = window.innerHeight - 330 + 'px'
       this.cheatSheetH = window.innerHeight - 130 + 'px'
     },
     resize () {
