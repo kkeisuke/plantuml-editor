@@ -14,6 +14,7 @@ PlantUML online demo client
 - supports SVG & PNG
 - save texts
 - create gists
+- support markdown
 
 ## Build Setup
 

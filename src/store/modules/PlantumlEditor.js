@@ -14,7 +14,7 @@ const state: any = {
   server: 'https://plantuml-server.herokuapp.com/',
   startuml: '@startuml',
   enduml: '@enduml',
-  defaultText: '@startuml\n\nactor User\n\nUser -right-> (select template)\nUser -down-> (write uml diagram)\n\n@enduml',
+  defaultText: '# PlantUML Editor\n\n1. select template\n2. write uml diagram\n\n@startuml\n\nactor User\n\nUser -right-> (select template)\nUser -down-> (write uml diagram)\n\n@enduml',
   editor: null,
   text: '',
   src: '',
