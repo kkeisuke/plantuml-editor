@@ -45,6 +45,7 @@ require('bootstrap')
 
 // store
 import store from './store'
+import directive from './directive'
 
 // components
 import HeaderNavbar from './components/HeaderNavbar'
@@ -60,6 +61,7 @@ import Editor from './components/Editor'
 export default {
   name: 'app',
   store,
+  directive,
   components: {
     HeaderNavbar,
     FooterNavbar,

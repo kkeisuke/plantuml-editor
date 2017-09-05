@@ -9,25 +9,59 @@
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <th>title</th>
-            <td><code>title</code> Title</td>
-          </tr>
-          <tr>
-            <th>direction</th>
-            <td><code>left to right direction</code></td>
-          </tr>
-          <tr>
-            <th>label</th>
-            <td><code>:</code> label</td>
-          </tr>
-          <tr>
-            <th>comment</th>
-            <td><code>'</code> comment</td>
-          </tr>
-          <tr>
-            <th>block comment</th>
+            <td>header</td>
             <td>
-<pre>
+<pre v-clipboard>
+center header
+
+endheader
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>footer</td>
+            <td>
+<pre v-clipboard>
+center footer
+
+endfooter
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td><code v-clipboard>title</code> Title</td>
+          </tr>
+          <tr>
+            <td>legend</td>
+            <td>
+<pre v-clipboard>
+legend center
+
+endlegend
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>caption</td>
+            <td><code v-clipboard>caption</code> figure 1</td>
+          </tr>
+          <tr>
+            <td>direction</td>
+            <td><code v-clipboard>left to right direction</code></td>
+          </tr>
+          <tr>
+            <td>label</td>
+            <td><code v-clipboard>:</code> label</td>
+          </tr>
+          <tr>
+            <td>comment</td>
+            <td><code v-clipboard>'</code> comment</td>
+          </tr>
+          <tr>
+            <td>block comment</td>
+            <td>
+<pre v-clipboard>
 /'
 comment
 '/
@@ -35,15 +69,15 @@ comment
             </td>
           </tr>
           <tr>
-            <th rowspan="3">note</th>
-            <td><code>note left :</code> note</td>
+            <td rowspan="3">note</td>
+            <td><code v-clipboard>note left :</code> note</td>
           </tr>
           <tr>
-            <td><code>note right :</code> note</td>
+            <td><code v-clipboard>note right :</code> note</td>
           </tr>
           <tr>
             <td>
-<pre>
+<pre v-clipboard>
 note left of A
 
 end note
@@ -54,32 +88,32 @@ end note
             <td rowspan="2">
               <img :src="url+'UDfpA2v9B2efpStXuh9oJ2x9Br98pCbCBBRYud98pKi1YWC0mMaBGG00'" alt="actor">
             </td>
-            <td><code>actor</code> Actor</td>
+            <td><code v-clipboard>actor</code> Actor</td>
           </tr>
           <tr>
-            <td><code>:Actor alias:</code></td>
+            <td><code v-clipboard>:Actor alias:</code></td>
           </tr>
           <tr>
             <td>
               <img :src="url+'UDfpA2v9B2efpStXuafCJyqhKG2JN5mEgNafG540i5aAw000'" alt="agent">
             </td>
-            <td><code>agent</code> Agent</td>
+            <td><code v-clipboard>agent</code> Agent</td>
           </tr>
           <tr>
             <td>
               <img :src="url+'UDfpA2v9B2efpStXuYejJarEB4vLWD9SN0wfUIb06G3bpmoS'" alt="usecase">
             </td>
-            <td><code>usecase</code> UseCase</td>
+            <td><code v-clipboard>usecase</code> UseCase</td>
           </tr>
           <tr>
             <td rowspan="2">
               <img :src="url+'UDfpA2v9B2efpStXuihBJqbL01FHO3PNB1UNGsfU2b0I0Ftn3AW0'" alt="node">
             </td>
-            <td><code>node</code> Node</td>
+            <td><code v-clipboard>node</code> Node</td>
           </tr>
           <tr>
             <td>
-<pre>
+<pre v-clipboard>
 node Node [
 node
 ]
@@ -90,11 +124,11 @@ node
             <td rowspan="2">
               <img :src="url+'UDfpA2v9B2efpStXuaf9B4bCIYnELO0pehbSdBXYkRWSKlDIW4e0M8iEfW00'" alt="database">
             </td>
-            <td><code>database</code> DB</td>
+            <td><code v-clipboard>database</code> DB</td>
           </tr>
           <tr>
             <td>
-<pre>
+<pre v-clipboard>
 database DB [
 DB
 ]
@@ -105,11 +139,11 @@ DB
             <td rowspan="2">
               <img :src="url+'UDfpA2v9B2efpStXuYekoIzAJ4zLWD7HC16kM2ukXzIy5A0g09aj49K0'" alt="storage">
             </td>
-            <td><code>storage</code> Storage</td>
+            <td><code v-clipboard>storage</code> Storage</td>
           </tr>
           <tr>
             <td>
-<pre>
+<pre v-clipboard>
 storage Storage [
 storage
 ]
@@ -120,7 +154,7 @@ storage
             <td>
               <img :src="url+'UDfpA2v9B2efpStXuefspiyjoCzBpIk9vU9oICrB0Oe20BAT2nK0'" alt="component">
             </td>
-            <td><code>[Component]</code></td>
+            <td><code v-clipboard>[Component]</code></td>
           </tr>
         </tbody>
       </table>
@@ -132,13 +166,37 @@ storage
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <th>rectangle</th>
+            <td>rectangle</td>
             <td>
-<pre>
+<pre v-clipboard>
 rectangle Job {
 
 }
 </pre>
+            </td>
+          </tr>
+          <tr>
+            <td>up</td>
+            <td>
+              <code v-clipboard>-up-></code>
+            </td>
+          </tr>
+          <tr>
+            <td>right</td>
+            <td>
+              <code v-clipboard>-right-></code>
+            </td>
+          </tr>
+          <tr>
+            <td>down</td>
+            <td>
+              <code v-clipboard>-down-></code>
+            </td>
+          </tr>
+          <tr>
+            <td>left</td>
+            <td>
+              <code v-clipboard>-left-></code>
             </td>
           </tr>
         </tbody>
@@ -153,7 +211,7 @@ rectangle Job {
           <tr>
             <td>if</td>
             <td>
-<pre>
+<pre v-clipboard>
 if (try) then (true)
 
 else (false)
@@ -165,7 +223,7 @@ endif
           <tr>
             <td>repeat</td>
             <td>
-<pre>
+<pre v-clipboard>
 repeat
 
 repeat while (error)
@@ -175,7 +233,7 @@ repeat while (error)
           <tr>
             <td>while</td>
             <td>
-<pre>
+<pre v-clipboard>
 while (try) is (true)
 
 endwhile (false)
@@ -185,7 +243,7 @@ endwhile (false)
           <tr>
             <td>fork</td>
             <td>
-<pre>
+<pre v-clipboard>
 fork
 
 fork again
@@ -197,7 +255,7 @@ end fork
           <tr>
             <td>partition</td>
             <td>
-<pre>
+<pre v-clipboard>
 partition A {
 
 }
@@ -212,17 +270,11 @@ partition A {
         Sequence
       </div>
       <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>keyword</th>
-            <th>code</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td>alt/else</td>
             <td>
-<pre>
+<pre v-clipboard>
 alt success
 
 else error
@@ -234,7 +286,7 @@ end
           <tr>
             <td>loop</td>
             <td>
-<pre>
+<pre v-clipboard>
 loop title
 
 end
@@ -243,7 +295,7 @@ end
           </tr>
           <tr>
             <td>separate</td>
-            <td><code>== ==</code></td>
+            <td><code v-clipboard>== ==</code></td>
           </tr>
         </tbody>
       </table>
@@ -253,24 +305,18 @@ end
         Object
       </div>
       <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>relation</th>
-            <th>code</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td>Extension</td>
-            <td><code><|-</code></td>
+            <td><code v-clipboard><|-</code></td>
           </tr>
           <tr>
             <td>Composition</td>
-            <td><code>*-</code></td>
+            <td><code v-clipboard>*-</code></td>
           </tr>
           <tr>
             <td>Aggregation</td>
-            <td><code>o-</code></td>
+            <td><code v-clipboard>o-</code></td>
           </tr>
         </tbody>
       </table>
@@ -280,32 +326,26 @@ end
         Class
       </div>
       <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>modifiers</th>
-            <th>code</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td>Public</td>
-            <td><code>+</code></td>
+            <td><code v-clipboard>+</code></td>
           </tr>
           <tr>
             <td>Private</td>
-            <td><code>-</code></td>
+            <td><code v-clipboard>-</code></td>
           </tr>
           <tr>
             <td>Protected</td>
-            <td><code>#</code></td>
+            <td><code v-clipboard>#</code></td>
           </tr>
           <tr>
             <td>Package</td>
-            <td><code>~</code></td>
+            <td><code v-clipboard>~</code></td>
           </tr>
           <tr>
             <td>static</td>
-            <td><code>{static}</code> static</td>
+            <td><code v-clipboard>{static}</code> static</td>
           </tr>
         </tbody>
       </table>
