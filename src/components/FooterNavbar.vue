@@ -3,6 +3,7 @@
     <div class="container-fluid">
       <div class="navbar-right">
         <p class="navbar-text">
+          <a href="https://twitter.com/intent/tweet" class="twitter-share-button">Tweet</a>
           <a href="https://twitter.com/kkeisuke" class="twitter-follow-button" data-show-count="false">Follow @kkeisuke</a>
           <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" title="このエントリーをはてなブックマークに追加">
             <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" />
