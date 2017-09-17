@@ -156,6 +156,22 @@ storage
             </td>
             <td><code v-clipboard>[Component]</code></td>
           </tr>
+          <tr>
+            <td rowspan="3">
+              <dl>
+                <dt>skinparam</dt>
+                <dd>monochrome</dd>
+                <dd>handwritten</dd>
+              </dl>
+            </td>
+            <td><code v-clipboard>skinparam monochrome true</code></td>
+          </tr>
+          <tr>
+            <td><code v-clipboard>skinparam monochrome reverse</code></td>
+          </tr>
+          <tr>
+            <td><code v-clipboard>skinparam handwritten true</code></td>
+          </tr>
         </tbody>
       </table>
 
