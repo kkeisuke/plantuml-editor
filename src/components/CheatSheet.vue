@@ -69,6 +69,14 @@ comment
             </td>
           </tr>
           <tr>
+            <td>solid line</td>
+            <td><code v-clipboard>--></code></td>
+          </tr>
+          <tr>
+            <td>dashed line</td>
+            <td><code v-clipboard>..></code></td>
+          </tr>
+          <tr>
             <td rowspan="3">note</td>
             <td><code v-clipboard>note left :</code> note</td>
           </tr>
