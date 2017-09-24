@@ -88,24 +88,6 @@ const mutations: any = {
   },
   setIsLoading (state: any, isLoading: boolean) {
     state.isLoading = isLoading
-  },
-  download (state: any) {
-    const ext: any = mutations.getExtFromText()
-    axios.get(state.src || '', {
-      'responseType': ext.responseType
-    })
-    .then((response: any) => {
-      if (response && response.data) {
-        let downLoadLink: any = document.createElement('a')
-        downLoadLink.download = `${state.plantuml}.${state.umlExtension}`
-        downLoadLink.href = URL.createObjectURL(new Blob([response.data], {type: ext.fileType}))
-        downLoadLink.dataset.downloadurl = `${ext.fileType}:${downLoadLink.download}:${downLoadLink.href}`
-        downLoadLink.click()
-      }
-    })
-  },
-  getExtFromText (): any {
-    return _.find(state.umlExtensions, {'text': state.umlExtension})
   }
 }
 
@@ -146,8 +128,20 @@ const actions: any = {
     context.commit('renderMarkdown', text)
     context.commit('setLocalStrage', text)
   },
-  download (context: any) {
-    context.commit('download')
+  download ({state}: any) {
+    const ext: any = _.find(state.umlExtensions, {'text': state.umlExtension})
+    axios.get(state.src || '', {
+      'responseType': ext.responseType
+    })
+    .then((response: any) => {
+      if (response && response.data) {
+        let downLoadLink: any = document.createElement('a')
+        downLoadLink.download = `${state.plantuml}.${state.umlExtension}`
+        downLoadLink.href = URL.createObjectURL(new Blob([response.data], {type: ext.fileType}))
+        downLoadLink.dataset.downloadurl = `${ext.fileType}:${downLoadLink.download}:${downLoadLink.href}`
+        downLoadLink.click()
+      }
+    })
   }
 }
 
