@@ -37,12 +37,6 @@ const state: any = {
     }
   ],
   isLoading: false,
-  colSize: {
-    'history': 2,
-    'editor': 4,
-    'cheatSheet': 0,
-    'uml': 6
-  },
   renderUMLKey: {
     'win': 'Ctrl-Enter',
     'mac': 'Command-Enter'
@@ -63,20 +57,6 @@ const mutations: any = {
   },
   setUmlExtension (state: any, umlExtension: string) {
     state.umlExtension = umlExtension
-  },
-  setColSize (state: any, colSize: any) {
-    if (colSize.history || colSize.history === 0) {
-      state.colSize.history = colSize.history
-    }
-    if (colSize.editor || colSize.editor === 0) {
-      state.colSize.editor = colSize.editor
-    }
-    if (colSize.cheatSheet || colSize.cheatSheet === 0) {
-      state.colSize.cheatSheet = colSize.cheatSheet
-    }
-    if (colSize.uml || colSize.uml === 0) {
-      state.colSize.uml = colSize.uml
-    }
   },
   setEditor (state: any, editor: any) {
     state.editor = editor
@@ -138,17 +118,6 @@ const actions: any = {
   },
   setIsLoading (context: any, isLoading: boolean) {
     context.commit('setIsLoading', isLoading)
-  },
-  setColSize (context: any, colSize: any) {
-    context.commit('setColSize', colSize)
-  },
-  resetColSize (context: any, colSize: any) {
-    context.commit('setColSize', {
-      'history': 2,
-      'editor': 4,
-      'cheatSheet': 0,
-      'uml': 6
-    })
   },
   setEditor (context: any, editor: any) {
     context.commit('setEditor', editor)

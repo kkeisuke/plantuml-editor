@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     changeHistoryColSize () {
-      if (this.$store.state.plantumlEditor.colSize.history) {
+      if (this.$store.state.Layout.colSize.history) {
         this.$store.dispatch('setColSize', {
           'history': 0,
           'editor': 5,

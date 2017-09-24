@@ -81,16 +81,16 @@ export default {
       return this.$store.state.plantumlEditor.url
     },
     historyCol (): number {
-      return this.$store.state.plantumlEditor.colSize.history
+      return this.$store.state.Layout.colSize.history
     },
     editorCol (): number {
-      return this.$store.state.plantumlEditor.colSize.editor
+      return this.$store.state.Layout.colSize.editor
     },
     cheatSheetCol (): number {
-      return this.$store.state.plantumlEditor.colSize.cheatSheet
+      return this.$store.state.Layout.colSize.cheatSheet
     },
     umlCol (): number {
-      return this.$store.state.plantumlEditor.colSize.uml
+      return this.$store.state.Layout.colSize.uml
     }
   },
   data (): any {
