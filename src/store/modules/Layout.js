@@ -30,7 +30,23 @@ const actions: any = {
   setColSize (context: any, colSize: any) {
     context.commit('setColSize', colSize)
   },
-  resetColSize (context: any, colSize: any) {
+  setEditColSize (context: any) {
+    context.commit('setColSize', {
+      'history': 0,
+      'editor': 5,
+      'cheatSheet': 0,
+      'uml': 7
+    })
+  },
+  setCheatSheetColSize (context: any) {
+    context.commit('setColSize', {
+      'history': 0,
+      'editor': 4,
+      'cheatSheet': 3,
+      'uml': 5
+    })
+  },
+  resetColSize (context: any) {
     context.commit('setColSize', {
       'history': 2,
       'editor': 4,

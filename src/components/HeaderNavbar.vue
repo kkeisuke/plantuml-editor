@@ -55,23 +55,13 @@ export default {
   methods: {
     changeHistoryColSize () {
       if (this.$store.state.Layout.colSize.history) {
-        this.$store.dispatch('setColSize', {
-          'history': 0,
-          'editor': 5,
-          'cheatSheet': 0,
-          'uml': 7
-        })
+        this.$store.dispatch('setEditColSize')
       } else {
         this.$store.dispatch('resetColSize')
       }
     },
     changeCheatSheetColSize () {
-      this.$store.dispatch('setColSize', {
-        'history': 0,
-        'editor': 4,
-        'cheatSheet': 3,
-        'uml': 5
-      })
+      this.$store.dispatch('setCheatSheetColSize')
       // 強制的にハッシュ削除
       window.setTimeout(() => {
         location.hash = ''
