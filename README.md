@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-<img src="static/Logomakr_7Gn1Ck.png" width="60">　PlantUML online demo client
+![PlantUML Editor](static/favicon-60.png)　PlantUML online demo client
 
 ![PlantUML Editor](static/capture1_20170809.png)
 
