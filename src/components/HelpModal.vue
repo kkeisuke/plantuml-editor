@@ -77,6 +77,12 @@
               <a href="http://kkeisuke.com" target="_blank">kkeisuke.com</a>
             </li>
           </ul>
+          <div class="page-header">
+            <span class="h4">Other</span>
+          </div>
+          <p>
+            Pen graphic by <a href="http://www.flaticon.com/authors/freepik" target="_blank">freepik</a> from <a href="http://www.flaticon.com/" target="_blank">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a>. Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Maker" target="_blank">LogoMaker.com</a> https://logomakr.com/7Gn1Ck7Gn1Ck
+          </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
