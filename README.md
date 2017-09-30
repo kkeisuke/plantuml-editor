@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-PlantUML online demo client
+![PlantUML Editor](static/favicon-60.png)　PlantUML online demo client
 
 ![PlantUML Editor](static/capture1_20170809.png)
 
@@ -39,3 +39,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Other
+
+Pen graphic by [freepik](http://www.flaticon.com/authors/freepik) from [Flaticon](http://www.flaticon.com/) is licensed under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/). Check out the new logo that I created on [LogoMaker.com](http://logomakr.com) https://logomakr.com/7Gn1Ck7Gn1Ck
