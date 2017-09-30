@@ -103,15 +103,13 @@ export default {
     },
     resize () {
       let timer: any = null
-      // FPS 30
-      let interval: number = Math.floor(1000 / 30 * 10)
       window.addEventListener('resize', () => {
         if (timer) {
           clearTimeout(timer)
         }
         timer = setTimeout(() => {
           this.setHeight()
-        }, interval)
+        }, this.$store.state.plantumlEditor.FPS)
       })
     }
   }

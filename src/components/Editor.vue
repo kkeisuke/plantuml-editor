@@ -25,6 +25,9 @@ export default {
       lang: 'tcl'
     }
   },
+  created () {
+    this.resize()
+  },
   mounted () {
     this.init()
     this.setEvent()
@@ -51,6 +54,17 @@ export default {
     setEvent () {
       this.editor.on('change', () => {
         this.$store.dispatch('syncText', this.editor.getValue())
+      })
+    },
+    resize () {
+      let timer: any = null
+      window.addEventListener('resize', () => {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          this.editor.resize()
+        }, this.$store.state.plantumlEditor.FPS)
       })
     },
     dispatch () {

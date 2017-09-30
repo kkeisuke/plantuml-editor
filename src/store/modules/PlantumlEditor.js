@@ -8,6 +8,7 @@ const _: any = lodash
 
 const state: any = {
   isHTTPS: location.protocol === 'https:',
+  FPS: Math.floor(1000 / 30 * 10), // FPS 30
   url: 'https://plantuml-editor.kkeisuke.com/',
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
