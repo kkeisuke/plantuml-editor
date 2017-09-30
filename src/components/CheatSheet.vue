@@ -165,11 +165,10 @@ storage
             <td><code v-clipboard>[Component]</code></td>
           </tr>
           <tr>
-            <td rowspan="3">
+            <td rowspan="2">
               <dl>
                 <dt>skinparam</dt>
                 <dd>monochrome</dd>
-                <dd>handwritten</dd>
               </dl>
             </td>
             <td><code v-clipboard>skinparam monochrome true</code></td>
@@ -178,7 +177,31 @@ storage
             <td><code v-clipboard>skinparam monochrome reverse</code></td>
           </tr>
           <tr>
+            <td>
+              <dl>
+                <dt>skinparam</dt>
+                <dd>handwritten</dd>
+              </dl>
+            </td>
             <td><code v-clipboard>skinparam handwritten true</code></td>
+          </tr>
+          <tr>
+            <td>
+              <dl>
+                <dt>skinparam</dt>
+                <dd>shadowing</dd>
+              </dl>
+            </td>
+            <td><code v-clipboard>skinparam shadowing false</code></td>
+          </tr>
+          <tr>
+            <td>
+              <dl>
+                <dt>skinparam</dt>
+                <dd>backgroundColor</dd>
+              </dl>
+            </td>
+            <td><code v-clipboard>skinparam backgroundColor #EEEEEE</code></td>
           </tr>
         </tbody>
       </table>
@@ -330,6 +353,16 @@ end
       </div>
       <table class="table table-bordered table-hover">
         <tbody>
+          <tr>
+            <td>object</td>
+            <td>
+<pre v-clipboard>
+object A {
+
+}
+</pre>
+            </td>
+          </tr>
           <tr>
             <td>Extension</td>
             <td><code v-clipboard><|-</code></td>
