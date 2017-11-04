@@ -5,7 +5,7 @@
         <div v-html="preMarkdown"></div>
         <div class="text-center">
           <p>
-            <img :src="src" :width="umlWidth+'%'" @load="loadedImg" v-if="!isSvg">
+            <img :src="src" @load="loadedImg" v-if="!isSvg">
             <object :data="src" :width="umlWidth+'%'" @load="loadedImg" v-if="isSvg"></object>
           </p>
         </div>

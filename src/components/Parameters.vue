@@ -2,7 +2,7 @@
   <form class="form-inline">
     <div class="form-group">
       <label for="umlWidth">size</label>
-      <input type="number" id="umlWidth" step="10" max="300" min="10" v-model="umlWidth" class="form-control">
+      <input type="number" id="umlWidth" step="10" max="300" min="10" v-model="umlWidth" class="form-control" :disabled="!isSvg">
     </div>
     <div class="form-group">
       <label for="umlExtension">img</label>
@@ -61,6 +61,9 @@ export default {
   computed: {
     src (): string {
       return this.$store.state.plantumlEditor.src
+    },
+    isSvg (): string {
+      return this.$store.getters.isSvg
     },
     isLoading (): boolean {
       return this.$store.state.plantumlEditor.isLoading
