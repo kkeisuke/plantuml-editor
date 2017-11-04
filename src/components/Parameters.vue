@@ -23,6 +23,23 @@
         <a :href="src" class="btn btn-default" @click.prevent="download" data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
           <span class="glyphicon glyphicon-download-alt"></span>
         </a>
+        <popover-btn>
+          <span slot="popover-btn" class="glyphicon glyphicon-link"></span>
+          <span slot="popover-title">PlantUML Server URL</span>
+          <div slot="popover-content" class="row">
+            <div class="col-sm-12">
+              <div class="input-group">
+                <input type="text" class="form-control" v-model="src" v-clipboard readonly style="width:auto;">
+                <span class="input-group-btn">
+                  <a :href="src" target="_blank" class="btn btn-default"><i class="fa fa-external-link"></i></a>
+                </span>
+              </div>
+              <span class="help-block">
+                if click, copy to clipbord .
+              </span>
+            </div>
+          </div>
+        </popover-btn>
         <button type="button" class="btn btn-default" @click="showGistModal" :disabled="umlExtension!='svg'" data-toggle="tooltip" data-placement="bottom" title="share" data-container="body">
           <span class="glyphicon glyphicon-share-alt"></span>
         </button>
@@ -34,8 +51,13 @@
 <script>
 /* @flow */
 
+import PopoverBtn from './common/PopoverBtn'
+
 export default {
   name: 'parameters',
+  components: {
+    PopoverBtn
+  },
   computed: {
     src (): string {
       return this.$store.state.plantumlEditor.src
