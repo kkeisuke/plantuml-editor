@@ -5,7 +5,8 @@
         <div v-html="preMarkdown"></div>
         <div class="text-center">
           <p>
-            <img :src="src" :width="umlWidth+'%'" @load="loadedImg">
+            <img :src="src" :width="umlWidth+'%'" @load="loadedImg" v-if="!isSvg">
+            <object :data="src" :width="umlWidth+'%'" @load="loadedImg" v-if="isSvg"></object>
           </p>
         </div>
         <div v-html="afterMarkdown"></div>
@@ -28,6 +29,9 @@ export default {
   computed: {
     src (): string {
       return this.$store.state.plantumlEditor.src
+    },
+    isSvg (): string {
+      return this.$store.getters.isSvg
     },
     preMarkdown (): string {
       return this.$store.state.plantumlEditor.preMarkdown

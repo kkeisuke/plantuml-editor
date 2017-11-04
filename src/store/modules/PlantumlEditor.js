@@ -44,6 +44,12 @@ const state: any = {
   }
 }
 
+const getters: any = {
+  isSvg (): boolean {
+    return state.umlExtension === 'svg'
+  }
+}
+
 const mutations: any = {
   getUmlWidthFromLocalStorage () {
     if (window.localStorage && window.localStorage.getItem('umlWidth')) {
@@ -148,6 +154,7 @@ const actions: any = {
 
 export default {
   state,
+  getters,
   mutations,
   actions
 }
