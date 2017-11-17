@@ -28,8 +28,7 @@
 /* @flow */
 
 // Bootstrap
-window.$ = window.jQuery = require('jquery')
-require('bootstrap')
+import 'bootstrap'
 
 // store
 import store from './store'
