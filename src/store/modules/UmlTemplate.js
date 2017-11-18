@@ -62,17 +62,19 @@ stop
   Sequence:
 `@startuml
 
-A -> B: step1
+autonumber
+
+A -> B: step
 
 activate B
-B -> C: step2
+B -> C: step
 
 activate C
 C --> C: action
-C -> B: step3
+C -> B: step
 deactivate C
 
-B -> A: step4
+B -> A: step
 deactivate B
 
 @enduml`,

@@ -319,6 +319,12 @@ partition A {
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
+            <td>autonumber</td>
+            <td>
+              <code v-clipboard>autonumber</code>
+            </td>
+          </tr>
+          <tr>
             <td>alt/else</td>
             <td>
 <pre v-clipboard>
