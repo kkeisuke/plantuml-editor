@@ -62,16 +62,16 @@ export default {
   },
   computed: {
     historyCol (): number {
-      return this.$store.state.Layout.colSize.history
+      return this.$store.state.layout.colSize.history
     },
     editorCol (): number {
-      return this.$store.state.Layout.colSize.editor
+      return this.$store.state.layout.colSize.editor
     },
     cheatSheetCol (): number {
-      return this.$store.state.Layout.colSize.cheatSheet
+      return this.$store.state.layout.colSize.cheatSheet
     },
     umlCol (): number {
-      return this.$store.state.Layout.colSize.uml
+      return this.$store.state.layout.colSize.uml
     }
   },
   data (): any {

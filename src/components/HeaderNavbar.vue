@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     changeHistoryColSize () {
-      if (this.$store.state.Layout.colSize.history) {
+      if (this.$store.state.layout.colSize.history) {
         this.$store.dispatch('setEditColSize')
       } else {
         this.$store.dispatch('resetColSize')
