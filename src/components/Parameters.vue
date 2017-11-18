@@ -23,7 +23,7 @@
         <a :href="src" class="btn btn-default" @click.prevent="download" data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
           <span class="glyphicon glyphicon-download-alt"></span>
         </a>
-        <popover-btn>
+        <popover-btn :title="'link'">
           <span slot="popover-btn" class="glyphicon glyphicon-link"></span>
           <span slot="popover-title">PlantUML Server URL</span>
           <div slot="popover-content" class="row">
