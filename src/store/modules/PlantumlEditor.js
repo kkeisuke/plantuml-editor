@@ -69,7 +69,9 @@ const mutations: any = {
     state.editor = editor
   },
   setEditorText () {
-    state.editor.setValue(state.text, 1)
+    if (state.editor) {
+      state.editor.setValue(state.text, 1)
+    }
   },
   setText (state: any, text: string) {
     state.text = text
