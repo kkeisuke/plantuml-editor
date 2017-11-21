@@ -143,7 +143,7 @@ export default {
       // 「ファイル名が空 or GistのURL取得済み or バリデーションエラーがある or 送信中」場合は投稿できない
       const result: boolean = this.fileName === '' ||
         Boolean(this.$store.state.gistApi.gistUrl) ||
-        Boolean(this.$validator.errorBag.count()) ||
+        Boolean(this.$validator.errors.count()) ||
         this.$store.state.gistApi.isSending
       return result
     }
@@ -167,7 +167,7 @@ export default {
     },
     setEvent () {
       window.$('#gist').on('shown.bs.modal hidden.bs.modal', () => {
-        this.$validator.errorBag.clear()
+        this.$validator.errors.clear()
         this.fileName = ''
         this.$store.dispatch('resetGist')
       })
