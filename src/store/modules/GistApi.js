@@ -85,13 +85,13 @@ const actions: any = {
   },
   addSvgUML ({state, commit}: any, data: any): any {
     return axios.get(data.src || '')
-    .then((response: any) => {
-      if (response && response.data) {
-        data.ext = state.ext.svg
-        data.text = response.data
-        commit('addFiles', data)
-      }
-    })
+      .then((response: any) => {
+        if (response && response.data) {
+          data.ext = state.ext.svg
+          data.text = response.data
+          commit('addFiles', data)
+        }
+      })
   },
   createGist ({state, commit, dispatch}: any, data: any) {
     // 送信中フラグ ON
@@ -106,24 +106,24 @@ const actions: any = {
 
     // svg 再取得
     axios.all([dispatch('addSvgUML', data)])
-    .then(axios.spread(() => {
-      // text と svg が両方ある場合
-      if (Object.keys(state.gist.files).length >= 2) {
-        // Gist 投稿
-        axios.post(`${state.api}?access_token=${state.token}`, state.gist)
-        .then((response: any) => {
-          commit('setGistURL', response.data.html_url)
+      .then(axios.spread(() => {
+        // text と svg が両方ある場合
+        if (Object.keys(state.gist.files).length >= 2) {
+          // Gist 投稿
+          axios.post(`${state.api}?access_token=${state.token}`, state.gist)
+            .then((response: any) => {
+              commit('setGistURL', response.data.html_url)
+              commit('stopSending')
+            })
+            .catch((error: any) => {
+              commit('setErrorMsg', `${error.response.status} ${error.response.statusText} ${error.response.data.message}`)
+              commit('stopSending')
+            })
+        } else {
+          commit('setErrorMsg', 'could not get SVG')
           commit('stopSending')
-        })
-        .catch((error: any) => {
-          commit('setErrorMsg', `${error.response.status} ${error.response.statusText} ${error.response.data.message}`)
-          commit('stopSending')
-        })
-      } else {
-        commit('setErrorMsg', 'could not get SVG')
-        commit('stopSending')
-      }
-    }))
+        }
+      }))
   },
   resetGist ({commit}: any) {
     commit('setDescription', '')

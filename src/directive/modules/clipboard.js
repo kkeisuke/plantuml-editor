@@ -7,9 +7,9 @@ export default Vue.directive('clipboard', {
   inserted (element: any, binding: any) {
     $(element)
     // .after('<span class="glyphicon glyphicon-copy"></span>')
-    .css({
-      'cursor': 'pointer'
-    })
+      .css({
+        'cursor': 'pointer'
+      })
     new Clipboard(element, {
       target (): any {
         return element

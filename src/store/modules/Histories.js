@@ -20,16 +20,16 @@ const mutations: any = {
           plantuml: state.scheme
         })
         oldDb.plantuml.toCollection().toArray()
-        .then(function (data: any[]) {
-          // 旧DBから新DBへデータ入れ替え
-          state.db.plantuml.bulkAdd(data).then(function () {
-            // 旧DB削除
-            Dexie.delete('undefined')
-            // Dexie.DatabaseNames 変更
-            window.localStorage.setItem('Dexie.DatabaseNames', '["PlantumlEditor"]')
-            location.reload()
+          .then(function (data: any[]) {
+            // 旧DBから新DBへデータ入れ替え
+            state.db.plantuml.bulkAdd(data).then(function () {
+              // 旧DB削除
+              Dexie.delete('undefined')
+              // Dexie.DatabaseNames 変更
+              window.localStorage.setItem('Dexie.DatabaseNames', '["PlantumlEditor"]')
+              location.reload()
+            })
           })
-        })
       }
     })
   },
@@ -40,11 +40,11 @@ const mutations: any = {
   },
   getHistories (state: any) {
     state.db.plantuml
-    .reverse()
-    .toArray()
-    .then(function (data: any[]) {
-      state.data = data
-    })
+      .reverse()
+      .toArray()
+      .then(function (data: any[]) {
+        state.data = data
+      })
   },
   save (state: any, plantumlEditor: any) {
     state.db.plantuml.add({

@@ -142,15 +142,15 @@ const actions: any = {
     axios.get(state.src || '', {
       'responseType': ext.responseType
     })
-    .then((response: any) => {
-      if (response && response.data) {
-        let downLoadLink: any = document.createElement('a')
-        downLoadLink.download = `${state.plantuml}.${state.umlExtension}`
-        downLoadLink.href = URL.createObjectURL(new Blob([response.data], {type: ext.fileType}))
-        downLoadLink.dataset.downloadurl = `${ext.fileType}:${downLoadLink.download}:${downLoadLink.href}`
-        downLoadLink.click()
-      }
-    })
+      .then((response: any) => {
+        if (response && response.data) {
+          let downLoadLink: any = document.createElement('a')
+          downLoadLink.download = `${state.plantuml}.${state.umlExtension}`
+          downLoadLink.href = URL.createObjectURL(new Blob([response.data], {type: ext.fileType}))
+          downLoadLink.dataset.downloadurl = `${ext.fileType}:${downLoadLink.download}:${downLoadLink.href}`
+          downLoadLink.click()
+        }
+      })
   }
 }
 
