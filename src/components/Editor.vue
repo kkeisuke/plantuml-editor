@@ -1,16 +1,24 @@
 <template>
-  <div :style="{height: height}"></div>
+  <div :style="{height: height}">
+    <codemirror :value="text" :options="options" @ready="onReady" @input="onChange"></codemirror>
+  </div>
 </template>
 
 <script>
 /* @flow */
 
-import ace from 'brace'
-// 一番それっぽいシンタックスハイライト
-import 'brace/mode/tcl'
-import 'brace/theme/solarized_dark'
+import { codemirror } from 'vue-codemirror'
+import 'codemirror/keymap/sublime.js'
+import 'codemirror/addon/selection/active-line.js'
+import '../lib/codemirror/mode/plantuml/plantuml.js'
+
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/solarized.css'
 
 export default {
+  components: {
+    codemirror
+  },
   name: 'editor',
   props: {
     height: {
@@ -18,59 +26,43 @@ export default {
       default: '100%'
     }
   },
-  data (): any {
-    return {
-      editor: null,
-      theme: 'solarized_dark',
-      lang: 'tcl'
+  computed: {
+    text (): string {
+      return this.$store.state.plantumlEditor.text
     }
   },
-  created () {
-    this.resize()
-  },
-  mounted () {
-    this.init()
-    this.setEvent()
-    this.dispatch()
+  data (): any {
+    return {
+      codemirror: null,
+      options: {
+        mode: 'plantuml',
+        theme: 'solarized dark',
+        lineNumbers: true,
+        styleActiveLine: true,
+        keyMap: 'sublime'
+      }
+    }
   },
   methods: {
-    init () {
-      this.editor = ace.edit(this.$el)
-      this.editor.$blockScrolling = Infinity
-      this.editor.setTheme('ace/theme/' + this.theme)
-      this.editor.getSession().setMode('ace/mode/' + this.lang)
-      this.editor.setOption('scrollPastEnd', true)
-      this.editor.commands.addCommand({
-        name: 'renderUML',
-        bindKey: {
-          'win': this.$store.state.plantumlEditor.renderUMLKey.win,
-          'mac': this.$store.state.plantumlEditor.renderUMLKey.mac
-        },
-        exec: (editor: any) => {
-          this.$store.dispatch('renderUML', this.editor.getValue())
-        }
+    onReady (codemirror: any) {
+      this.codemirror = codemirror
+      this.addKeymap()
+      setTimeout(() => {
+        this.codemirror.setSize('100%', '100%')
       })
     },
-    setEvent () {
-      this.editor.on('change', () => {
-        this.$store.dispatch('syncText', this.editor.getValue())
-      })
+    onChange (text: string) {
+      this.$store.dispatch('syncText', text)
     },
-    resize () {
-      let timer: any = null
-      window.addEventListener('resize', () => {
-        if (timer) {
-          clearTimeout(timer)
-        }
-        timer = setTimeout(() => {
-          this.editor.resize()
-        }, this.$store.state.plantumlEditor.FPS)
-      })
-    },
-    dispatch () {
-      this.$store.dispatch('setEditor', this.editor)
-      this.$store.dispatch('setEditorText')
-      this.$store.dispatch('renderUML', this.editor.getValue())
+    addKeymap () {
+      const map: {key?: string, callback?: Function} = {}
+      map[this.$store.state.plantumlEditor.renderUMLKey.win] = () => {
+        this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+      }
+      map[this.$store.state.plantumlEditor.renderUMLKey.mac] = () => {
+        this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+      }
+      this.codemirror.setOption('extraKeys', map)
     }
   }
 }
@@ -78,4 +70,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.vue-codemirror,
+.CodeMirror {
+  height: 100%;
+}
 </style>

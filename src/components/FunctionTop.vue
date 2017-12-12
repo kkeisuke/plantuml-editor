@@ -5,7 +5,7 @@
         Please go to <a :href="url">{{url}}</a>
       </div>
       <div class="alert alert-default">
-        Preview are win <kbd>{{winKey}}</kbd> , mac <kbd>{{macKey}}</kbd> .
+        Preview are <kbd>{{winKey}}</kbd> or <kbd>{{macKey}}</kbd> .
       </div>
       <div class="row form-group">
         <div class="col-sm-12">

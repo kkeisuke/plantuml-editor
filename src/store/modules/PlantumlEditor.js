@@ -16,7 +16,6 @@ const state: any = {
   startuml: '@startuml',
   enduml: '@enduml',
   defaultText: '# PlantUML Editor\n\n1. select template\n2. write uml diagram\n\n@startuml\n\nleft to right direction\n\nactor User\n\nUser --> (1. select template)\nUser --> (2. write uml diagram)\n\n@enduml',
-  editor: null,
   text: '',
   src: '',
   preMarkdown: '',
@@ -40,7 +39,7 @@ const state: any = {
   isLoading: false,
   renderUMLKey: {
     'win': 'Ctrl-Enter',
-    'mac': 'Command-Enter'
+    'mac': 'Cmd-Enter'
   }
 }
 
@@ -64,14 +63,6 @@ const mutations: any = {
   },
   setUmlExtension (state: any, umlExtension: string) {
     state.umlExtension = umlExtension
-  },
-  setEditor (state: any, editor: any) {
-    state.editor = editor
-  },
-  setEditorText () {
-    if (state.editor) {
-      state.editor.setValue(state.text, 1)
-    }
   },
   setText (state: any, text: string) {
     state.text = text
@@ -109,12 +100,6 @@ const actions: any = {
   },
   setIsLoading (context: any, isLoading: boolean) {
     context.commit('setIsLoading', isLoading)
-  },
-  setEditor (context: any, editor: any) {
-    context.commit('setEditor', editor)
-  },
-  setEditorText (context: any) {
-    context.commit('setEditorText')
   },
   getLocalStrage (context: any) {
     context.commit('getLocalStrage')

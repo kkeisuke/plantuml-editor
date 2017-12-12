@@ -42,15 +42,31 @@ declare module 'bootstrap' {
   declare var exports: any;
 }
 
-declare module 'brace' {
+declare module 'codemirror/lib/codemirror.js' {
   declare var exports: any;
 }
 
-declare module 'brace/mode/tcl' {
+declare module 'vue-codemirror' {
   declare var exports: any;
 }
 
-declare module 'brace/theme/solarized_dark' {
+declare module 'codemirror/addon/mode/simple.js' {
+  declare var exports: any;
+}
+
+declare module 'codemirror/addon/selection/active-line.js' {
+  declare var exports: any;
+}
+
+declare module 'codemirror/keymap/sublime.js' {
+  declare var exports: any;
+}
+
+declare module 'codemirror/lib/codemirror.css' {
+  declare var exports: any;
+}
+
+declare module 'codemirror/theme/solarized.css' {
   declare var exports: any;
 }
 

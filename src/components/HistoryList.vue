@@ -55,7 +55,6 @@ export default {
     read (text: string, event: any) {
       if (window.confirm(this.editMessage)) {
         this.$store.dispatch('renderUML', text)
-        this.$store.dispatch('setEditorText')
       }
     }
   }

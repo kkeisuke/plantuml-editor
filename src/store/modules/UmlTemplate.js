@@ -3,7 +3,6 @@
 const actions: any = {
   selectTemplate (context: any, prop: string) {
     context.dispatch('renderUML', context.state[prop])
-    context.dispatch('setEditorText')
   }
 }
 

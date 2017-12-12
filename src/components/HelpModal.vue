@@ -28,11 +28,11 @@
                 </li>
               </ul>
             </dd>
-            <dt>Ace</dt>
+            <dt>CodeMirror</dt>
             <dd>
               <ul>
                 <li>
-                  <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">Default Keyboard Shortcuts</a>
+                  <a href="https://codemirror.net/demo/sublime.html" target="_blank">Sublime Text bindings demo</a>
                 </li>
               </ul>
             </dd>
