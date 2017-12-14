@@ -6,9 +6,20 @@ import $ from 'jquery' // コンパイルを通すためだけの書き方
 export default Vue.directive('clipboard', {
   inserted (element: any, binding: any) {
     $(element)
-    // .after('<span class="glyphicon glyphicon-copy"></span>')
       .css({
         'cursor': 'pointer'
+      })
+      .data('toggle', 'tooltip')
+      .prop('title', 'Copied')
+      .tooltip({
+        trigger: 'manual'
+      })
+      .on('click', function () {
+        const $this: jQuery = $(this)
+        $this.tooltip('show')
+        setTimeout(() => {
+          $this.tooltip('hide')
+        }, 500)
       })
     new Clipboard(element, {
       target (): any {
