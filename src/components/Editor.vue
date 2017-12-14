@@ -46,7 +46,7 @@ export default {
       this.codemirror = codemirror
       this.addKeymap()
       setTimeout(() => {
-        this.codemirror.setSize('100%', '100%')
+        this.codemirror.setSize('100%', 'calc(100% - 2px)')
       })
     },
     onChange (text: string) {
@@ -68,8 +68,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.vue-codemirror,
-.CodeMirror {
+.vue-codemirror {
   height: 100%;
 }
 </style>
