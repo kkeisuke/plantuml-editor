@@ -62,6 +62,14 @@ declare module 'codemirror/keymap/sublime.js' {
   declare var exports: any;
 }
 
+declare module 'codemirror/keymap/vim.js' {
+  declare var exports: any;
+}
+
+declare module 'codemirror/keymap/emacs.js' {
+  declare var exports: any;
+}
+
 declare module 'codemirror/lib/codemirror.css' {
   declare var exports: any;
 }

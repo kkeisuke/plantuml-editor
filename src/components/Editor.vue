@@ -9,6 +9,8 @@
 
 import { codemirror } from 'vue-codemirror'
 import 'codemirror/keymap/sublime.js'
+import 'codemirror/keymap/vim.js'
+import 'codemirror/keymap/emacs.js'
 import 'codemirror/addon/selection/active-line.js'
 import '../lib/codemirror/mode/plantuml/plantuml.js'
 
@@ -29,18 +31,14 @@ export default {
   computed: {
     text (): string {
       return this.$store.state.plantumlEditor.text
+    },
+    options (): any {
+      return this.$store.state.plantumlEditor.codemirrorOptions
     }
   },
   data (): any {
     return {
-      codemirror: null,
-      options: {
-        mode: 'plantuml',
-        theme: 'solarized dark',
-        lineNumbers: true,
-        styleActiveLine: true,
-        keyMap: 'sublime'
-      }
+      codemirror: null
     }
   },
   methods: {

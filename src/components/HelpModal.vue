@@ -34,6 +34,12 @@
                 <li>
                   <a href="https://codemirror.net/demo/sublime.html" target="_blank">Sublime Text bindings demo</a>
                 </li>
+                <li>
+                  <a href="https://codemirror.net/demo/vim.html" target="_blank">Vim bindings demo</a>
+                </li>
+                <li>
+                  <a href="https://codemirror.net/demo/emacs.html" target="_blank">Emacs bindings demo</a>
+                </li>
               </ul>
             </dd>
           </dl>

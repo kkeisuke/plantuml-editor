@@ -20,6 +20,14 @@ const state: any = {
   src: '',
   preMarkdown: '',
   afterMarkdown: '',
+  codemirrorOptions: {
+    mode: 'plantuml',
+    theme: 'solarized dark',
+    lineNumbers: true,
+    styleActiveLine: true,
+    keyMap: ''
+  },
+  defaultKeyMap: 'sublime',
   umlWidth: 50,
   umlExtension: 'svg',
   umlExtensions: [
@@ -50,6 +58,9 @@ const getters: any = {
 }
 
 const mutations: any = {
+  setCodeMirrorKeyMap (state: any, keyMap: string) {
+    state.codemirrorOptions.keyMap = keyMap
+  },
   getUmlWidthFromLocalStorage () {
     if (window.localStorage && window.localStorage.getItem('umlWidth')) {
       state.umlWidth = window.localStorage.getItem('umlWidth')
@@ -86,12 +97,25 @@ const mutations: any = {
     const text: string = window.localStorage ? window.localStorage.getItem(state.plantuml) : ''
     state.text = text || state.defaultText
   },
+  setKeyMapLocalStrage (state: any, keyMap: string) {
+    if (window.localStorage) {
+      window.localStorage.setItem('codemirrorOptions.keyMap', keyMap)
+    }
+  },
+  getKeyMapFromLocalStrage (state: any) {
+    const keyMap: string = window.localStorage ? window.localStorage.getItem('codemirrorOptions.keyMap') : ''
+    state.codemirrorOptions.keyMap = keyMap || state.defaultKeyMap
+  },
   setIsLoading (state: any, isLoading: boolean) {
     state.isLoading = isLoading
   }
 }
 
 const actions: any = {
+  syncCodeMirrorKeyMap (context: any, keyMap: string) {
+    context.commit('setCodeMirrorKeyMap', keyMap)
+    context.commit('setKeyMapLocalStrage', keyMap)
+  },
   setUmlWidth (context: any, umlWidth: number) {
     context.commit('setUmlWidth', umlWidth)
   },
@@ -104,6 +128,7 @@ const actions: any = {
   getLocalStrage (context: any) {
     context.commit('getLocalStrage')
     context.commit('getUmlWidthFromLocalStorage')
+    context.commit('getKeyMapFromLocalStrage')
   },
   syncText (context: any, text: string) {
     context.commit('setText', text)
