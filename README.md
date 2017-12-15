@@ -1,6 +1,6 @@
 # PlantUML Editor
 
-> A Vue.js project
+> A Vue.js, Vuex project
 
 ![PlantUML Editor](static/favicon-60.png)　PlantUML online demo client
 
