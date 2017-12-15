@@ -37,9 +37,9 @@
             <i class="fa fa-keyboard-o fa-inverse"></i> keymap <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#" @click.prevent="setKyaMap('sublime')">sublime <i class="fa fa-check" v-show="keyMap==='sublime'"></i></a></li>
-            <li><a href="#" @click.prevent="setKyaMap('vim')">vim <i class="fa fa-check" v-show="keyMap==='vim'"></i></a></li>
-            <li><a href="#" @click.prevent="setKyaMap('emacs')">emacs <i class="fa fa-check" v-show="keyMap==='emacs'"></i></a></li>
+            <li><a href="#" @click.prevent="setKyaMap('sublime')">sublime <i class="fa fa-check" v-show="isSublime"></i></a></li>
+            <li><a href="#" @click.prevent="setKyaMap('vim')">vim <i class="fa fa-check" v-show="isVim"></i></a></li>
+            <li><a href="#" @click.prevent="setKyaMap('emacs')">emacs <i class="fa fa-check" v-show="isEmacs"></i></a></li>
           </ul>
         </li>
       </ul>
@@ -67,6 +67,15 @@ export default {
   computed: {
     keyMap (): string {
       return this.$store.state.plantumlEditor.codemirrorOptions.keyMap
+    },
+    isSublime (): string {
+      return this.$store.getters.isSublime
+    },
+    isVim (): string {
+      return this.$store.getters.isVim
+    },
+    isEmacs (): string {
+      return this.$store.getters.isEmacs
     }
   },
   methods: {

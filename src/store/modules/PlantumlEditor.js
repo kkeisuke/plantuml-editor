@@ -52,8 +52,17 @@ const state: any = {
 }
 
 const getters: any = {
-  isSvg (): boolean {
+  isSvg (state: any): boolean {
     return state.umlExtension === 'svg'
+  },
+  isSublime (state: any): boolean {
+    return state.codemirrorOptions.keyMap === 'sublime'
+  },
+  isVim (state: any): boolean {
+    return state.codemirrorOptions.keyMap === 'vim'
+  },
+  isEmacs (state: any): boolean {
+    return state.codemirrorOptions.keyMap === 'emacs'
   }
 }
 
