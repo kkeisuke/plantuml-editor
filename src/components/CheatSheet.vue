@@ -325,6 +325,16 @@ partition A {
             </td>
           </tr>
           <tr>
+            <td>
+              <img :src="`${url}UDfpA2v9B2efpStXuYe0CZAJCmiIyqeK79sSkRWSKlDIW380uZKCBm00`" alt="participant">
+            </td>
+            <td>
+<pre v-clipboard>
+participant ABC as abc
+</pre>
+            </td>
+          </tr>
+          <tr>
             <td>alt/else</td>
             <td>
 <pre v-clipboard>
