@@ -10,6 +10,7 @@
 
 - multiple PlantUML templates
 - cheat sheet
+- snippet
 - zoom & scroll
 - supports SVG & PNG
 - save texts
