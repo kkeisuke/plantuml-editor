@@ -7,15 +7,18 @@
 <script>
 /* @flow */
 
+import CodeMirror from 'codemirror/lib/codemirror.js'
 import { codemirror } from 'vue-codemirror'
 import 'codemirror/keymap/sublime.js'
 import 'codemirror/keymap/vim.js'
 import 'codemirror/keymap/emacs.js'
 import 'codemirror/addon/selection/active-line.js'
+import 'codemirror/addon/hint/show-hint.js'
 import '../lib/codemirror/mode/plantuml/plantuml.js'
 
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/solarized.css'
+import 'codemirror/addon/hint/show-hint.css'
 
 export default {
   components: {
@@ -38,7 +41,8 @@ export default {
   },
   data (): any {
     return {
-      codemirror: null
+      codemirror: null,
+      snippets: this.$store.getters.snippets
     }
   },
   methods: {
@@ -52,13 +56,41 @@ export default {
     onChange (text: string) {
       this.$store.dispatch('syncText', text)
     },
+    snippet () {
+      const codemirror: any = this.codemirror
+      const snippets: any[] = this.snippets
+      CodeMirror.showHint(codemirror, function (): any {
+        const cursor: any = codemirror.getCursor()
+        const token: any = codemirror.getTokenAt(cursor)
+        const start: number = token.start
+        const end: number = cursor.ch
+        const line: number = cursor.line
+        const currentWord: string = token.string
+
+        const list: any[] = snippets.filter((item: any): boolean => {
+          return item.text.indexOf(currentWord) >= 0
+        })
+
+        return {
+          list: list.length ? list : snippets,
+          from: CodeMirror.Pos(line, start),
+          to: CodeMirror.Pos(line, end)
+        }
+      }, { completeSingle: false })
+    },
     addKeymap () {
-      const map: {key?: string, callback?: Function} = {}
+      const map: any = {}
       map[this.$store.state.plantumlEditor.renderUMLKey.win] = () => {
         this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
       }
       map[this.$store.state.plantumlEditor.renderUMLKey.mac] = () => {
         this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+      }
+      map[this.$store.state.plantumlEditor.snippetKey.win] = () => {
+        this.snippet()
+      }
+      map[this.$store.state.plantumlEditor.snippetKey.mac] = () => {
+        this.snippet()
       }
       this.codemirror.setOption('extraKeys', map)
     }

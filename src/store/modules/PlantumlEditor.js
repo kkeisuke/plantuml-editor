@@ -48,6 +48,10 @@ const state: any = {
   renderUMLKey: {
     'win': 'Ctrl-Enter',
     'mac': 'Cmd-Enter'
+  },
+  snippetKey: {
+    'win': 'Ctrl-E',
+    'mac': 'Cmd-E'
   }
 }
 

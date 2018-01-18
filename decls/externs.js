@@ -58,6 +58,10 @@ declare module 'codemirror/addon/selection/active-line.js' {
   declare var exports: any;
 }
 
+declare module 'codemirror/addon/hint/show-hint.js' {
+  declare var exports: any;
+}
+
 declare module 'codemirror/keymap/sublime.js' {
   declare var exports: any;
 }
@@ -75,6 +79,10 @@ declare module 'codemirror/lib/codemirror.css' {
 }
 
 declare module 'codemirror/theme/solarized.css' {
+  declare var exports: any;
+}
+
+declare module 'codemirror/addon/hint/show-hint.css' {
   declare var exports: any;
 }
 

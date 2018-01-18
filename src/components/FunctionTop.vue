@@ -5,7 +5,7 @@
         Please go to <a :href="url">{{url}}</a>
       </div>
       <div class="alert alert-default">
-        Preview are <kbd>{{winKey}}</kbd> or <kbd>{{macKey}}</kbd> .
+        Preview is <kbd>{{winKey}}</kbd> or <kbd>{{macKey}}</kbd> . Snippets are <kbd>{{snippetWinKey}}</kbd> or <kbd>{{snippetMacKey}}</kbd> .
       </div>
       <div class="row form-group">
         <div class="col-sm-12">
@@ -38,7 +38,9 @@ export default {
   data (): any {
     return {
       winKey: this.$store.state.plantumlEditor.renderUMLKey.win,
-      macKey: this.$store.state.plantumlEditor.renderUMLKey.mac
+      macKey: this.$store.state.plantumlEditor.renderUMLKey.mac,
+      snippetWinKey: this.$store.state.plantumlEditor.snippetKey.win,
+      snippetMacKey: this.$store.state.plantumlEditor.snippetKey.mac
     }
   }
 }
