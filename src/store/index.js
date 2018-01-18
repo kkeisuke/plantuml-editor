@@ -8,6 +8,7 @@ import plantumlEditor from './modules/PlantumlEditor'
 import layout from './modules/Layout'
 import histories from './modules/Histories'
 import umlTemplate from './modules/UmlTemplate'
+import cheatSheet from './modules/CheatSheet'
 import gistApi from './modules/GistApi'
 
 export default new Vuex.Store({
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     layout,
     histories,
     umlTemplate,
+    cheatSheet,
     gistApi
   }
 })

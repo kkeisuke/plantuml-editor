@@ -2,210 +2,142 @@
   <div class="row cheatSheet" :style="{'height':height}">
     <div class="col-sm-12">
 
-
       <div class="h4" id="CommonCheatSheet">
         Common
       </div>
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <td>header</td>
-            <td>
-<pre v-clipboard>
-center header
-
-endheader
-</pre>
-            </td>
+            <td>{{cheatSheet.common.header.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.common.header.text}}</pre></td>
           </tr>
           <tr>
-            <td>footer</td>
-            <td>
-<pre v-clipboard>
-center footer
-
-endfooter
-</pre>
-            </td>
+            <td>{{cheatSheet.common.footer.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.common.footer.text}}</pre></td>
           </tr>
           <tr>
-            <td>title</td>
-            <td><code v-clipboard>title</code> Title</td>
+            <td>{{cheatSheet.common.title.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.title.text}}</code> Title</td>
           </tr>
           <tr>
-            <td>legend</td>
-            <td>
-<pre v-clipboard>
-legend center
-
-endlegend
-</pre>
-            </td>
+            <td>{{cheatSheet.common.legend.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.common.legend.text}}</pre></td>
           </tr>
           <tr>
-            <td>caption</td>
-            <td><code v-clipboard>caption</code> figure 1</td>
+            <td>{{cheatSheet.common.caption.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.caption.text}}</code> figure 1</td>
           </tr>
           <tr>
-            <td>direction</td>
-            <td><code v-clipboard>left to right direction</code></td>
+            <td>{{cheatSheet.common.direction.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.direction.text}}</code></td>
           </tr>
           <tr>
-            <td>label</td>
-            <td><code v-clipboard>:</code> label</td>
+            <td>{{cheatSheet.common.label.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.label.text}}</code> label</td>
           </tr>
           <tr>
-            <td>comment</td>
-            <td><code v-clipboard>'</code> comment</td>
+            <td>{{cheatSheet.common.comment.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.comment.text}}</code> comment</td>
           </tr>
           <tr>
-            <td>block comment</td>
-            <td>
-<pre v-clipboard>
-/'
-comment
-'/
-</pre>
-            </td>
+            <td>{{cheatSheet.common.blockcomment.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.common.blockcomment.text}}</pre></td>
           </tr>
           <tr>
-            <td>solid line</td>
-            <td><code v-clipboard>--></code></td>
+            <td>{{cheatSheet.common.solidline.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.solidline.text}}</code></td>
           </tr>
           <tr>
-            <td>dashed line</td>
-            <td><code v-clipboard>..></code></td>
+            <td>{{cheatSheet.common.dashedline.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.dashedline.text}}</code></td>
           </tr>
           <tr>
             <td rowspan="3">note</td>
-            <td><code v-clipboard>note left :</code> note</td>
+            <td><code v-clipboard>{{cheatSheet.common.noteleft.text}}</code> note</td>
           </tr>
           <tr>
-            <td><code v-clipboard>note right :</code> note</td>
+            <td><code v-clipboard>{{cheatSheet.common.noteright.text}}</code> note</td>
           </tr>
           <tr>
-            <td>
-<pre v-clipboard>
-note left of A
-
-end note
-</pre>
-            </td>
+            <td><pre v-clipboard>{{cheatSheet.common.noteblock.text}}</pre></td>
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+'UDfpA2v9B2efpStXuh9oJ2x9Br98pCbCBBRYud98pKi1YWC0mMaBGG00'" alt="actor">
+              <img :src="url+cheatSheet.common.actor.img" :alt="cheatSheet.common.actor.title">
             </td>
-            <td><code v-clipboard>actor</code> Actor</td>
+            <td><code v-clipboard>{{cheatSheet.common.actor.text}}</code> Actor</td>
           </tr>
           <tr>
-            <td><code v-clipboard>:Actor alias:</code></td>
-          </tr>
-          <tr>
-            <td>
-              <img :src="url+'UDfpA2v9B2efpStXuafCJyqhKG2JN5mEgNafG540i5aAw000'" alt="agent">
-            </td>
-            <td><code v-clipboard>agent</code> Agent</td>
+            <td><code v-clipboard>{{cheatSheet.common.actoralias.text}}</code></td>
           </tr>
           <tr>
             <td>
-              <img :src="url+'UDfpA2v9B2efpStXuYejJarEB4vLWD9SN0wfUIb06G3bpmoS'" alt="usecase">
+              <img :src="url+cheatSheet.common.agent.img" :alt="cheatSheet.common.agent.title">
             </td>
-            <td><code v-clipboard>usecase</code> UseCase</td>
+            <td><code v-clipboard>{{cheatSheet.common.agent.text}}</code> Agent</td>
+          </tr>
+          <tr>
+            <td>
+              <img :src="url+cheatSheet.common.usecase.img" :alt="cheatSheet.common.usecase.title">
+            </td>
+            <td><code v-clipboard>{{cheatSheet.common.usecase.text}}</code> UseCase</td>
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+'UDfpA2v9B2efpStXuihBJqbL01FHO3PNB1UNGsfU2b0I0Ftn3AW0'" alt="node">
+              <img :src="url+cheatSheet.common.node.img" :alt="cheatSheet.common.node.title">
             </td>
-            <td><code v-clipboard>node</code> Node</td>
+            <td><code v-clipboard>{{cheatSheet.common.node.text}}</code> Node</td>
           </tr>
           <tr>
-            <td>
-<pre v-clipboard>
-node Node [
-node
-]
-</pre>
-            </td>
+            <td><pre v-clipboard>{{cheatSheet.common.nodeblock.text}}</pre></td>
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+'UDfpA2v9B2efpStXuaf9B4bCIYnELO0pehbSdBXYkRWSKlDIW4e0M8iEfW00'" alt="database">
+              <img :src="url+cheatSheet.common.database.img" :alt="cheatSheet.common.database.title">
             </td>
-            <td><code v-clipboard>database</code> DB</td>
+            <td><code v-clipboard>{{cheatSheet.common.database.text}}</code> DB</td>
           </tr>
           <tr>
-            <td>
-<pre v-clipboard>
-database DB [
-DB
-]
-</pre>
-            </td>
+            <td><pre v-clipboard>{{cheatSheet.common.databaseblock.text}}</pre></td>
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+'UDfpA2v9B2efpStXuYekoIzAJ4zLWD7HC16kM2ukXzIy5A0g09aj49K0'" alt="storage">
+              <img :src="url+cheatSheet.common.storage.img" :alt="cheatSheet.common.storage.title">
             </td>
-            <td><code v-clipboard>storage</code> Storage</td>
+            <td><code v-clipboard>{{cheatSheet.common.storage.text}}</code> Storage</td>
+          </tr>
+          <tr>
+            <td><pre v-clipboard>{{cheatSheet.common.storageblock.text}}</pre></td>
           </tr>
           <tr>
             <td>
-<pre v-clipboard>
-storage Storage [
-storage
-]
-</pre>
+              <img :src="url+cheatSheet.common.component.img" :alt="cheatSheet.common.component.title">
             </td>
-          </tr>
-          <tr>
-            <td>
-              <img :src="url+'UDfpA2v9B2efpStXuefspiyjoCzBpIk9vU9oICrB0Oe20BAT2nK0'" alt="component">
-            </td>
-            <td><code v-clipboard>[Component]</code></td>
+            <td><code v-clipboard>{{cheatSheet.common.component.text}}</code></td>
           </tr>
           <tr>
             <td rowspan="2">
-              <dl>
-                <dt>skinparam</dt>
-                <dd>monochrome</dd>
-              </dl>
+              {{cheatSheet.common.skinparammonochrome.title}}
             </td>
-            <td><code v-clipboard>skinparam monochrome true</code></td>
+            <td><code v-clipboard>{{cheatSheet.common.skinparammonochrome.text}}</code></td>
           </tr>
           <tr>
-            <td><code v-clipboard>skinparam monochrome reverse</code></td>
+            <td><code v-clipboard>{{cheatSheet.common.skinparammonochromereverse.text}}</code></td>
           </tr>
           <tr>
-            <td>
-              <dl>
-                <dt>skinparam</dt>
-                <dd>handwritten</dd>
-              </dl>
-            </td>
-            <td><code v-clipboard>skinparam handwritten true</code></td>
+            <td>{{cheatSheet.common.skinparamhandwritten.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.skinparamhandwritten.text}}</code></td>
           </tr>
           <tr>
-            <td>
-              <dl>
-                <dt>skinparam</dt>
-                <dd>shadowing</dd>
-              </dl>
-            </td>
-            <td><code v-clipboard>skinparam shadowing false</code></td>
+            <td>{{cheatSheet.common.skinparamshadowing.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.skinparamshadowing.text}}</code></td>
           </tr>
           <tr>
-            <td>
-              <dl>
-                <dt>skinparam</dt>
-                <dd>backgroundColor</dd>
-              </dl>
-            </td>
-            <td><code v-clipboard>skinparam backgroundColor #EEEEEE</code></td>
+            <td>{{cheatSheet.common.skinparambackgroundcolor.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.skinparambackgroundcolor.text}}</code></td>
           </tr>
         </tbody>
       </table>
-
 
       <div class="h4" id="UseCaseCheatSheet">
         Use Case
@@ -213,42 +145,27 @@ storage
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <td>rectangle</td>
-            <td>
-<pre v-clipboard>
-rectangle Job {
-
-}
-</pre>
-            </td>
+            <td>{{cheatSheet.usecase.rectangle.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.usecase.rectangle.text}}</pre></td>
           </tr>
           <tr>
-            <td>up</td>
-            <td>
-              <code v-clipboard>-up-></code>
-            </td>
+            <td>{{cheatSheet.usecase.up.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.usecase.up.text}}</code> (text)</td>
           </tr>
           <tr>
-            <td>right</td>
-            <td>
-              <code v-clipboard>-right-></code>
-            </td>
+            <td>{{cheatSheet.usecase.right.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.usecase.right.text}}</code> (text)</td>
           </tr>
           <tr>
-            <td>down</td>
-            <td>
-              <code v-clipboard>-down-></code>
-            </td>
+            <td>{{cheatSheet.usecase.down.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.usecase.down.text}}</code> (text)</td>
           </tr>
           <tr>
-            <td>left</td>
-            <td>
-              <code v-clipboard>-left-></code>
-            </td>
+            <td>{{cheatSheet.usecase.left.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.usecase.left.text}}</code> (text)</td>
           </tr>
         </tbody>
       </table>
-
 
       <div class="h4" id="ActivityCheatSheet">
         Activity
@@ -256,62 +173,27 @@ rectangle Job {
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <td>if</td>
-            <td>
-<pre v-clipboard>
-if (try) then (true)
-
-else (false)
-
-endif
-</pre>
-            </td>
+            <td>{{cheatSheet.activity.if.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.activity.if.text}}</pre></td>
           </tr>
           <tr>
-            <td>repeat</td>
-            <td>
-<pre v-clipboard>
-repeat
-
-repeat while (error)
-</pre>
-            </td>
+            <td>{{cheatSheet.activity.repeat.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.activity.repeat.text}}</pre></td>
           </tr>
           <tr>
-            <td>while</td>
-            <td>
-<pre v-clipboard>
-while (try) is (true)
-
-endwhile (false)
-</pre>
-            </td>
+            <td>{{cheatSheet.activity.while.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.activity.while.text}}</pre></td>
           </tr>
           <tr>
-            <td>fork</td>
-            <td>
-<pre v-clipboard>
-fork
-
-fork again
-
-end fork
-</pre>
-            </td>
+            <td>{{cheatSheet.activity.fork.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.activity.fork.text}}</pre></td>
           </tr>
           <tr>
-            <td>partition</td>
-            <td>
-<pre v-clipboard>
-partition A {
-
-}
-</pre>
-            </td>
+            <td>{{cheatSheet.activity.partition.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.activity.partition.text}}</pre></td>
           </tr>
         </tbody>
       </table>
-
 
       <div class="h4" id="SequenceCheatSheet">
         Sequence
@@ -319,50 +201,29 @@ partition A {
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <td>autonumber</td>
-            <td>
-              <code v-clipboard>autonumber</code>
-            </td>
+            <td>{{cheatSheet.sequence.autonumber.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.sequence.autonumber.text}}</code></td>
           </tr>
           <tr>
             <td>
-              <img :src="`${url}UDfpA2v9B2efpStXuYe0CZAJCmiIyqeK79sSkRWSKlDIW380uZKCBm00`" alt="participant">
+              <img :src="url+cheatSheet.sequence.participant.img" :alt="cheatSheet.sequence.participant.title">
             </td>
-            <td>
-<pre v-clipboard>
-participant ABC as abc
-</pre>
-            </td>
+            <td><pre v-clipboard>{{cheatSheet.sequence.participant.text}}</pre></td>
           </tr>
           <tr>
-            <td>alt/else</td>
-            <td>
-<pre v-clipboard>
-alt success
-
-else error
-
-end
-</pre>
-            </td>
+            <td>{{cheatSheet.sequence.altelse.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.sequence.altelse.text}}</pre></td>
           </tr>
           <tr>
-            <td>loop</td>
-            <td>
-<pre v-clipboard>
-loop title
-
-end
-</pre>
-            </td>
+            <td>{{cheatSheet.sequence.loop.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.sequence.loop.text}}</pre></td>
           </tr>
           <tr>
-            <td>separate</td>
-            <td><code v-clipboard>== ==</code></td>
+            <td>{{cheatSheet.sequence.separate.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.sequence.separate.text}}</code></td>
           </tr>
         </tbody>
       </table>
-
 
       <div class="h4" id="ObjectCheatSheet">
         Object
@@ -370,30 +231,23 @@ end
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <td>object</td>
-            <td>
-<pre v-clipboard>
-object A {
-
-}
-</pre>
-            </td>
+            <td>{{cheatSheet.object.object.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.object.object.text}}</pre></td>
           </tr>
           <tr>
-            <td>Extension</td>
-            <td><code v-clipboard><|-</code></td>
+            <td>{{cheatSheet.object.extension.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.object.extension.text}}</code></td>
           </tr>
           <tr>
-            <td>Composition</td>
-            <td><code v-clipboard>*-</code></td>
+            <td>{{cheatSheet.object.composition.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.object.composition.text}}</code></td>
           </tr>
           <tr>
-            <td>Aggregation</td>
-            <td><code v-clipboard>o-</code></td>
+            <td>{{cheatSheet.object.aggregation.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.object.aggregation.text}}</code></td>
           </tr>
         </tbody>
       </table>
-
 
       <div class="h4" id="ClassCheatSheet">
         Class
@@ -401,28 +255,27 @@ object A {
       <table class="table table-bordered table-hover">
         <tbody>
           <tr>
-            <td>Public</td>
-            <td><code v-clipboard>+</code></td>
+            <td>{{cheatSheet.class.public.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.public.text}}</code></td>
           </tr>
           <tr>
-            <td>Private</td>
-            <td><code v-clipboard>-</code></td>
+            <td>{{cheatSheet.class.private.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.private.text}}</code></td>
           </tr>
           <tr>
-            <td>Protected</td>
-            <td><code v-clipboard>#</code></td>
+            <td>{{cheatSheet.class.protected.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.protected.text}}</code></td>
           </tr>
           <tr>
-            <td>Package</td>
-            <td><code v-clipboard>~</code></td>
+            <td>{{cheatSheet.class.package.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.package.text}}</code></td>
           </tr>
           <tr>
-            <td>static</td>
-            <td><code v-clipboard>{static}</code> static</td>
+            <td>{{cheatSheet.class.static.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.static.text}}</code> static</td>
           </tr>
         </tbody>
       </table>
-
 
     </div>
   </div>
@@ -437,6 +290,11 @@ export default {
     height: {
       type: String,
       default: '100%'
+    }
+  },
+  data ():any {
+    return {
+      cheatSheet: this.$store.state.cheatSheet.contents
     }
   },
   computed: {
