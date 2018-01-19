@@ -86,7 +86,7 @@ const state: any = {
         img: 'UDfpA2v9B2efpStXuihBJqbL01FHO3PNB1UNGsfU2b0I0Ftn3AW0'
       },
       nodeblock: {
-        title: 'node',
+        title: 'node block',
         text: 'node Node [\nnode\n]'
       },
       database: {
@@ -95,7 +95,7 @@ const state: any = {
         img: 'UDfpA2v9B2efpStXuaf9B4bCIYnELO0pehbSdBXYkRWSKlDIW4e0M8iEfW00'
       },
       databaseblock: {
-        title: 'database',
+        title: 'database block',
         text: 'database DB [\nDB\n]'
       },
       storage: {
@@ -104,7 +104,7 @@ const state: any = {
         img: 'UDfpA2v9B2efpStXuYekoIzAJ4zLWD7HC16kM2ukXzIy5A0g09aj49K0'
       },
       storageblock: {
-        title: 'storage',
+        title: 'storage block',
         text: 'storage Storage [\nstorage\n]'
       },
       component: {
