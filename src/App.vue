@@ -3,16 +3,16 @@
     <headerNavbar></headerNavbar>
     <div class="container-fluid">
       <div class="row">
-        <div :class="[historyCol ? 'col-sm-'+historyCol : 'col-sm-2']" v-show="Boolean(historyCol)">
+        <div :class="[historyCol ? `col-sm-${historyCol}` : 'col-sm-2']" v-show="Boolean(historyCol)">
           <historyList :height="height"></historyList>
         </div>
-        <div class="col-editor" :class="[editorCol ? 'col-sm-'+editorCol : 'col-sm-4']">
+        <div class="col-editor" :class="[editorCol ? `col-sm-${editorCol}` : 'col-sm-4']">
           <editor :height="height"></editor>
         </div>
-        <div :class="[cheatSheetCol ? 'col-sm-'+cheatSheetCol : 'col-sm-3']" v-show="Boolean(cheatSheetCol)">
+        <div :class="[cheatSheetCol ? `col-sm-${cheatSheetCol}` : 'col-sm-3']" v-show="Boolean(cheatSheetCol)">
           <cheatSheet :height="height"></cheatSheet>
         </div>
-        <div :class="[umlCol ? 'col-sm-'+umlCol : 'col-sm-6']">
+        <div :class="[umlCol ? `col-sm-${umlCol}` : 'col-sm-6']">
           <functionTop></functionTop>
           <uml :height="umlH"></uml>
         </div>
