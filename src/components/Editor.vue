@@ -50,7 +50,7 @@ export default {
       this.codemirror = codemirror
       this.addKeymap()
       setTimeout(() => {
-        this.codemirror.setSize('100%', 'calc(100% - 2px)')
+        this.codemirror.setSize('100%', 'calc(100%)')
       })
     },
     onChange (text: string) {

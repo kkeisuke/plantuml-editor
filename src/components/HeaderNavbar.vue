@@ -4,7 +4,7 @@
       <ul class="nav navbar-nav navbar-left">
         <li>
           <a href="#" @click.prevent="changeHistoryColSize">
-            <span class="glyphicon glyphicon-menu-hamburger"></span>
+            <span class="glyphicon glyphicon-menu-hamburger" :class="{'fa-rotate-90': isCloseHistory}"></span>
           </a>
         </li>
       </ul>
@@ -43,13 +43,20 @@
           </ul>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
         <li>
           <a href="#" data-toggle="modal" data-target="#help">
-            <span class="glyphicon glyphicon-question-sign"></span> HELP
+            <span class="glyphicon glyphicon-question-sign"></span> help
           </a>
         </li>
       </ul>
+      <div class="navbar-header navbar-right">
+        <ul class="navbar-text list-inline">
+          <li><a href="https://github.com/kkeisuke/plantuml-editor" class="navbar-link" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+          <li><a href="https://twitter.com/kkeisuke" class="navbar-link" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+          <li><a href="http://kkeisuke.com/" class="navbar-link" target="_blank"><i class="fa fa-home fa-lg"></i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -65,6 +72,9 @@ export default {
     UmlTemplate
   },
   computed: {
+    isCloseHistory (): string {
+      return this.$store.getters.isCloseHistory
+    },
     keyMap (): string {
       return this.$store.state.plantumlEditor.codemirrorOptions.keyMap
     },

@@ -26,6 +26,12 @@ const mutations: any = {
   }
 }
 
+const getters: any = {
+  isCloseHistory ({colSize}: any): boolean {
+    return colSize.history === 0
+  }
+}
+
 const actions: any = {
   setColSize (context: any, colSize: any) {
     context.commit('setColSize', colSize)
@@ -59,5 +65,6 @@ const actions: any = {
 export default {
   state,
   mutations,
+  getters,
   actions
 }

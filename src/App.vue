@@ -20,7 +20,6 @@
     </div>
     <helpModal></helpModal>
     <gistModal></gistModal>
-    <footerNavbar></footerNavbar>
   </div>
 </template>
 
@@ -36,7 +35,6 @@ import directive from './directive'
 
 // components
 import HeaderNavbar from './components/HeaderNavbar'
-import FooterNavbar from './components/FooterNavbar'
 import HelpModal from './components/HelpModal'
 import GistModal from './components/GistModal'
 import HistoryList from './components/HistoryList'
@@ -51,7 +49,6 @@ export default {
   directive,
   components: {
     HeaderNavbar,
-    FooterNavbar,
     HelpModal,
     GistModal,
     HistoryList,
@@ -93,12 +90,12 @@ export default {
   methods: {
     setHeight () {
       const headerHeight: number = window.$('.navbar-static-top').height()
-      const footerHeight: number = window.$('.navbar-fixed-bottom').height()
       const functionTopHeight: number = window.$('.functionTop').height()
-      const height: number = window.innerHeight - (headerHeight + footerHeight)
-      const margin: number = 20
+      const height: number = window.innerHeight - headerHeight
+      const marginTop: number = 20
+      const marginBottom: number = 10
       this.height = height + 'px'
-      this.umlH = height - (margin + functionTopHeight + margin) + 'px'
+      this.umlH = height - (marginTop + functionTopHeight + marginBottom) + 'px'
     },
     resize () {
       let timer: any = null
