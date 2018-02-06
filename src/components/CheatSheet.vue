@@ -16,6 +16,19 @@
             <td><pre v-clipboard>{{cheatSheet.common.footer.text}}</pre></td>
           </tr>
           <tr>
+            <td>{{cheatSheet.common.scale.title}}</td>
+            <td>
+              <code v-clipboard>{{cheatSheet.common.scale.text}}</code> 1.5<br>
+              <code v-clipboard>{{cheatSheet.common.scale.text}}</code> 200 width<br>
+              <code v-clipboard>{{cheatSheet.common.scale.text}}</code> 200 height<br>
+              <code v-clipboard>{{cheatSheet.common.scale.text}}</code> max 1024 width
+            </td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.common.define.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.common.define.text}}</code> ABC text</td>
+          </tr>
+          <tr>
             <td>{{cheatSheet.common.title.title}}</td>
             <td><code v-clipboard>{{cheatSheet.common.title.text}}</code> Title</td>
           </tr>
@@ -267,12 +280,32 @@
             <td><code v-clipboard>{{cheatSheet.class.protected.text}}</code></td>
           </tr>
           <tr>
-            <td>{{cheatSheet.class.package.title}}</td>
-            <td><code v-clipboard>{{cheatSheet.class.package.text}}</code></td>
+            <td>{{cheatSheet.class.packageprivate.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.packageprivate.text}}</code></td>
           </tr>
           <tr>
             <td>{{cheatSheet.class.static.title}}</td>
-            <td><code v-clipboard>{{cheatSheet.class.static.text}}</code> static</td>
+            <td><code v-clipboard>{{cheatSheet.class.static.text}}</code> member</td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.class.abstract.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.abstract.text}}</code> member</td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.class.abstractkeyword.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.abstractkeyword.text}}</code> class</td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.class.interface.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.class.interface.text}}</code></td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.class.package.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.class.package.text}}</pre></td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.class.namespace.title}}</td>
+            <td><pre v-clipboard>{{cheatSheet.class.namespace.text}}</pre></td>
           </tr>
         </tbody>
       </table>

@@ -13,6 +13,14 @@ const state: any = {
         title: 'footer',
         text: 'center footer\n\nendfooter'
       },
+      scale: {
+        title: 'scale',
+        text: 'scale'
+      },
+      define: {
+        title: 'define',
+        text: '!define'
+      },
       title: {
         title: 'title',
         text: 'title'
@@ -231,13 +239,33 @@ const state: any = {
         title: 'Protected',
         text: '#'
       },
-      package: {
-        title: 'Package',
+      packageprivate: {
+        title: 'Package Private',
         text: '~'
       },
       static: {
         title: 'static',
         text: '{static}'
+      },
+      abstract: {
+        title: 'abstract',
+        text: '{abstract}'
+      },
+      abstractkeyword: {
+        title: 'abstract keyword',
+        text: 'abstract'
+      },
+      interface: {
+        title: 'interface',
+        text: 'interface'
+      },
+      package: {
+        title: 'package',
+        text: 'package A {\n\n}'
+      },
+      namespace: {
+        title: 'namespace',
+        text: 'namespace A {\n\n}'
       }
     }
   }
