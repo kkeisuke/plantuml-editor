@@ -1,9 +1,9 @@
 <template>
   <div class="row">
     <div class="col-sm-12">
-      <div class="umlImage" :style="{'height':height}">
+      <div id="umlArea" class="umlImage" :style="{'height':height}">
         <div v-html="preMarkdown"></div>
-        <div class="text-center">
+        <div class="text-center" align="center">
           <p>
             <img :src="src" @load="loadedImg" v-if="!isSvg">
             <object :data="src" :width="umlWidth+'%'" @load="loadedImg" v-if="isSvg"></object>

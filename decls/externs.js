@@ -89,3 +89,7 @@ declare module 'codemirror/addon/hint/show-hint.css' {
 declare module 'clipboard' {
   declare var exports: any;
 }
+
+declare module 'print-js' {
+  declare var exports: any;
+}

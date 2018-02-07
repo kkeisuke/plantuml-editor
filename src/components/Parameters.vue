@@ -23,6 +23,9 @@
         <a :href="src" class="btn btn-default" @click.prevent="download" data-toggle="tooltip" data-placement="bottom" title="download" data-container="body">
           <span class="glyphicon glyphicon-download-alt"></span>
         </a>
+        <button type="button" class="btn btn-default" @click="print" :disabled="umlExtension!='png'" data-toggle="tooltip" data-placement="bottom" title="print" data-container="body">
+          <span class="glyphicon glyphicon-print"></span>
+        </button>
         <popover-btn :title="'link'">
           <span slot="popover-btn" class="glyphicon glyphicon-link"></span>
           <span slot="popover-title">PlantUML Server URL</span>
@@ -52,6 +55,7 @@
 /* @flow */
 
 import PopoverBtn from './common/PopoverBtn'
+import printjs from 'print-js'
 
 export default {
   name: 'parameters',
@@ -103,6 +107,9 @@ export default {
     },
     download () {
       this.$store.dispatch('download')
+    },
+    print () {
+      printjs('umlArea', 'html')
     }
   }
 }
