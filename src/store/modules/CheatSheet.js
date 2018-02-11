@@ -195,6 +195,14 @@ const state: any = {
         text: 'participant ABC as abc',
         img: 'UDfpA2v9B2efpStXuYe0CZAJCmiIyqeK79sSkRWSKlDIW380uZKCBm00'
       },
+      activate: {
+        title: 'activate',
+        text: 'activate'
+      },
+      deactivate: {
+        title: 'deactivate',
+        text: 'deactivate'
+      },
       altelse: {
         title: 'alt/else',
         text: 'alt success\n\nelse error\n\nend'

@@ -224,6 +224,14 @@
             <td><pre v-clipboard>{{cheatSheet.sequence.participant.text}}</pre></td>
           </tr>
           <tr>
+            <td>{{cheatSheet.sequence.activate.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.sequence.activate.text}}</code> abc</td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.sequence.deactivate.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.sequence.deactivate.text}}</code> abc</td>
+          </tr>
+          <tr>
             <td>{{cheatSheet.sequence.altelse.title}}</td>
             <td><pre v-clipboard>{{cheatSheet.sequence.altelse.text}}</pre></td>
           </tr>
