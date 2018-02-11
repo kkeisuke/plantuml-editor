@@ -286,7 +286,7 @@ const getters: any = {
       _.forEach(snippets, function (snippet: any) {
         results[results.length] = {
           text: snippet.text,
-          displayText: `${category}: ${snippet.title}`
+          displayText: `${snippet.title} : ( ${category} )`
         }
       })
     })
