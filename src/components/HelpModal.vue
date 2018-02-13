@@ -72,6 +72,9 @@
                 <li>
                   <a href="http://kkeisuke.hatenablog.com/entry/2017/08/07/160845" target="_blank">PlantUML Editor の要求/要件定義</a>
                 </li>
+                <li>
+                  <a href="http://kkeisuke.hatenablog.com/entry/2018/02/06/054803" target="_blank">PlantUML を導入するのに適したケースとは</a>
+                </li>
               </ul>
             </dd>
           </dl>

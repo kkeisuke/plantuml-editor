@@ -16,6 +16,8 @@
 - save texts
 - create gists
 - support markdown
+- download image
+- print HTML
 
 ## Build Setup
 
