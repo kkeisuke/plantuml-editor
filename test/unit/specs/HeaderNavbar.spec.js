@@ -12,7 +12,7 @@ describe('HeaderNavbar.vue', () => {
 
   describe('methods changeHistoryColSize', () => {
     before(() => {
-      vm.$store.dispatch('setEditColSize')
+      vm.$store.dispatch('layout/setEditColSize')
     })
 
     it('state.layout.colSize.history', () => {

@@ -79,9 +79,9 @@ export default {
   },
   created () {
     this.resize()
-    this.$store.dispatch('getLocalStrage')
-    this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
-    this.$store.dispatch('defineScheme')
+    this.$store.dispatch('plantumlEditor/getLocalStrage')
+    this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+    this.$store.dispatch('histories/defineScheme')
   },
   mounted () {
     this.setHeight()

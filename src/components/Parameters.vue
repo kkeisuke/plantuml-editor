@@ -67,7 +67,7 @@ export default {
       return this.$store.state.plantumlEditor.src
     },
     isSvg (): string {
-      return this.$store.getters.isSvg
+      return this.$store.getters['plantumlEditor/isSvg']
     },
     isLoading (): boolean {
       return this.$store.state.plantumlEditor.isLoading
@@ -77,7 +77,7 @@ export default {
         return this.$store.state.plantumlEditor.umlWidth
       },
       set (value: number) {
-        this.$store.dispatch('setUmlWidth', value)
+        this.$store.dispatch('plantumlEditor/setUmlWidth', value)
       }
     },
     umlExtensions (): any {
@@ -88,25 +88,25 @@ export default {
         return this.$store.state.plantumlEditor.umlExtension
       },
       set (value: string) {
-        this.$store.dispatch('setUmlExtension', value)
-        this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+        this.$store.dispatch('plantumlEditor/setUmlExtension', value)
+        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
       }
     }
   },
   methods: {
     renderUML (event: any) {
-      this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+      this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
     },
     save (event: any) {
-      this.$store.dispatch('save', this.$store.state.plantumlEditor)
-      this.$store.dispatch('resetColSize')
+      this.$store.dispatch('histories/save', this.$store.state.plantumlEditor)
+      this.$store.dispatch('layout/resetColSize')
     },
     showGistModal ($event: any) {
       window.$('#gist').modal('show')
       window.$('[data-toggle="tooltip"]').tooltip('hide')
     },
     download () {
-      this.$store.dispatch('download')
+      this.$store.dispatch('plantumlEditor/download')
     },
     print () {
       printjs('umlArea', 'html')

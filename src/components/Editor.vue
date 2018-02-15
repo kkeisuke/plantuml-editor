@@ -42,7 +42,7 @@ export default {
   data (): any {
     return {
       codemirror: null,
-      snippets: this.$store.getters.snippets
+      snippets: this.$store.getters['cheatSheet/snippets']
     }
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
       })
     },
     onChange (text: string) {
-      this.$store.dispatch('syncText', text)
+      this.$store.dispatch('plantumlEditor/syncText', text)
     },
     snippet () {
       const codemirror: any = this.codemirror
@@ -81,10 +81,10 @@ export default {
     addKeymap () {
       const map: any = {}
       map[this.$store.state.plantumlEditor.renderUMLKey.win] = () => {
-        this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
       }
       map[this.$store.state.plantumlEditor.renderUMLKey.mac] = () => {
-        this.$store.dispatch('renderUML', this.$store.state.plantumlEditor.text)
+        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
       }
       map[this.$store.state.plantumlEditor.snippetKey.win] = () => {
         this.snippet()

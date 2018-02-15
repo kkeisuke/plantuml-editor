@@ -32,7 +32,7 @@ export default {
   methods: {
     selectTemplate (prop: string, event: any) {
       if (window.confirm(this.selectMessage)) {
-        this.$store.dispatch('selectTemplate', prop)
+        this.$store.dispatch('umlTemplate/selectTemplate', prop)
       }
     }
   }

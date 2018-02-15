@@ -108,7 +108,7 @@ export default {
         return this.$store.state.gistApi.gist.description
       },
       set (value: string) {
-        this.$store.dispatch('setDescription', value)
+        this.$store.dispatch('gistApi/setDescription', value)
       }
     },
     isPublic: {
@@ -116,7 +116,7 @@ export default {
         return this.$store.state.gistApi.gist.public
       },
       set (value: boolean) {
-        this.$store.dispatch('setPublic', value)
+        this.$store.dispatch('gistApi/setPublic', value)
       }
     },
     token: {
@@ -124,7 +124,7 @@ export default {
         return this.$store.state.gistApi.token
       },
       set (value: string) {
-        this.$store.dispatch('setToken', value)
+        this.$store.dispatch('gistApi/setToken', value)
       }
     },
     ext (): any {
@@ -169,14 +169,14 @@ export default {
       window.$('#gist').on('shown.bs.modal hidden.bs.modal', () => {
         this.$validator.errors.clear()
         this.fileName = ''
-        this.$store.dispatch('resetGist')
+        this.$store.dispatch('gistApi/resetGist')
       })
     },
     submit () {
       // 誤送信を防ぐために無効化する
     },
     createGist () {
-      this.$store.dispatch('createGist', {
+      this.$store.dispatch('gistApi/createGist', {
         'fileName': this.fileName,
         'text': this.$store.state.plantumlEditor.text,
         'src': this.$store.state.plantumlEditor.src

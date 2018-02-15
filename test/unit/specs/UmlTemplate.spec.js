@@ -12,7 +12,7 @@ describe('UmlTemplate.vue', () => {
 
   describe('methods selectTemplate', () => {
     before(() => {
-      vm.$store.dispatch('selectTemplate', 'useCase')
+      vm.$store.dispatch('umlTemplate/selectTemplate', 'useCase')
     })
 
     it('state.plantumlEditor.text', () => {

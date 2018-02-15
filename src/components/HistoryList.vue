@@ -44,17 +44,17 @@ export default {
     }
   },
   mounted () {
-    this.$store.dispatch('getHistories')
+    this.$store.dispatch('histories/getHistories')
   },
   methods: {
     del (id: number, event: any) {
       if (window.confirm(this.deleteMessage)) {
-        this.$store.dispatch('delete', id)
+        this.$store.dispatch('histories/delete', id)
       }
     },
     read (text: string, event: any) {
       if (window.confirm(this.editMessage)) {
-        this.$store.dispatch('renderUML', text)
+        this.$store.dispatch('plantumlEditor/renderUML', text)
       }
     }
   }

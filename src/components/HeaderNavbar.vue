@@ -73,34 +73,34 @@ export default {
   },
   computed: {
     isCloseHistory (): string {
-      return this.$store.getters.isCloseHistory
+      return this.$store.getters['layout/isCloseHistory']
     },
     keyMap (): string {
       return this.$store.state.plantumlEditor.codemirrorOptions.keyMap
     },
     isSublime (): string {
-      return this.$store.getters.isSublime
+      return this.$store.getters['plantumlEditor/isSublime']
     },
     isVim (): string {
-      return this.$store.getters.isVim
+      return this.$store.getters['plantumlEditor/isVim']
     },
     isEmacs (): string {
-      return this.$store.getters.isEmacs
+      return this.$store.getters['plantumlEditor/isEmacs']
     }
   },
   methods: {
     setKyaMap (keyMap: string) {
-      this.$store.dispatch('syncCodeMirrorKeyMap', keyMap)
+      this.$store.dispatch('plantumlEditor/syncCodeMirrorKeyMap', keyMap)
     },
     changeHistoryColSize () {
       if (this.$store.state.layout.colSize.history) {
-        this.$store.dispatch('setEditColSize')
+        this.$store.dispatch('layout/setEditColSize')
       } else {
-        this.$store.dispatch('resetColSize')
+        this.$store.dispatch('layout/resetColSize')
       }
     },
     changeCheatSheetColSize () {
-      this.$store.dispatch('setCheatSheetColSize')
+      this.$store.dispatch('layout/setCheatSheetColSize')
       // 強制的にハッシュ削除
       window.setTimeout(() => {
         location.hash = ''

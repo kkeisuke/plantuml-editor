@@ -31,7 +31,7 @@ export default {
       return this.$store.state.plantumlEditor.src
     },
     isSvg (): string {
-      return this.$store.getters.isSvg
+      return this.$store.getters['plantumlEditor/isSvg']
     },
     preMarkdown (): string {
       return this.$store.state.plantumlEditor.preMarkdown
@@ -49,20 +49,20 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('setMarked')
-    this.$store.dispatch('setIsLoading', true)
+    this.$store.dispatch('plantumlEditor/setMarked')
+    this.$store.dispatch('plantumlEditor/setIsLoading', true)
   },
   watch: {
     src () {
       if (this.src) {
-        this.$store.dispatch('setIsLoading', true)
+        this.$store.dispatch('plantumlEditor/setIsLoading', true)
       }
     }
   },
   methods: {
     loadedImg () {
       window.setTimeout(() => {
-        this.$store.dispatch('setIsLoading', false)
+        this.$store.dispatch('plantumlEditor/setIsLoading', false)
       }, this.loadingDelay)
     }
   }
