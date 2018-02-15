@@ -295,6 +295,7 @@ const getters: any = {
 }
 
 export default {
+  namespaced: true,
   state,
   getters
 }

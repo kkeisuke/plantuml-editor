@@ -178,6 +178,7 @@ const actions: any = {
 }
 
 export default {
+  namespaced: true,
   state,
   getters,
   mutations,

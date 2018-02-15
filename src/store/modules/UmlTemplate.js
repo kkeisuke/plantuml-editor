@@ -2,7 +2,7 @@
 
 const actions: any = {
   selectTemplate (context: any, prop: string) {
-    context.dispatch('renderUML', context.state[prop])
+    context.dispatch('plantumlEditor/renderUML', context.state[prop], { root: true })
   }
 }
 
@@ -112,6 +112,7 @@ Bus o-down- Driver
 }
 
 export default {
+  namespaced: true,
   state,
   actions
 }
