@@ -32,15 +32,10 @@
         </li>
       </ul>
       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button">
-            <i class="fa fa-keyboard-o fa-inverse"></i> keymap <b class="caret"></b>
+        <li>
+          <a href="#" data-toggle="modal" data-target="#options">
+            <span class="glyphicon glyphicon-cog"></span> options
           </a>
-          <ul class="dropdown-menu">
-            <li><a href="#" @click.prevent="setKyaMap('sublime')">sublime <i class="fa fa-check" v-show="isSublime"></i></a></li>
-            <li><a href="#" @click.prevent="setKyaMap('vim')">vim <i class="fa fa-check" v-show="isVim"></i></a></li>
-            <li><a href="#" @click.prevent="setKyaMap('emacs')">emacs <i class="fa fa-check" v-show="isEmacs"></i></a></li>
-          </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav">
@@ -74,24 +69,9 @@ export default {
   computed: {
     isCloseHistory (): string {
       return this.$store.getters['layout/isCloseHistory']
-    },
-    keyMap (): string {
-      return this.$store.state.plantumlEditor.codemirrorOptions.keyMap
-    },
-    isSublime (): string {
-      return this.$store.getters['plantumlEditor/isSublime']
-    },
-    isVim (): string {
-      return this.$store.getters['plantumlEditor/isVim']
-    },
-    isEmacs (): string {
-      return this.$store.getters['plantumlEditor/isEmacs']
     }
   },
   methods: {
-    setKyaMap (keyMap: string) {
-      this.$store.dispatch('plantumlEditor/syncCodeMirrorKeyMap', keyMap)
-    },
     changeHistoryColSize () {
       if (this.$store.state.layout.colSize.history) {
         this.$store.dispatch('layout/setEditColSize')

@@ -23,11 +23,16 @@ const state: any = {
   codemirrorOptions: {
     mode: 'plantuml',
     theme: 'solarized dark',
+    indentUnit: 2,
+    tabSize: 2,
+    indentWithTabs: false,
     lineNumbers: true,
     styleActiveLine: true,
     keyMap: ''
   },
   defaultKeyMap: 'sublime',
+  defaultIndent: 'space2',
+  codemirrorIndent: 'space2',
   umlWidth: 50,
   umlExtension: 'svg',
   umlExtensions: [
@@ -67,12 +72,43 @@ const getters: any = {
   },
   isEmacs (state: any): boolean {
     return state.codemirrorOptions.keyMap === 'emacs'
+  },
+  isSpace2 (state: any): boolean {
+    return state.codemirrorIndent === 'space2'
+  },
+  isSpace4 (state: any): boolean {
+    return state.codemirrorIndent === 'space4'
+  },
+  isTab (state: any): boolean {
+    return state.codemirrorIndent === 'tab'
   }
 }
 
 const mutations: any = {
   setCodeMirrorKeyMap (state: any, keyMap: string) {
     state.codemirrorOptions.keyMap = keyMap
+  },
+  setCodeMirrorIndent (state: any, indent: string) {
+    state.codemirrorIndent = indent
+    switch (indent) {
+      case 'space2':
+        state.codemirrorOptions.indentUnit = 2
+        state.codemirrorOptions.tabSize = 2
+        state.codemirrorOptions.indentWithTabs = false
+        break
+      case 'space4':
+        state.codemirrorOptions.indentUnit = 4
+        state.codemirrorOptions.tabSize = 4
+        state.codemirrorOptions.indentWithTabs = false
+        break
+      case 'tab':
+        state.codemirrorOptions.indentUnit = 4
+        state.codemirrorOptions.tabSize = 4
+        state.codemirrorOptions.indentWithTabs = true
+        break
+      default:
+        break
+    }
   },
   getUmlWidthFromLocalStorage () {
     if (window.localStorage && window.localStorage.getItem('umlWidth')) {
@@ -115,9 +151,18 @@ const mutations: any = {
       window.localStorage.setItem('codemirrorOptions.keyMap', keyMap)
     }
   },
+  setIndentLocalStrage (state: any, indent: string) {
+    if (window.localStorage) {
+      window.localStorage.setItem('codemirrorIndent', indent)
+    }
+  },
   getKeyMapFromLocalStrage (state: any) {
     const keyMap: string = window.localStorage ? window.localStorage.getItem('codemirrorOptions.keyMap') : ''
     state.codemirrorOptions.keyMap = keyMap || state.defaultKeyMap
+  },
+  getIndentFromLocalStrage (state: any) {
+    const indent: string = window.localStorage ? window.localStorage.getItem('codemirrorIndent') : ''
+    state.codemirrorIndent = indent || state.defaultIndent
   },
   setIsLoading (state: any, isLoading: boolean) {
     state.isLoading = isLoading
@@ -128,6 +173,10 @@ const actions: any = {
   syncCodeMirrorKeyMap (context: any, keyMap: string) {
     context.commit('setCodeMirrorKeyMap', keyMap)
     context.commit('setKeyMapLocalStrage', keyMap)
+  },
+  syncCodeMirrorIndent (context: any, indent: string) {
+    context.commit('setCodeMirrorIndent', indent)
+    context.commit('setIndentLocalStrage', indent)
   },
   setUmlWidth (context: any, umlWidth: number) {
     context.commit('setUmlWidth', umlWidth)
@@ -142,6 +191,8 @@ const actions: any = {
     context.commit('getLocalStrage')
     context.commit('getUmlWidthFromLocalStorage')
     context.commit('getKeyMapFromLocalStrage')
+    context.commit('getIndentFromLocalStrage')
+    context.dispatch('syncCodeMirrorIndent', state.codemirrorIndent)
   },
   syncText (context: any, text: string) {
     context.commit('setText', text)

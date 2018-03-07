@@ -19,6 +19,7 @@
       </div>
     </div>
     <helpModal></helpModal>
+    <optionsModal></optionsModal>
     <gistModal></gistModal>
   </div>
 </template>
@@ -36,6 +37,7 @@ import directive from './directive'
 // components
 import HeaderNavbar from './components/HeaderNavbar'
 import HelpModal from './components/HelpModal'
+import OptionsModal from './components/OptionsModal'
 import GistModal from './components/GistModal'
 import HistoryList from './components/HistoryList'
 import CheatSheet from './components/CheatSheet'
@@ -50,6 +52,7 @@ export default {
   components: {
     HeaderNavbar,
     HelpModal,
+    OptionsModal,
     GistModal,
     HistoryList,
     CheatSheet,

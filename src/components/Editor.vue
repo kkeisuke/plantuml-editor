@@ -78,6 +78,14 @@ export default {
         }
       }, { completeSingle: false })
     },
+    insertTab () {
+      const codemirror: any = this.codemirror
+      if (this.$store.getters['plantumlEditor/isTab']) {
+        codemirror.execCommand('defaultTab')
+      } else {
+        codemirror.execCommand('insertSoftTab')
+      }
+    },
     addKeymap () {
       const map: any = {}
       map[this.$store.state.plantumlEditor.renderUMLKey.win] = () => {
@@ -91,6 +99,9 @@ export default {
       }
       map[this.$store.state.plantumlEditor.snippetKey.mac] = () => {
         this.snippet()
+      }
+      map.Tab = () => {
+        this.insertTab()
       }
       this.codemirror.setOption('extraKeys', map)
     }
