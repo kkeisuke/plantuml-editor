@@ -81,15 +81,17 @@ export default {
       }
     },
     changeCheatSheetColSize (event: any) {
-      const target: HTMLAnchorElement = event.target
-      if (target && target.hash) {
-        location.hash = target.hash
-      }
       this.$store.dispatch('layout/setCheatSheetColSize')
-      // 強制的にハッシュ削除
       window.setTimeout(() => {
-        location.hash = ''
-      }, 300)
+        const target: HTMLAnchorElement = event.target
+        if (target && target.hash) {
+          location.hash = target.hash
+        }
+        // 強制的にハッシュ削除
+        window.setTimeout(() => {
+          location.hash = ''
+        }, 100)
+      }, 100)
     }
   }
 }
