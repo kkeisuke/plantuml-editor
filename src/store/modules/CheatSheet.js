@@ -275,6 +275,32 @@ const state: any = {
         title: 'namespace',
         text: 'namespace A {\n\n}'
       }
+    },
+    er: {
+      one: {
+        title: '1',
+        text: '-'
+      },
+      zeroOrOne: {
+        title: '0 or 1',
+        text: '-o|'
+      },
+      oneAndOnlyOne: {
+        title: 'one and only 1',
+        text: '-||'
+      },
+      many: {
+        title: 'many',
+        text: '-{'
+      },
+      zeroOrMany: {
+        title: '0 or many',
+        text: '-o{'
+      },
+      oneOrMany: {
+        title: '1 or many',
+        text: '-|{'
+      }
     }
   }
 }

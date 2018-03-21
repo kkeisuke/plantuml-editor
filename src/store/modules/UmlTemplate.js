@@ -108,6 +108,34 @@ Car *-down- Tire
 Car *-down- Engine
 Bus o-down- Driver
 
+@enduml`,
+  ER:
+`@startuml
+
+entity Customer  {
+  + id (PK)
+  --
+  name
+  mail
+}
+
+entity Order  {
+  + id (PK)
+  --
+  # customer id (FK)
+  order date
+}
+
+entity "Order Detail" as OrderDetail {
+  + id (PK)
+  --
+  # order id  (FK)
+  price without tax
+}
+
+Customer -right-o{ Order
+Order ||-right-|{ OrderDetail
+
 @enduml`
 }
 

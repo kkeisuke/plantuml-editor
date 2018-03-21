@@ -28,6 +28,7 @@
             <li class="dropdown-header">structural diagrams</li>
             <li><a href="#ObjectCheatSheet" @click="changeCheatSheetColSize">Object</a></li>
             <li><a href="#ClassCheatSheet" @click="changeCheatSheetColSize">Class</a></li>
+            <li><a href="#ERCheatSheet" @click="changeCheatSheetColSize">ER diagram</a></li>
           </ul>
         </li>
       </ul>

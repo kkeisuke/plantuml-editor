@@ -318,6 +318,38 @@
         </tbody>
       </table>
 
+      <div class="h4" id="ERCheatSheet">
+        ER diagram
+      </div>
+      <table class="table table-bordered table-hover">
+        <tbody>
+          <tr>
+            <td>{{cheatSheet.er.one.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.er.one.text}}</code></td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.er.zeroOrOne.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.er.zeroOrOne.text}}</code></td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.er.oneAndOnlyOne.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.er.oneAndOnlyOne.text}}</code></td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.er.many.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.er.many.text}}</code></td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.er.zeroOrMany.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.er.zeroOrMany.text}}</code></td>
+          </tr>
+          <tr>
+            <td>{{cheatSheet.er.oneOrMany.title}}</td>
+            <td><code v-clipboard>{{cheatSheet.er.oneOrMany.text}}</code></td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </template>

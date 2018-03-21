@@ -14,6 +14,7 @@
         <li class="dropdown-header">structural diagrams</li>
         <li><a @click="selectTemplate('Object')">Object</a></li>
         <li><a @click="selectTemplate('Class')">Class</a></li>
+        <li><a @click="selectTemplate('ER')">ER diagram</a></li>
       </ul>
     </li>
   </ul>
