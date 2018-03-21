@@ -18,17 +18,17 @@
             <span class="glyphicon glyphicon-info-sign"></span> cheat sheet <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#CommonCheatSheet" @click="changeCheatSheetColSize">Common</a></li>
+            <li><a href="#CommonCheatSheet" @click.prevent="changeCheatSheetColSize">Common</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">behavioral diagrams</li>
-            <li><a href="#UseCaseCheatSheet" @click="changeCheatSheetColSize">Use Case</a></li>
-            <li><a href="#ActivityCheatSheet" @click="changeCheatSheetColSize">Activity</a></li>
-            <li><a href="#SequenceCheatSheet" @click="changeCheatSheetColSize">Sequence</a></li>
+            <li><a href="#UseCaseCheatSheet" @click.prevent="changeCheatSheetColSize">Use Case</a></li>
+            <li><a href="#ActivityCheatSheet" @click.prevent="changeCheatSheetColSize">Activity</a></li>
+            <li><a href="#SequenceCheatSheet" @click.prevent="changeCheatSheetColSize">Sequence</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">structural diagrams</li>
-            <li><a href="#ObjectCheatSheet" @click="changeCheatSheetColSize">Object</a></li>
-            <li><a href="#ClassCheatSheet" @click="changeCheatSheetColSize">Class</a></li>
-            <li><a href="#ERCheatSheet" @click="changeCheatSheetColSize">ER diagram</a></li>
+            <li><a href="#ObjectCheatSheet" @click.prevent="changeCheatSheetColSize">Object</a></li>
+            <li><a href="#ClassCheatSheet" @click.prevent="changeCheatSheetColSize">Class</a></li>
+            <li><a href="#ERCheatSheet" @click.prevent="changeCheatSheetColSize">ER diagram</a></li>
           </ul>
         </li>
       </ul>
@@ -80,7 +80,11 @@ export default {
         this.$store.dispatch('layout/resetColSize')
       }
     },
-    changeCheatSheetColSize () {
+    changeCheatSheetColSize (event: any) {
+      const target: HTMLAnchorElement = event.target
+      if (target && target.hash) {
+        location.hash = target.hash
+      }
       this.$store.dispatch('layout/setCheatSheetColSize')
       // 強制的にハッシュ削除
       window.setTimeout(() => {
