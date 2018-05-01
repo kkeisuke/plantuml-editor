@@ -6,6 +6,10 @@ const state: any = {
     'editor': 4,
     'cheatSheet': 0,
     'uml': 6
+  },
+  fullSize: {
+    'uml': false,
+    previousColSize: null
   }
 }
 
@@ -59,6 +63,20 @@ const actions: any = {
       'cheatSheet': 0,
       'uml': 6
     })
+  },
+  toggleFullsizeUml (context: any) {
+    if (context.state.fullSize.uml) {
+      context.dispatch('setColSize', context.state.fullSize.previousColSize)
+    } else {
+      context.state.fullSize.previousColSize = JSON.parse(JSON.stringify(context.state.colSize))
+      context.commit('setColSize', {
+        'history': 0,
+        'editor': 0,
+        'cheatSheet': 0,
+        'uml': 12
+      })
+    }
+    context.state.fullSize.uml = !context.state.fullSize.uml
   }
 }
 

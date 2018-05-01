@@ -1,6 +1,7 @@
 <template>
   <div class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
+
       <ul class="nav navbar-nav navbar-left">
         <li>
           <a href="#" @click.prevent="changeHistoryColSize">
@@ -8,10 +9,13 @@
           </a>
         </li>
       </ul>
+
       <div class="navbar-header">
         <a class="navbar-brand" href="#" @click.prevent>PlantUML Editor <span class="h6">beta</span></a>
       </div>
+
       <umlTemplate></umlTemplate>
+
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button">
@@ -32,6 +36,7 @@
           </ul>
         </li>
       </ul>
+
       <ul class="nav navbar-nav">
         <li>
           <a href="#" data-toggle="modal" data-target="#options">
@@ -39,6 +44,7 @@
           </a>
         </li>
       </ul>
+
       <ul class="nav navbar-nav">
         <li>
           <a href="#" data-toggle="modal" data-target="#help">
@@ -46,6 +52,7 @@
           </a>
         </li>
       </ul>
+
       <div class="navbar-header navbar-right">
         <ul class="navbar-text list-inline">
           <li><a href="https://github.com/kkeisuke/plantuml-editor" class="navbar-link" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
@@ -53,6 +60,7 @@
           <li><a href="http://kkeisuke.com/" class="navbar-link" target="_blank"><i class="fa fa-home fa-lg"></i></a></li>
         </ul>
       </div>
+
     </div>
   </div>
 </template>
