@@ -46,6 +46,9 @@
         <button type="button" class="btn btn-default" @click="showGistModal" :disabled="umlExtension!='svg'" data-toggle="tooltip" data-placement="bottom" title="share" data-container="body">
           <span class="glyphicon glyphicon-share-alt"></span>
         </button>
+        <button type="button" class="btn btn-default" @click.prevent="toggleFullsizeUml">
+          <span class="glyphicon glyphicon-fullscreen"></span>
+        </button>
       </div>
     </div>
   </form>
@@ -110,6 +113,9 @@ export default {
     },
     print () {
       printjs('umlArea', 'html')
+    },
+    toggleFullsizeUml () {
+      this.$store.dispatch('layout/toggleFullsizeUml')
     }
   }
 }
