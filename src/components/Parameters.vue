@@ -97,17 +97,17 @@ export default {
     }
   },
   methods: {
-    renderUML(event: any) {
+    renderUML() {
       this.$store.dispatch(
         'plantumlEditor/renderUML',
         this.$store.state.plantumlEditor.text
       )
     },
-    save(event: any) {
+    save() {
       this.$store.dispatch('histories/save', this.$store.state.plantumlEditor)
       this.$store.dispatch('layout/resetColSize')
     },
-    showGistModal($event: any) {
+    showGistModal() {
       window.$('#gist').modal('show')
       window.$('[data-toggle="tooltip"]').tooltip('hide')
     },

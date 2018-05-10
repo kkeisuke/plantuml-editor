@@ -208,7 +208,7 @@ const actions: any = {
     context.commit('setText', text)
     context.commit('setLocalStrage', text)
   },
-  setMarked(context: any) {
+  setMarked() {
     const renderer: any = new marked.Renderer()
     renderer.table = function(header: string, body: string): string {
       return `<table class="table table-striped table-bordered"><thead>${header}</thead><tbody>${body}</tbody></table>`

@@ -47,12 +47,12 @@ export default {
     this.$store.dispatch('histories/getHistories')
   },
   methods: {
-    del(id: number, event: any) {
+    del(id: number) {
       if (window.confirm(this.deleteMessage)) {
         this.$store.dispatch('histories/delete', id)
       }
     },
-    read(text: string, event: any) {
+    read(text: string) {
       if (window.confirm(this.editMessage)) {
         this.$store.dispatch('plantumlEditor/renderUML', text)
       }

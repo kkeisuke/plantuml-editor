@@ -7,7 +7,7 @@
       <ul class="dropdown-menu">
         <li class="dropdown-header">behavioral diagrams</li>
         <li><a @click="selectTemplate('useCase')">Use Case</a></li>
-        <li><a @click="selectTemplate('ActivityB')">Activity &#946</a></li>
+        <li><a @click="selectTemplate('ActivityB')">Activity &#946;</a></li>
         <li><a @click="selectTemplate('Activity')">Activity</a></li>
         <li><a @click="selectTemplate('Sequence')">Sequence</a></li>
         <li class="divider"></li>
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    selectTemplate(prop: string, event: any) {
+    selectTemplate(prop: string) {
       if (window.confirm(this.selectMessage)) {
         this.$store.dispatch('umlTemplate/selectTemplate', prop)
       }

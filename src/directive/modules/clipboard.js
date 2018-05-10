@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Clipboard from 'clipboard'
 import $ from 'jquery' // コンパイルを通すためだけの書き方
+interface jQuery {}
 
 // https://clipboardjs.com/
 export default Vue.directive('clipboard', {
-  inserted(element: any, binding: any) {
+  inserted(element: any) {
     $(element)
       .css({
         cursor: 'pointer'
