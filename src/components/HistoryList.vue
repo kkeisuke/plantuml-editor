@@ -4,7 +4,7 @@
       <div class="alert alert-default" v-if="!histories.length">
         When you press the Save button, it will be added to the history.
       </div>
-      <div class="thumbnail" v-for="history in histories">
+      <div class="thumbnail" v-for="(history, key, index) in histories" :key="index">
         <img :src="history.src" @click="read(history.text, $event)">
         <div class="caption">
           <div class="row">
