@@ -32,27 +32,27 @@ export default {
       default: '100%'
     }
   },
-  data (): any {
+  data(): any {
     return {
       deleteMessage: 'Can I delete it?',
       editMessage: 'Do you want to edit it?'
     }
   },
   computed: {
-    histories (): any {
+    histories(): any {
       return this.$store.state.histories.data
     }
   },
-  mounted () {
+  mounted() {
     this.$store.dispatch('histories/getHistories')
   },
   methods: {
-    del (id: number, event: any) {
+    del(id: number, event: any) {
       if (window.confirm(this.deleteMessage)) {
         this.$store.dispatch('histories/delete', id)
       }
     },
-    read (text: string, event: any) {
+    read(text: string, event: any) {
       if (window.confirm(this.editMessage)) {
         this.$store.dispatch('plantumlEditor/renderUML', text)
       }
@@ -67,11 +67,11 @@ export default {
   margin-top: -20px;
   padding-top: 20px;
   overflow-y: auto;
-  background-color: #002B36;
+  background-color: #002b36;
 }
 .historyList .thumbnail {
   background-color: #fffff;
-  border-color: #002B36;
+  border-color: #002b36;
 }
 .historyList img {
   cursor: pointer;

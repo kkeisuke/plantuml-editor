@@ -27,40 +27,40 @@ export default {
     }
   },
   computed: {
-    src (): string {
+    src(): string {
       return this.$store.state.plantumlEditor.src
     },
-    isSvg (): string {
+    isSvg(): string {
       return this.$store.getters['plantumlEditor/isSvg']
     },
-    preMarkdown (): string {
+    preMarkdown(): string {
       return this.$store.state.plantumlEditor.preMarkdown
     },
-    afterMarkdown (): string {
+    afterMarkdown(): string {
       return this.$store.state.plantumlEditor.afterMarkdown
     },
-    umlWidth (): number {
+    umlWidth(): number {
       return this.$store.state.plantumlEditor.umlWidth
     }
   },
-  data (): any {
+  data(): any {
     return {
       loadingDelay: 500
     }
   },
-  created () {
+  created() {
     this.$store.dispatch('plantumlEditor/setMarked')
     this.$store.dispatch('plantumlEditor/setIsLoading', true)
   },
   watch: {
-    src () {
+    src() {
       if (this.src) {
         this.$store.dispatch('plantumlEditor/setIsLoading', true)
       }
     }
   },
   methods: {
-    loadedImg () {
+    loadedImg() {
       window.setTimeout(() => {
         this.$store.dispatch('plantumlEditor/setIsLoading', false)
       }, this.loadingDelay)

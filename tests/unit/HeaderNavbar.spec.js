@@ -7,7 +7,7 @@ describe('HeaderNavbar.vue', () => {
 
   beforeEach(() => {
     const Constructor: any = Vue.extend(HeaderNavbar)
-    vm = new Constructor({store}).$mount()
+    vm = new Constructor({ store }).$mount()
   })
 
   describe('methods changeHistoryColSize', () => {

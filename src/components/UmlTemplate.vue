@@ -25,13 +25,13 @@
 
 export default {
   name: 'umlTemplate',
-  data (): any {
+  data(): any {
     return {
       selectMessage: 'Do you want to select a template?'
     }
   },
   methods: {
-    selectTemplate (prop: string, event: any) {
+    selectTemplate(prop: string, event: any) {
       if (window.confirm(this.selectMessage)) {
         this.$store.dispatch('umlTemplate/selectTemplate', prop)
       }
@@ -42,7 +42,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.dropdown-menu>li>a {
+.dropdown-menu > li > a {
   cursor: pointer;
 }
 </style>

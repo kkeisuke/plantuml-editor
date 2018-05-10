@@ -61,37 +61,40 @@ export default {
     Editor
   },
   computed: {
-    historyCol (): number {
+    historyCol(): number {
       return this.$store.state.layout.colSize.history
     },
-    editorCol (): number {
+    editorCol(): number {
       return this.$store.state.layout.colSize.editor
     },
-    cheatSheetCol (): number {
+    cheatSheetCol(): number {
       return this.$store.state.layout.colSize.cheatSheet
     },
-    umlCol (): number {
+    umlCol(): number {
       return this.$store.state.layout.colSize.uml
     }
   },
-  data (): any {
+  data(): any {
     return {
       height: '0px',
       umlH: '0px'
     }
   },
-  created () {
+  created() {
     this.resize()
     this.$store.dispatch('plantumlEditor/getLocalStrage')
-    this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+    this.$store.dispatch(
+      'plantumlEditor/renderUML',
+      this.$store.state.plantumlEditor.text
+    )
     this.$store.dispatch('histories/defineScheme')
   },
-  mounted () {
+  mounted() {
     this.setHeight()
     window.$('[data-toggle="tooltip"]').tooltip()
   },
   methods: {
-    setHeight () {
+    setHeight() {
       const headerHeight: number = window.$('.navbar-static-top').height()
       const functionTopHeight: number = window.$('.functionTop').height()
       const height: number = window.innerHeight - headerHeight
@@ -100,7 +103,7 @@ export default {
       this.height = height + 'px'
       this.umlH = height - (marginTop + functionTopHeight + marginBottom) + 'px'
     },
-    resize () {
+    resize() {
       let timer: any = null
       window.addEventListener('resize', () => {
         if (timer) {
@@ -117,9 +120,9 @@ export default {
 
 <style>
 /* font-awesome */
-@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
 /* Bootstrap */
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 .col-editor {
   margin-top: -20px;

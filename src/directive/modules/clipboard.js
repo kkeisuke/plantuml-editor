@@ -4,17 +4,17 @@ import $ from 'jquery' // コンパイルを通すためだけの書き方
 
 // https://clipboardjs.com/
 export default Vue.directive('clipboard', {
-  inserted (element: any, binding: any) {
+  inserted(element: any, binding: any) {
     $(element)
       .css({
-        'cursor': 'pointer'
+        cursor: 'pointer'
       })
       .data('toggle', 'tooltip')
       .prop('title', 'Copied')
       .tooltip({
         trigger: 'manual'
       })
-      .on('click', function () {
+      .on('click', function() {
         const $this: jQuery = $(this)
         $this.tooltip('show')
         setTimeout(() => {
@@ -22,7 +22,7 @@ export default Vue.directive('clipboard', {
         }, 500)
       })
     new Clipboard(element, {
-      target (): any {
+      target(): any {
         return element
       }
     })

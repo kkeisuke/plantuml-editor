@@ -63,52 +63,58 @@ export default {
     PopoverBtn
   },
   computed: {
-    src (): string {
+    src(): string {
       return this.$store.state.plantumlEditor.src
     },
-    isSvg (): string {
+    isSvg(): string {
       return this.$store.getters['plantumlEditor/isSvg']
     },
-    isLoading (): boolean {
+    isLoading(): boolean {
       return this.$store.state.plantumlEditor.isLoading
     },
     umlWidth: {
-      get (): number {
+      get(): number {
         return this.$store.state.plantumlEditor.umlWidth
       },
-      set (value: number) {
+      set(value: number) {
         this.$store.dispatch('plantumlEditor/setUmlWidth', value)
       }
     },
-    umlExtensions (): any {
+    umlExtensions(): any {
       return this.$store.state.plantumlEditor.umlExtensions
     },
     umlExtension: {
-      get (): string {
+      get(): string {
         return this.$store.state.plantumlEditor.umlExtension
       },
-      set (value: string) {
+      set(value: string) {
         this.$store.dispatch('plantumlEditor/setUmlExtension', value)
-        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+        this.$store.dispatch(
+          'plantumlEditor/renderUML',
+          this.$store.state.plantumlEditor.text
+        )
       }
     }
   },
   methods: {
-    renderUML (event: any) {
-      this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+    renderUML(event: any) {
+      this.$store.dispatch(
+        'plantumlEditor/renderUML',
+        this.$store.state.plantumlEditor.text
+      )
     },
-    save (event: any) {
+    save(event: any) {
       this.$store.dispatch('histories/save', this.$store.state.plantumlEditor)
       this.$store.dispatch('layout/resetColSize')
     },
-    showGistModal ($event: any) {
+    showGistModal($event: any) {
       window.$('#gist').modal('show')
       window.$('[data-toggle="tooltip"]').tooltip('hide')
     },
-    download () {
+    download() {
       this.$store.dispatch('plantumlEditor/download')
     },
-    print () {
+    print() {
       printjs('umlArea', 'html')
     }
   }

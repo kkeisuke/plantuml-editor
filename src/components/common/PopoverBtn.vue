@@ -38,7 +38,7 @@ export default {
       default: ''
     }
   },
-  data (): any {
+  data(): any {
     return {
       top: '0',
       left: '0',
@@ -46,20 +46,22 @@ export default {
     }
   },
   computed: {
-    style (): any {
+    style(): any {
       return {
-        'top': `${this.top}px`,
-        'left': `${this.left}px`,
-        'display': this.isShow ? 'block' : 'none'
+        top: `${this.top}px`,
+        left: `${this.left}px`,
+        display: this.isShow ? 'block' : 'none'
       }
     }
   },
   methods: {
-    show ($event: any) {
+    show($event: any) {
       window.$('[data-toggle="tooltip"]').tooltip('hide')
       const $btn: any = window.$($event.currentTarget)
       const $this: any = window.$(this.$el)
-      this.left = -Math.floor(($this.find('.popover').outerWidth() - $btn.outerWidth()) / 2)
+      this.left = -Math.floor(
+        ($this.find('.popover').outerWidth() - $btn.outerWidth()) / 2
+      )
       switch (this.position) {
         case 'bottom':
           this.top = $btn.position().top + $btn.outerHeight() + 5
@@ -74,5 +76,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

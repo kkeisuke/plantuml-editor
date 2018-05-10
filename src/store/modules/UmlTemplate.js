@@ -1,14 +1,15 @@
 /* @flow */
 
 const actions: any = {
-  selectTemplate (context: any, prop: string) {
-    context.dispatch('plantumlEditor/renderUML', context.state[prop], { root: true })
+  selectTemplate(context: any, prop: string) {
+    context.dispatch('plantumlEditor/renderUML', context.state[prop], {
+      root: true
+    })
   }
 }
 
 const state: any = {
-  useCase:
-`@startuml
+  useCase: `@startuml
 
 actor A
 actor B
@@ -24,8 +25,7 @@ B -right-> (right)
 B -down-> (down)
 
 @enduml`,
-  ActivityB:
-`@startuml
+  ActivityB: `@startuml
 
 |A Section|
 start
@@ -40,8 +40,7 @@ start
 stop
 
 @enduml`,
-  Activity:
-`@startuml
+  Activity: `@startuml
 
 start
 
@@ -58,8 +57,7 @@ endif
 stop
 
 @enduml`,
-  Sequence:
-`@startuml
+  Sequence: `@startuml
 
 autonumber
 
@@ -77,8 +75,7 @@ B -> A: step
 deactivate B
 
 @enduml`,
-  Object:
-`@startuml
+  Object: `@startuml
 
 object Car
 object Bus
@@ -92,8 +89,7 @@ Car *-down- Engine
 Bus o-down- Driver
 
 @enduml`,
-  Class:
-`@startuml
+  Class: `@startuml
 
 class Car {
   color
@@ -109,8 +105,7 @@ Car *-down- Engine
 Bus o-down- Driver
 
 @enduml`,
-  ER:
-`@startuml
+  ER: `@startuml
 
 entity Customer  {
   + id (PK)

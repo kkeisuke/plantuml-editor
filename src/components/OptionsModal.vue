@@ -53,18 +53,18 @@ export default {
   name: 'OptionsModal',
   computed: {
     keymap: {
-      get (): string {
+      get(): string {
         return this.$store.state.plantumlEditor.codemirrorOptions.keyMap
       },
-      set (value: string) {
+      set(value: string) {
         this.$store.dispatch('plantumlEditor/syncCodeMirrorKeyMap', value)
       }
     },
     indent: {
-      get (): string {
+      get(): string {
         return this.$store.state.plantumlEditor.codemirrorIndent
       },
-      set (value: string) {
+      set(value: string) {
         this.$store.dispatch('plantumlEditor/syncCodeMirrorIndent', value)
       }
     }

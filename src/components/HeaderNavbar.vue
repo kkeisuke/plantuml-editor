@@ -68,19 +68,19 @@ export default {
     UmlTemplate
   },
   computed: {
-    isCloseHistory (): string {
+    isCloseHistory(): string {
       return this.$store.getters['layout/isCloseHistory']
     }
   },
   methods: {
-    changeHistoryColSize () {
+    changeHistoryColSize() {
       if (this.$store.state.layout.colSize.history) {
         this.$store.dispatch('layout/setEditColSize')
       } else {
         this.$store.dispatch('layout/resetColSize')
       }
     },
-    changeCheatSheetColSize (event: any) {
+    changeCheatSheetColSize(event: any) {
       this.$store.dispatch('layout/setCheatSheetColSize')
       window.setTimeout(() => {
         const target: HTMLAnchorElement = event.target
