@@ -1,11 +1,11 @@
 <template>
   <form class="form-inline">
     <div class="form-group">
-      <label for="umlWidth">size</label>
+      <label for="umlWidth">size&nbsp;</label>
       <input type="number" id="umlWidth" step="10" max="300" min="10" v-model="umlWidth" class="form-control" :disabled="!isSvg">
     </div>
     <div class="form-group">
-      <label for="umlExtension">img</label>
+      <label for="umlExtension">img&nbsp;</label>
       <select id="umlExtension" v-model="umlExtension" class="form-control">
         <option v-for="(option, key, index) in umlExtensions" :value="option.value" :key="index">
           {{ option.text }}
