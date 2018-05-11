@@ -43,11 +43,11 @@ const state: any = {
       },
       comment: {
         title: 'comment',
-        text: '\''
+        text: "'"
       },
       blockcomment: {
         title: 'block comment',
-        text: '/\'\ncomment\n\'/'
+        text: "/'\ncomment\n'/"
       },
       solidline: {
         title: 'solid line',
@@ -306,10 +306,10 @@ const state: any = {
 }
 
 const getters: any = {
-  snippets ({contents}: any): { text?: string, displayText?: string }[] {
+  snippets({ contents }: any): { text?: string, displayText?: string }[] {
     let results: { text?: string, displayText?: string }[] = []
-    _.forEach(contents, function (snippets: any, category: string) {
-      _.forEach(snippets, function (snippet: any) {
+    _.forEach(contents, function(snippets: any, category: string) {
+      _.forEach(snippets, function(snippet: any) {
         results[results.length] = {
           text: snippet.text,
           displayText: `${snippet.title} : ( ${category} )`

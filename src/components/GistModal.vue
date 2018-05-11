@@ -104,56 +104,57 @@ export default {
   name: 'GistModal',
   computed: {
     description: {
-      get (): string {
+      get(): string {
         return this.$store.state.gistApi.gist.description
       },
-      set (value: string) {
+      set(value: string) {
         this.$store.dispatch('gistApi/setDescription', value)
       }
     },
     isPublic: {
-      get (): boolean {
+      get(): boolean {
         return this.$store.state.gistApi.gist.public
       },
-      set (value: boolean) {
+      set(value: boolean) {
         this.$store.dispatch('gistApi/setPublic', value)
       }
     },
     token: {
-      get (): string {
+      get(): string {
         return this.$store.state.gistApi.token
       },
-      set (value: string) {
+      set(value: string) {
         this.$store.dispatch('gistApi/setToken', value)
       }
     },
-    ext (): any {
+    ext(): any {
       return this.$store.state.gistApi.ext
     },
-    gistUrl (): string {
+    gistUrl(): string {
       return this.$store.state.gistApi.gistUrl
     },
-    errorMsg (): string {
+    errorMsg(): string {
       return this.$store.state.gistApi.errorMsg
     },
-    isSending (): boolean {
+    isSending(): boolean {
       return this.$store.state.gistApi.isSending
     },
-    gistApiInValid (): boolean {
+    gistApiInValid(): boolean {
       // 「ファイル名が空 or GistのURL取得済み or バリデーションエラーがある or 送信中」場合は投稿できない
-      const result: boolean = this.fileName === '' ||
+      const result: boolean =
+        this.fileName === '' ||
         Boolean(this.$store.state.gistApi.gistUrl) ||
         Boolean(this.$validator.errors.count()) ||
         this.$store.state.gistApi.isSending
       return result
     }
   },
-  data (): any {
+  data(): any {
     return {
       fileName: ''
     }
   },
-  mounted () {
+  mounted() {
     this.setValidation()
     this.setEvent()
     // TODO しばらく残しておく 2017/08/07
@@ -162,24 +163,27 @@ export default {
     }
   },
   methods: {
-    setValidation () {
-      this.$validator.extend('fileName', this.$store.state.gistApi.validation.fileName)
+    setValidation() {
+      this.$validator.extend(
+        'fileName',
+        this.$store.state.gistApi.validation.fileName
+      )
     },
-    setEvent () {
+    setEvent() {
       window.$('#gist').on('shown.bs.modal hidden.bs.modal', () => {
         this.$validator.errors.clear()
         this.fileName = ''
         this.$store.dispatch('gistApi/resetGist')
       })
     },
-    submit () {
+    submit() {
       // 誤送信を防ぐために無効化する
     },
-    createGist () {
+    createGist() {
       this.$store.dispatch('gistApi/createGist', {
-        'fileName': this.fileName,
-        'text': this.$store.state.plantumlEditor.text,
-        'src': this.$store.state.plantumlEditor.src
+        fileName: this.fileName,
+        text: this.$store.state.plantumlEditor.text,
+        src: this.$store.state.plantumlEditor.src
       })
     }
   }

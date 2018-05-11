@@ -365,13 +365,13 @@ export default {
       default: '100%'
     }
   },
-  data ():any {
+  data(): any {
     return {
       cheatSheet: this.$store.state.cheatSheet.contents
     }
   },
   computed: {
-    url ():string {
+    url(): string {
       return `${this.$store.state.plantumlEditor.server}svg/`
     }
   }

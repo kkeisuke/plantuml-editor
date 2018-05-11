@@ -1,26 +1,21 @@
 [ignore]
-.*/build/.*
-.*/config/.*
-.*/docs/.*
 .*/node_modules/.*
-.*/static/.*
-.*/test/.*
-.*/assets/.*
+.*/public/.*
+.*/tests/.*
+.*/decls/.*
+.*/dist/.*
 
 [include]
 
 [libs]
 ./decls
 
+[lints]
+
 [options]
+module.system=haste
+include_warnings=true
 module.file_ext=.js
-# https://github.com/facebook/flow/issues/2691
-# eslint、babel は通るけど、肝心の型チェック(flow check)が No errors! になる。
-# ハック的なやり方でチェックすることもできるけど、However this is dirty. 
-# 以下 2017/08/08 追記
-# eslint-plugin-flowtype-errors で vue ファイルもチェックできるようになったが、
-# flowtype-loader と役割が重複するので、flowtype-loader が js ファイルのみ
-# eslint-plugin-flowtype-errors は vue のみ対応する。
 module.file_ext=.vue
 
-[lints]
+[strict]

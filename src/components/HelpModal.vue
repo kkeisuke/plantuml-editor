@@ -107,7 +107,7 @@
 export default {
   name: 'HelpModal',
   computed: {
-    official (): string {
+    official(): string {
       return this.$store.state.plantumlEditor.official
     }
   }

@@ -1,13 +1,13 @@
 <template>
   <form class="form-inline">
     <div class="form-group">
-      <label for="umlWidth">size</label>
+      <label for="umlWidth">size&nbsp;</label>
       <input type="number" id="umlWidth" step="10" max="300" min="10" v-model="umlWidth" class="form-control" :disabled="!isSvg">
     </div>
     <div class="form-group">
-      <label for="umlExtension">img</label>
+      <label for="umlExtension">img&nbsp;</label>
       <select id="umlExtension" v-model="umlExtension" class="form-control">
-        <option v-for="option in umlExtensions" :value="option.value">
+        <option v-for="(option, key, index) in umlExtensions" :value="option.value" :key="index">
           {{ option.text }}
         </option>
       </select>
@@ -63,52 +63,58 @@ export default {
     PopoverBtn
   },
   computed: {
-    src (): string {
+    src(): string {
       return this.$store.state.plantumlEditor.src
     },
-    isSvg (): string {
+    isSvg(): string {
       return this.$store.getters['plantumlEditor/isSvg']
     },
-    isLoading (): boolean {
+    isLoading(): boolean {
       return this.$store.state.plantumlEditor.isLoading
     },
     umlWidth: {
-      get (): number {
+      get(): number {
         return this.$store.state.plantumlEditor.umlWidth
       },
-      set (value: number) {
+      set(value: number) {
         this.$store.dispatch('plantumlEditor/setUmlWidth', value)
       }
     },
-    umlExtensions (): any {
+    umlExtensions(): any {
       return this.$store.state.plantumlEditor.umlExtensions
     },
     umlExtension: {
-      get (): string {
+      get(): string {
         return this.$store.state.plantumlEditor.umlExtension
       },
-      set (value: string) {
+      set(value: string) {
         this.$store.dispatch('plantumlEditor/setUmlExtension', value)
-        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+        this.$store.dispatch(
+          'plantumlEditor/renderUML',
+          this.$store.state.plantumlEditor.text
+        )
       }
     }
   },
   methods: {
-    renderUML (event: any) {
-      this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+    renderUML() {
+      this.$store.dispatch(
+        'plantumlEditor/renderUML',
+        this.$store.state.plantumlEditor.text
+      )
     },
-    save (event: any) {
+    save() {
       this.$store.dispatch('histories/save', this.$store.state.plantumlEditor)
       this.$store.dispatch('layout/resetColSize')
     },
-    showGistModal ($event: any) {
+    showGistModal() {
       window.$('#gist').modal('show')
       window.$('[data-toggle="tooltip"]').tooltip('hide')
     },
-    download () {
+    download() {
       this.$store.dispatch('plantumlEditor/download')
     },
-    print () {
+    print() {
       printjs('umlArea', 'html')
     }
   }

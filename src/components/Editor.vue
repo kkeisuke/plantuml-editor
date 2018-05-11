@@ -32,53 +32,57 @@ export default {
     }
   },
   computed: {
-    text (): string {
+    text(): string {
       return this.$store.state.plantumlEditor.text
     },
-    options (): any {
+    options(): any {
       return this.$store.state.plantumlEditor.codemirrorOptions
     }
   },
-  data (): any {
+  data(): any {
     return {
       codemirror: null,
       snippets: this.$store.getters['cheatSheet/snippets']
     }
   },
   methods: {
-    onReady (codemirror: any) {
+    onReady(codemirror: any) {
       this.codemirror = codemirror
       this.addKeymap()
       setTimeout(() => {
         this.codemirror.setSize('100%', 'calc(100%)')
       })
     },
-    onChange (text: string) {
+    onChange(text: string) {
       this.$store.dispatch('plantumlEditor/syncText', text)
     },
-    snippet () {
+    snippet() {
       const codemirror: any = this.codemirror
       const snippets: any[] = this.snippets
-      CodeMirror.showHint(codemirror, function (): any {
-        const cursor: any = codemirror.getCursor()
-        const token: any = codemirror.getTokenAt(cursor)
-        const start: number = token.start
-        const end: number = cursor.ch
-        const line: number = cursor.line
-        const currentWord: string = token.string
+      CodeMirror.showHint(
+        codemirror,
+        function(): any {
+          const cursor: any = codemirror.getCursor()
+          const token: any = codemirror.getTokenAt(cursor)
+          const start: number = token.start
+          const end: number = cursor.ch
+          const line: number = cursor.line
+          const currentWord: string = token.string
 
-        const list: any[] = snippets.filter((item: any): boolean => {
-          return item.text.indexOf(currentWord) >= 0
-        })
+          const list: any[] = snippets.filter((item: any): boolean => {
+            return item.text.indexOf(currentWord) >= 0
+          })
 
-        return {
-          list: list.length ? list : snippets,
-          from: CodeMirror.Pos(line, start),
-          to: CodeMirror.Pos(line, end)
-        }
-      }, { completeSingle: false })
+          return {
+            list: list.length ? list : snippets,
+            from: CodeMirror.Pos(line, start),
+            to: CodeMirror.Pos(line, end)
+          }
+        },
+        { completeSingle: false }
+      )
     },
-    insertTab () {
+    insertTab() {
       const codemirror: any = this.codemirror
       if (this.$store.getters['plantumlEditor/isTab']) {
         codemirror.execCommand('defaultTab')
@@ -86,13 +90,19 @@ export default {
         codemirror.execCommand('insertSoftTab')
       }
     },
-    addKeymap () {
+    addKeymap() {
       const map: any = {}
       map[this.$store.state.plantumlEditor.renderUMLKey.win] = () => {
-        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+        this.$store.dispatch(
+          'plantumlEditor/renderUML',
+          this.$store.state.plantumlEditor.text
+        )
       }
       map[this.$store.state.plantumlEditor.renderUMLKey.mac] = () => {
-        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
+        this.$store.dispatch(
+          'plantumlEditor/renderUML',
+          this.$store.state.plantumlEditor.text
+        )
       }
       map[this.$store.state.plantumlEditor.snippetKey.win] = () => {
         this.snippet()

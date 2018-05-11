@@ -1,19 +1,19 @@
 {
   "name": "plantuml-editor",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "kkeisuke",
   "private": true,
   "scripts": {
     "flow": "flow",
-    "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
-    "build": "node build/build.js",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test": "npm run unit",
-    "lint": "eslint --ext .js,.vue src test/unit/specs"
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "test": "vue-cli-service test",
+    "e2e": "vue-cli-service e2e",
+    "lint": "vue-cli-service lint",
+    "e2e:open": "vue-cli-service e2e:open"
   },
   "dependencies": {
+    "vue": "2.5.16",
+    "vuex": "3.0.1",
     "axios": "0.17.1",
     "bootstrap": "3.3.7",
     "clipboard": "1.7.1",
@@ -25,85 +25,94 @@
     "plantuml-encoder": "1.2.4",
     "print-js": "1.0.40",
     "vee-validate": "2.0.0-rc.23",
-    "vue": "2.5.8",
-    "vue-codemirror": "4.0.1",
-    "vuex": "3.0.1"
+    "vue-codemirror": "4.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-istanbul": "^4.1.1",
-    "babel-plugin-syntax-flow": "^6.18.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "chai": "^3.5.0",
-    "chalk": "^1.1.3",
-    "connect-history-api-fallback": "^1.3.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "cross-env": "^4.0.0",
-    "css-loader": "^0.28.0",
-    "eslint": "^4.11.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-friendly-formatter": "^2.0.7",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-flowtype": "^2.35.0",
-    "eslint-plugin-flowtype-errors": "^3.3.1",
-    "eslint-plugin-html": "^4.0.0",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "eventsource-polyfill": "^0.9.6",
-    "express": "^4.14.1",
-    "extract-text-webpack-plugin": "^2.0.0",
-    "file-loader": "^0.11.1",
-    "flow-bin": "^0.59.0",
-    "flowtype-loader": "^0.2.2",
-    "friendly-errors-webpack-plugin": "^1.1.3",
-    "html-webpack-plugin": "^2.29.0",
-    "http-proxy-middleware": "^0.17.3",
-    "inject-loader": "^3.0.0",
-    "karma": "^1.4.1",
-    "karma-coverage": "^1.1.1",
-    "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "karma-phantomjs-shim": "^1.4.0",
-    "karma-sinon-chai": "^1.3.1",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "0.0.30",
-    "karma-webpack": "^2.0.4",
-    "lolex": "^1.5.2",
-    "mocha": "^3.2.0",
-    "opn": "^4.0.2",
-    "optimize-css-assets-webpack-plugin": "^1.3.0",
-    "ora": "^1.3.0",
-    "phantomjs-prebuilt": "^2.1.14",
-    "rimraf": "^2.6.0",
-    "semver": "^5.3.0",
-    "shelljs": "^0.7.6",
-    "sinon": "^2.3.8",
-    "sinon-chai": "^2.12.0",
-    "url-loader": "^0.5.9",
-    "vue-loader": "13.5.0",
-    "vue-style-loader": "3.0.3",
-    "vue-template-compiler": "2.5.8",
-    "webpack": "^2.7.0",
-    "webpack-bundle-analyzer": "^2.8.3",
-    "webpack-dev-middleware": "^1.11.0",
-    "webpack-hot-middleware": "^2.18.2",
-    "webpack-merge": "^4.1.0"
+    "@babel/preset-flow": "^7.0.0-beta.46",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.9",
+    "@vue/cli-plugin-e2e-cypress": "^3.0.0-beta.9",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.9",
+    "@vue/cli-plugin-unit-jest": "^3.0.0-beta.9",
+    "@vue/cli-service": "^3.0.0-beta.9",
+    "@vue/eslint-config-prettier": "^3.0.0-beta.9",
+    "@vue/test-utils": "^1.0.0-beta.10",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.0.4",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-flowtype-errors": "^3.5.1",
+    "flow-bin": "^0.72.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vue-template-compiler": "^2.5.13"
   },
-  "engines": {
-    "node": ">= 8.1.4",
-    "npm": ">= 5.3.0"
+  "babel": {
+    "presets": [
+      "@vue/app",
+      "@babel/preset-flow"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
+    "plugins": [
+      "flowtype",
+      "flowtype-errors"
+    ],
+    "rules": {
+      "flowtype-errors/show-errors": 2,
+      "flowtype-errors/show-warnings": 1,
+      "flowtype/boolean-style": 2,
+      "flowtype/define-flow-type": 2,
+      "flowtype/no-dupe-keys": 2,
+      "flowtype/no-primitive-constructor-types": 2,
+      "flowtype/require-parameter-type": 2,
+      "flowtype/require-return-type": 2,
+      "flowtype/require-valid-file-annotation": 2,
+      "flowtype/require-variable-type": 2,
+      "flowtype/use-flow-type": 2
+    }
+  },
+  "eslintIgnore": [
+    "tests/*",
+    "vue.config.js"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testMatch": [
+      "<rootDir>/(tests/unit/**/*.spec.(ts|tsx|js)|**/__tests__/*.(ts|tsx|js))"
+    ]
+  }
 }

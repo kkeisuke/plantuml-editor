@@ -2,15 +2,15 @@
 
 const state: any = {
   colSize: {
-    'history': 2,
-    'editor': 4,
-    'cheatSheet': 0,
-    'uml': 6
+    history: 2,
+    editor: 4,
+    cheatSheet: 0,
+    uml: 6
   }
 }
 
 const mutations: any = {
-  setColSize (state: any, colSize: any) {
+  setColSize(state: any, colSize: any) {
     if (colSize.history || colSize.history === 0) {
       state.colSize.history = colSize.history
     }
@@ -27,37 +27,37 @@ const mutations: any = {
 }
 
 const getters: any = {
-  isCloseHistory ({colSize}: any): boolean {
+  isCloseHistory({ colSize }: any): boolean {
     return colSize.history === 0
   }
 }
 
 const actions: any = {
-  setColSize (context: any, colSize: any) {
+  setColSize(context: any, colSize: any) {
     context.commit('setColSize', colSize)
   },
-  setEditColSize (context: any) {
+  setEditColSize(context: any) {
     context.commit('setColSize', {
-      'history': 0,
-      'editor': 5,
-      'cheatSheet': 0,
-      'uml': 7
+      history: 0,
+      editor: 5,
+      cheatSheet: 0,
+      uml: 7
     })
   },
-  setCheatSheetColSize (context: any) {
+  setCheatSheetColSize(context: any) {
     context.commit('setColSize', {
-      'history': 0,
-      'editor': 4,
-      'cheatSheet': 3,
-      'uml': 5
+      history: 0,
+      editor: 4,
+      cheatSheet: 3,
+      uml: 5
     })
   },
-  resetColSize (context: any) {
+  resetColSize(context: any) {
     context.commit('setColSize', {
-      'history': 2,
-      'editor': 4,
-      'cheatSheet': 0,
-      'uml': 6
+      history: 2,
+      editor: 4,
+      cheatSheet: 0,
+      uml: 6
     })
   }
 }
