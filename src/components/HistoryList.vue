@@ -5,7 +5,7 @@
         When you press the Save button, it will be added to the history.
       </div>
       <div class="thumbnail" v-for="(history, key, index) in histories" :key="index">
-        <img :src="history.src" @click="read(history.text, $event)">
+        <img v-lazy="history.src" @click="read(history.text, $event)" height="200" width="100%">
         <div class="caption">
           <div class="row">
             <div class="col-sm-4">
@@ -45,8 +45,14 @@ export default {
   },
   mounted() {
     this.$store.dispatch('histories/getHistories')
+    this.setLazyloadEvent()
   },
   methods: {
+    setLazyloadEvent() {
+      this.$Lazyload.$on('loaded', ({ el, naturalHeight }: any) => {
+        el.height = naturalHeight
+      })
+    },
     del(id: number) {
       if (window.confirm(this.deleteMessage)) {
         this.$store.dispatch('histories/delete', id)
@@ -62,7 +68,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 .historyList {
   margin-top: -20px;
   padding-top: 20px;
@@ -75,5 +81,11 @@ export default {
 }
 .historyList img {
   cursor: pointer;
+  &[lazy='loading'] {
+    background-color: #f5f5f5;
+  }
+  &[lazy='loaded'] {
+    background-color: none;
+  }
 }
 </style>

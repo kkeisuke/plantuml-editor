@@ -12,8 +12,6 @@
     "e2e:open": "vue-cli-service e2e:open"
   },
   "dependencies": {
-    "vue": "2.5.16",
-    "vuex": "3.0.1",
     "axios": "0.17.1",
     "bootstrap": "3.3.7",
     "clipboard": "1.7.1",
@@ -25,7 +23,10 @@
     "plantuml-encoder": "1.2.4",
     "print-js": "1.0.40",
     "vee-validate": "2.0.0-rc.23",
-    "vue-codemirror": "4.0.1"
+    "vue": "2.5.16",
+    "vue-codemirror": "4.0.1",
+    "vue-lazyload": "1.2.3",
+    "vuex": "3.0.1"
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0-beta.46",
