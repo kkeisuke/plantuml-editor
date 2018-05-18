@@ -13,11 +13,13 @@ const state: any = {
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
   server: 'https://plantuml-server.herokuapp.com/',
+  cdn: 'https://plantuml-server.kkeisuke.app/',
   startuml: '@startuml',
   enduml: '@enduml',
   defaultText:
     '# PlantUML Editor\n\n1. select template\n2. write uml diagram\n\n@startuml\n\nleft to right direction\n\nactor User\n\nUser --> (1. select template)\nUser --> (2. write uml diagram)\n\n@enduml',
   text: '',
+  encodedText: '',
   src: '',
   preMarkdown: '',
   afterMarkdown: '',
@@ -132,8 +134,10 @@ const mutations: any = {
     const uml: string = `${state.startuml}${String(
       text.split(state.startuml)[1]
     ).split(state.enduml)[0] || ''}${state.enduml}`
-    state.src =
-      state.server + state.umlExtension + '/' + plantumlEncoder.encode(uml)
+    state.encodedText = plantumlEncoder.encode(uml)
+    state.src = `${state.cdn}${state.umlExtension}/${state.encodedText}.${
+      state.umlExtension
+    }`
   },
   renderMarkdown(state: any, text: string) {
     const pre: string = text.split(state.startuml)[0] || ''

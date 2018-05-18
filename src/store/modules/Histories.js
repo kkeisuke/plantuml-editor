@@ -1,49 +1,32 @@
 /* @flow */
 
 import Dexie from 'dexie'
+import lodash from 'lodash'
+const _: any = lodash
 
 const state: any = {
   db: new Dexie('PlantumlEditor'),
-  scheme: '++id,text,src,created',
-  version: 1,
+  schemes: ['++id,text,src,created', '++id,text,encodedText,created'],
+  versions: [1, 2],
   data: []
 }
 
 const mutations: any = {
-  changeDbName() {
-    // TODO DB名が undefined になっていたため、PlantumlEditor に変更。変更する際にテーブルを引き継ぐ。時間がたったら不要になる。2017/08/28
-    Dexie.getDatabaseNames(function(databases: any) {
-      // null があり、かつ PlantumlEditor がない
-      if (
-        databases.indexOf(null) !== -1 &&
-        databases.indexOf('PlantumlEditor') === -1
-      ) {
-        const oldDb: any = new Dexie()
-        oldDb.version(state.version).stores({
-          plantuml: state.scheme
-        })
-        oldDb.plantuml
-          .toCollection()
-          .toArray()
-          .then(function(data: any[]) {
-            // 旧DBから新DBへデータ入れ替え
-            state.db.plantuml.bulkAdd(data).then(function() {
-              // 旧DB削除
-              Dexie.delete('undefined')
-              // Dexie.DatabaseNames 変更
-              window.localStorage.setItem(
-                'Dexie.DatabaseNames',
-                '["PlantumlEditor"]'
-              )
-              location.reload()
-            })
-          })
-      }
-    })
-  },
   defineScheme(state: any) {
-    state.db.version(state.version).stores({
-      plantuml: state.scheme
+    // バージョン 2
+    state.db
+      .version(state.versions[1])
+      .stores({
+        plantuml: state.schemes[1]
+      })
+      .upgrade(() => {
+        state.db.plantuml.toCollection().modify((history: any) => {
+          history.encodedText = _.last(history.src.split('/'))
+        })
+      })
+    // バージョン 1
+    state.db.version(state.versions[0]).stores({
+      plantuml: state.schemes[0]
     })
   },
   getHistories(state: any) {
@@ -54,10 +37,10 @@ const mutations: any = {
         state.data = data
       })
   },
-  save(state: any, plantumlEditor: any) {
+  save(state: any, { text, encodedText }: any) {
     state.db.plantuml.add({
-      text: plantumlEditor.text,
-      src: plantumlEditor.src,
+      text: text,
+      encodedText: encodedText,
       created: new Date().toLocaleString()
     })
   },
@@ -68,14 +51,13 @@ const mutations: any = {
 
 const actions: any = {
   defineScheme(context: any) {
-    context.commit('changeDbName')
     context.commit('defineScheme')
   },
   getHistories(context: any) {
     context.commit('getHistories')
   },
-  save(context: any, plantumlEditor: any) {
-    context.commit('save', plantumlEditor)
+  save(context: any, { text, encodedText }: any) {
+    context.commit('save', { text, encodedText })
     context.commit('getHistories')
   },
   delete(context: any, id: number) {
