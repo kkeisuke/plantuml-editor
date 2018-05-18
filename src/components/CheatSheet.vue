@@ -76,7 +76,7 @@
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+cheatSheet.common.actor.img" :alt="cheatSheet.common.actor.title">
+              <img :src="createUrl(cheatSheet.common.actor.img)" :alt="cheatSheet.common.actor.title">
             </td>
             <td><code v-clipboard>{{cheatSheet.common.actor.text}}</code> Actor</td>
           </tr>
@@ -85,19 +85,19 @@
           </tr>
           <tr>
             <td>
-              <img :src="url+cheatSheet.common.agent.img" :alt="cheatSheet.common.agent.title">
+              <img :src="createUrl(cheatSheet.common.agent.img)" :alt="cheatSheet.common.agent.title">
             </td>
             <td><code v-clipboard>{{cheatSheet.common.agent.text}}</code> Agent</td>
           </tr>
           <tr>
             <td>
-              <img :src="url+cheatSheet.common.usecase.img" :alt="cheatSheet.common.usecase.title">
+              <img :src="createUrl(cheatSheet.common.usecase.img)" :alt="cheatSheet.common.usecase.title">
             </td>
             <td><code v-clipboard>{{cheatSheet.common.usecase.text}}</code> UseCase</td>
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+cheatSheet.common.node.img" :alt="cheatSheet.common.node.title">
+              <img :src="createUrl(cheatSheet.common.node.img)" :alt="cheatSheet.common.node.title">
             </td>
             <td><code v-clipboard>{{cheatSheet.common.node.text}}</code> Node</td>
           </tr>
@@ -106,7 +106,7 @@
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+cheatSheet.common.database.img" :alt="cheatSheet.common.database.title">
+              <img :src="createUrl(cheatSheet.common.database.img)" :alt="cheatSheet.common.database.title">
             </td>
             <td><code v-clipboard>{{cheatSheet.common.database.text}}</code> DB</td>
           </tr>
@@ -115,7 +115,7 @@
           </tr>
           <tr>
             <td rowspan="2">
-              <img :src="url+cheatSheet.common.storage.img" :alt="cheatSheet.common.storage.title">
+              <img :src="createUrl(cheatSheet.common.storage.img)" :alt="cheatSheet.common.storage.title">
             </td>
             <td><code v-clipboard>{{cheatSheet.common.storage.text}}</code> Storage</td>
           </tr>
@@ -124,7 +124,7 @@
           </tr>
           <tr>
             <td>
-              <img :src="url+cheatSheet.common.component.img" :alt="cheatSheet.common.component.title">
+              <img :src="createUrl(cheatSheet.common.component.img)" :alt="cheatSheet.common.component.title">
             </td>
             <td><code v-clipboard>{{cheatSheet.common.component.text}}</code></td>
           </tr>
@@ -219,7 +219,7 @@
           </tr>
           <tr>
             <td>
-              <img :src="url+cheatSheet.sequence.participant.img" :alt="cheatSheet.sequence.participant.title">
+              <img :src="createUrl(cheatSheet.sequence.participant.img)" :alt="cheatSheet.sequence.participant.title">
             </td>
             <td><pre v-clipboard>{{cheatSheet.sequence.participant.text}}</pre></td>
           </tr>
@@ -370,9 +370,12 @@ export default {
       cheatSheet: this.$store.state.cheatSheet.contents
     }
   },
-  computed: {
-    url(): string {
-      return `${this.$store.state.plantumlEditor.server}svg/`
+  methods: {
+    createUrl(img: string): string {
+      const extension: string = 'svg'
+      return `${
+        this.$store.state.plantumlEditor.cdn
+      }${extension}/${img}.${extension}`
     }
   }
 }

@@ -23,7 +23,7 @@ describe('UmlTemplate.vue', () => {
 
     it('state.plantumlEditor.src', () => {
       expect(vm.$store.state.plantumlEditor.src).toEqual(
-        'https://plantuml-server.herokuapp.com/svg/UDfpA2v9B2efpStXuafCBialKd24qavSN8uAkgK5kdOA6gK5cY1EKMPwHWc8dvoQLv9Q11PBoI_F0mc1QB10JceQM0s8rkJYSa8smmaX3JF22SbOC0CiX6egbqDgNWhGYG02d38o'
+        'https://plantuml-server.kkeisuke.app/svg/UDfpA2v9B2efpStXuafCBialKd24qavSN8uAkgK5kdOA6gK5cY1EKMPwHWc8dvoQLv9Q11PBoI_F0mc1QB10JceQM0s8rkJYSa8smmaX3JF22SbOC0CiX6egbqDgNWhGYG02d38o.svg'
       )
     })
   })
