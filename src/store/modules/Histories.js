@@ -10,37 +10,6 @@ const state: any = {
 }
 
 const mutations: any = {
-  changeDbName() {
-    // TODO DB名が undefined になっていたため、PlantumlEditor に変更。変更する際にテーブルを引き継ぐ。時間がたったら不要になる。2017/08/28
-    Dexie.getDatabaseNames(function(databases: any) {
-      // null があり、かつ PlantumlEditor がない
-      if (
-        databases.indexOf(null) !== -1 &&
-        databases.indexOf('PlantumlEditor') === -1
-      ) {
-        const oldDb: any = new Dexie()
-        oldDb.version(state.version).stores({
-          plantuml: state.scheme
-        })
-        oldDb.plantuml
-          .toCollection()
-          .toArray()
-          .then(function(data: any[]) {
-            // 旧DBから新DBへデータ入れ替え
-            state.db.plantuml.bulkAdd(data).then(function() {
-              // 旧DB削除
-              Dexie.delete('undefined')
-              // Dexie.DatabaseNames 変更
-              window.localStorage.setItem(
-                'Dexie.DatabaseNames',
-                '["PlantumlEditor"]'
-              )
-              location.reload()
-            })
-          })
-      }
-    })
-  },
   defineScheme(state: any) {
     state.db.version(state.version).stores({
       plantuml: state.scheme
@@ -68,7 +37,6 @@ const mutations: any = {
 
 const actions: any = {
   defineScheme(context: any) {
-    context.commit('changeDbName')
     context.commit('defineScheme')
   },
   getHistories(context: any) {
