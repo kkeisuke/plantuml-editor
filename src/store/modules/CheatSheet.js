@@ -277,6 +277,10 @@ const state: any = {
       }
     },
     er: {
+      entity: {
+        title: 'entity',
+        text: 'entity'
+      },
       one: {
         title: '1',
         text: '-'
