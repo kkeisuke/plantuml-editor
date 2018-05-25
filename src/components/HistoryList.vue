@@ -12,6 +12,14 @@
               <button type="button" class="close pull-left" @click="del(history.id, $event)">&times;</button>
             </div>
             <div class="col-sm-8 text-right">
+              <ul class="list-inline">
+                <li><a :href="createUrl(history.encodedText)" target="_blank">png <i class="fa fa-external-link"></i></a></li>
+                <li><a :href="createUrl(history.encodedText, 'svg')" target="_blank">svg <i class="fa fa-external-link"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 text-right">
               {{history.created}}
             </div>
           </div>
@@ -48,8 +56,7 @@ export default {
     this.setLazyloadEvent()
   },
   methods: {
-    createUrl(encodedText: string): string {
-      const extension: string = 'png'
+    createUrl(encodedText: string, extension: string = 'png'): string {
       return `${
         this.$store.state.plantumlEditor.cdn
       }${extension}/${encodedText}.${extension}`
