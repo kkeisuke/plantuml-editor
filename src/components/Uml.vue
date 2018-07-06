@@ -6,7 +6,7 @@
         <div class="text-center" align="center">
           <p>
             <img :src="src" @load="loadedImg" v-if="!isSvg">
-            <object :data="src" :width="umlWidth+'%'" @load="loadedImg" v-if="isSvg"></object>
+            <img :src="src" :width="umlWidth+'%'" @load="loadedImg" v-if="isSvg">
           </p>
         </div>
         <div v-html="afterMarkdown"></div>
