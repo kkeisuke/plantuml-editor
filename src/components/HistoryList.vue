@@ -4,7 +4,7 @@
       <div class="alert alert-default" v-if="!histories.length">
         When you press the Save button, it will be added to the history.
       </div>
-      <div class="thumbnail" v-for="(history, key, index) in histories" :key="index">
+      <div class="thumbnail" v-for="history in histories" :key="history.id">
         <img v-lazy="createUrl(history.encodedText)" @click="read(history.text, $event)" height="200" width="100%" />
         <div class="caption">
           <div class="row">
@@ -93,7 +93,7 @@ export default {
   background-color: #002b36;
 }
 .historyList .thumbnail {
-  background-color: #fffff;
+  background-color: #ffffff;
   border-color: #002b36;
 }
 .historyList img {
