@@ -74,7 +74,7 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
 /* @flow */
 
 import UmlTemplate from './UmlTemplate'

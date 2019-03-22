@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
 /* @flow */
 
 import CodeMirror from 'codemirror/lib/codemirror.js'

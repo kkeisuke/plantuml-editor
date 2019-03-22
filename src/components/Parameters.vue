@@ -69,7 +69,7 @@
   </form>
 </template>
 
-<script>
+<script lang="js">
 /* @flow */
 
 import PopoverBtn from './common/PopoverBtn'

@@ -35,7 +35,7 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
 /* @flow */
 
 export default {

@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
 /* @flow */
 
 import CommonCheatSheet from './CheatSheet/CommonCheatSheet'
