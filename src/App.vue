@@ -83,10 +83,7 @@ export default {
   created() {
     this.resize()
     this.$store.dispatch('plantumlEditor/getLocalStrage')
-    this.$store.dispatch(
-      'plantumlEditor/renderUML',
-      this.$store.state.plantumlEditor.text
-    )
+    this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
     this.$store.dispatch('histories/defineScheme')
   },
   mounted() {

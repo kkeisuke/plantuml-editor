@@ -6,24 +6,34 @@
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>
-          <td>{{rectangle.title}}</td>
-          <td><pre v-clipboard>{{rectangle.text}}</pre></td>
+          <td>{{ rectangle.title }}</td>
+          <td>
+            <pre v-clipboard>{{ rectangle.text }}</pre>
+          </td>
         </tr>
         <tr>
-          <td>{{up.title}}</td>
-          <td><code v-clipboard>{{up.text}}</code> (text)</td>
+          <td>{{ up.title }}</td>
+          <td>
+            <code v-clipboard>{{ up.text }}</code> (text)
+          </td>
         </tr>
         <tr>
-          <td>{{right.title}}</td>
-          <td><code v-clipboard>{{right.text}}</code> (text)</td>
+          <td>{{ right.title }}</td>
+          <td>
+            <code v-clipboard>{{ right.text }}</code> (text)
+          </td>
         </tr>
         <tr>
-          <td>{{down.title}}</td>
-          <td><code v-clipboard>{{down.text}}</code> (text)</td>
+          <td>{{ down.title }}</td>
+          <td>
+            <code v-clipboard>{{ down.text }}</code> (text)
+          </td>
         </tr>
         <tr>
-          <td>{{left.title}}</td>
-          <td><code v-clipboard>{{left.text}}</code> (text)</td>
+          <td>{{ left.title }}</td>
+          <td>
+            <code v-clipboard>{{ left.text }}</code> (text)
+          </td>
         </tr>
       </tbody>
     </table>
@@ -47,5 +57,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

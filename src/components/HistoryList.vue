@@ -1,26 +1,32 @@
 <template>
-  <div class="row historyList" :style="{'height':height}">
+  <div class="row historyList" :style="{ height: height }">
     <div class="col-sm-12">
       <div class="alert alert-default" v-if="!histories.length">
         When you press the Save button, it will be added to the history.
       </div>
       <div class="thumbnail" v-for="(history, key, index) in histories" :key="index">
-        <img v-lazy="createUrl(history.encodedText)" @click="read(history.text, $event)" height="200" width="100%">
+        <img v-lazy="createUrl(history.encodedText)" @click="read(history.text, $event)" height="200" width="100%" />
         <div class="caption">
           <div class="row">
             <div class="col-sm-4">
-              <button type="button" class="close pull-left" @click="del(history.id, $event)">&times;</button>
+              <button type="button" class="close pull-left" @click="del(history.id, $event)">
+                &times;
+              </button>
             </div>
             <div class="col-sm-8 text-right">
               <ul class="list-inline">
-                <li><a :href="createUrl(history.encodedText)" target="_blank">png <i class="fa fa-external-link"></i></a></li>
-                <li><a :href="createUrl(history.encodedText, 'svg')" target="_blank">svg <i class="fa fa-external-link"></i></a></li>
+                <li>
+                  <a :href="createUrl(history.encodedText)" target="_blank">png <i class="fa fa-external-link"></i></a>
+                </li>
+                <li>
+                  <a :href="createUrl(history.encodedText, 'svg')" target="_blank">svg <i class="fa fa-external-link"></i></a>
+                </li>
               </ul>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12 text-right">
-              {{history.created}}
+              {{ history.created }}
             </div>
           </div>
         </div>
@@ -57,9 +63,7 @@ export default {
   },
   methods: {
     createUrl(encodedText: string, extension: string = 'png'): string {
-      return `${
-        this.$store.state.plantumlEditor.cdn
-      }${extension}/${encodedText}.${extension}`
+      return `${this.$store.state.plantumlEditor.cdn}${extension}/${encodedText}.${extension}`
     },
     setLazyloadEvent() {
       this.$Lazyload.$on('loaded', ({ el, naturalHeight }: any) => {

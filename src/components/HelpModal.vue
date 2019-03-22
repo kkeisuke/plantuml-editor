@@ -3,14 +3,16 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
           <div class="h3 modal-title">PlantUML</div>
         </div>
         <div class="modal-body">
           <blockquote>
             <p>Generate UML diagram from textual description</p>
             <footer>
-              <a :href="official" target="_blank">{{official}}</a>
+              <a :href="official" target="_blank">{{ official }}</a>
             </footer>
           </blockquote>
           <div class="page-header">
@@ -90,11 +92,19 @@
             <span class="h4">Other</span>
           </div>
           <p>
-            Pen graphic by <a href="http://www.flaticon.com/authors/freepik" target="_blank">freepik</a> from <a href="http://www.flaticon.com/" target="_blank">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a>. Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Maker" target="_blank">LogoMaker.com</a> https://logomakr.com/7Gn1Ck
+            Pen graphic by
+            <a href="http://www.flaticon.com/authors/freepik" target="_blank">freepik</a>
+            from
+            <a href="http://www.flaticon.com/" target="_blank">Flaticon</a> is licensed under
+            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a>. Check out the new logo that I created on
+            <a href="http://logomakr.com" title="Logo Maker" target="_blank">LogoMaker.com</a>
+            https://logomakr.com/7Gn1Ck
           </p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
         </div>
       </div>
     </div>
@@ -115,5 +125,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

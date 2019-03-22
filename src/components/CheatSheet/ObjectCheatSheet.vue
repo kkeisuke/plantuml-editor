@@ -6,20 +6,28 @@
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>
-          <td>{{object.title}}</td>
-          <td><pre v-clipboard>{{object.text}}</pre></td>
+          <td>{{ object.title }}</td>
+          <td>
+            <pre v-clipboard>{{ object.text }}</pre>
+          </td>
         </tr>
         <tr>
-          <td>{{extension.title}}</td>
-          <td><code v-clipboard>{{extension.text}}</code></td>
+          <td>{{ extension.title }}</td>
+          <td>
+            <code v-clipboard>{{ extension.text }}</code>
+          </td>
         </tr>
         <tr>
-          <td>{{composition.title}}</td>
-          <td><code v-clipboard>{{composition.text}}</code></td>
+          <td>{{ composition.title }}</td>
+          <td>
+            <code v-clipboard>{{ composition.text }}</code>
+          </td>
         </tr>
         <tr>
-          <td>{{aggregation.title}}</td>
-          <td><code v-clipboard>{{aggregation.text}}</code></td>
+          <td>{{ aggregation.title }}</td>
+          <td>
+            <code v-clipboard>{{ aggregation.text }}</code>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -43,5 +51,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

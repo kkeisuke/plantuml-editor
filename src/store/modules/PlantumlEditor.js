@@ -8,7 +8,7 @@ const _: any = lodash
 
 const state: any = {
   isHTTPS: location.protocol === 'https:',
-  FPS: Math.floor(1000 / 30 * 10), // FPS 30
+  FPS: Math.floor((1000 / 30) * 10), // FPS 30
   url: 'https://plantuml-editor.kkeisuke.com/',
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
@@ -131,13 +131,9 @@ const mutations: any = {
     state.text = text
   },
   renderUML(state: any, text: string) {
-    const uml: string = `${state.startuml}${String(
-      text.split(state.startuml)[1]
-    ).split(state.enduml)[0] || ''}${state.enduml}`
+    const uml: string = `${state.startuml}${String(text.split(state.startuml)[1]).split(state.enduml)[0] || ''}${state.enduml}`
     state.encodedText = plantumlEncoder.encode(uml)
-    state.src = `${state.cdn}${state.umlExtension}/${state.encodedText}.${
-      state.umlExtension
-    }`
+    state.src = `${state.cdn}${state.umlExtension}/${state.encodedText}.${state.umlExtension}`
   },
   renderMarkdown(state: any, text: string) {
     const pre: string = text.split(state.startuml)[0] || ''
@@ -151,9 +147,7 @@ const mutations: any = {
     }
   },
   getLocalStrage(state: any) {
-    const text: string = window.localStorage
-      ? window.localStorage.getItem(state.plantuml)
-      : ''
+    const text: string = window.localStorage ? window.localStorage.getItem(state.plantuml) : ''
     state.text = text || state.defaultText
   },
   setKeyMapLocalStrage(state: any, keyMap: string) {
@@ -167,15 +161,11 @@ const mutations: any = {
     }
   },
   getKeyMapFromLocalStrage(state: any) {
-    const keyMap: string = window.localStorage
-      ? window.localStorage.getItem('codemirrorOptions.keyMap')
-      : ''
+    const keyMap: string = window.localStorage ? window.localStorage.getItem('codemirrorOptions.keyMap') : ''
     state.codemirrorOptions.keyMap = keyMap || state.defaultKeyMap
   },
   getIndentFromLocalStrage(state: any) {
-    const indent: string = window.localStorage
-      ? window.localStorage.getItem('codemirrorIndent')
-      : ''
+    const indent: string = window.localStorage ? window.localStorage.getItem('codemirrorIndent') : ''
     state.codemirrorIndent = indent || state.defaultIndent
   },
   setIsLoading(state: any, isLoading: boolean) {
@@ -235,12 +225,8 @@ const actions: any = {
         if (response && response.data) {
           let downLoadLink: any = document.createElement('a')
           downLoadLink.download = `${state.plantuml}.${state.umlExtension}`
-          downLoadLink.href = URL.createObjectURL(
-            new Blob([response.data], { type: ext.fileType })
-          )
-          downLoadLink.dataset.downloadurl = `${ext.fileType}:${
-            downLoadLink.download
-          }:${downLoadLink.href}`
+          downLoadLink.href = URL.createObjectURL(new Blob([response.data], { type: ext.fileType }))
+          downLoadLink.dataset.downloadurl = `${ext.fileType}:${downLoadLink.download}:${downLoadLink.href}`
           downLoadLink.click()
         }
       })

@@ -3,7 +3,7 @@
     <button type="button" class="btn" :class="btnClass" @click="show" data-toggle="tooltip" :data-placement="placement" :title="title">
       <slot name="popover-btn"></slot>
     </button>
-    <div class="popover" :class="position" role="tooltip" :style="{'top':style.top, 'left':style.left, 'display':style.display}">
+    <div class="popover" :class="position" role="tooltip" :style="{ top: style.top, left: style.left, display: style.display }">
       <div class="arrow"></div>
       <h3 class="popover-title" v-show="this.$slots['popover-title']">
         <slot name="popover-title"></slot>
@@ -59,9 +59,7 @@ export default {
       window.$('[data-toggle="tooltip"]').tooltip('hide')
       const $btn: any = window.$($event.currentTarget)
       const $this: any = window.$(this.$el)
-      this.left = -Math.floor(
-        ($this.find('.popover').outerWidth() - $btn.outerWidth()) / 2
-      )
+      this.left = -Math.floor(($this.find('.popover').outerWidth() - $btn.outerWidth()) / 2)
       switch (this.position) {
         case 'bottom':
           this.top = $btn.position().top + $btn.outerHeight() + 5
@@ -75,5 +73,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

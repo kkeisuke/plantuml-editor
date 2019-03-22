@@ -1,5 +1,5 @@
 <template>
-  <div class="row cheatSheet" :style="{'height':height}">
+  <div class="row cheatSheet" :style="{ height: height }">
     <div class="col-sm-12">
       <common-cheat-sheet :contents="contents" :cdn="cdn"></common-cheat-sheet>
       <use-case-cheat-sheet :contents="contents" :cdn="cdn"></use-case-cheat-sheet>

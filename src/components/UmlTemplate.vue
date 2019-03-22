@@ -1,9 +1,7 @@
 <template>
   <ul class="nav navbar-nav">
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" role="button">
-        <i class="fa fa-pencil-square"></i> template <b class="caret"></b>
-      </a>
+      <a class="dropdown-toggle" data-toggle="dropdown" role="button"> <i class="fa fa-pencil-square"></i> template <b class="caret"></b> </a>
       <ul class="dropdown-menu">
         <li class="dropdown-header">behavioral diagrams</li>
         <li><a @click="selectTemplate('useCase')">Use Case</a></li>

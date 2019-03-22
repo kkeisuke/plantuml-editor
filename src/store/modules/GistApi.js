@@ -116,12 +116,7 @@ const actions: any = {
               commit('stopSending')
             })
             .catch((error: any) => {
-              commit(
-                'setErrorMsg',
-                `${error.response.status} ${error.response.statusText} ${
-                  error.response.data.message
-                }`
-              )
+              commit('setErrorMsg', `${error.response.status} ${error.response.statusText} ${error.response.data.message}`)
               commit('stopSending')
             })
         } else {

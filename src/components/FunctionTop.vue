@@ -2,10 +2,10 @@
   <div class="row functionTop">
     <div class="col-sm-12">
       <div class="alert alert-warning" v-if="!isHTTPS">
-        Please go to <a :href="url">{{url}}</a>
+        Please go to <a :href="url">{{ url }}</a>
       </div>
       <div class="alert alert-default">
-        Preview is <kbd>{{winKey}}</kbd> or <kbd>{{macKey}}</kbd> . Snippets are <kbd>{{snippetWinKey}}</kbd> or <kbd>{{snippetMacKey}}</kbd> .
+        Preview is <kbd>{{ winKey }}</kbd> or <kbd>{{ macKey }}</kbd> . Snippets are <kbd>{{ snippetWinKey }}</kbd> or <kbd>{{ snippetMacKey }}</kbd> .
       </div>
       <div class="row form-group">
         <div class="col-sm-12">
@@ -47,5 +47,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

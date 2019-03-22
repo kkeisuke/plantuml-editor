@@ -1,5 +1,5 @@
 <template>
-  <div :style="{height: height}">
+  <div :style="{ height: height }">
     <codemirror :value="text" :options="options" @ready="onReady" @input="onChange"></codemirror>
   </div>
 </template>
@@ -69,9 +69,11 @@ export default {
           const line: number = cursor.line
           const currentWord: string = token.string
 
-          const list: any[] = snippets.filter((item: any): boolean => {
-            return item.text.indexOf(currentWord) >= 0
-          })
+          const list: any[] = snippets.filter(
+            (item: any): boolean => {
+              return item.text.indexOf(currentWord) >= 0
+            }
+          )
 
           return {
             list: list.length ? list : snippets,
@@ -93,16 +95,10 @@ export default {
     addKeymap() {
       const map: any = {}
       map[this.$store.state.plantumlEditor.renderUMLKey.win] = () => {
-        this.$store.dispatch(
-          'plantumlEditor/renderUML',
-          this.$store.state.plantumlEditor.text
-        )
+        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
       }
       map[this.$store.state.plantumlEditor.renderUMLKey.mac] = () => {
-        this.$store.dispatch(
-          'plantumlEditor/renderUML',
-          this.$store.state.plantumlEditor.text
-        )
+        this.$store.dispatch('plantumlEditor/renderUML', this.$store.state.plantumlEditor.text)
       }
       map[this.$store.state.plantumlEditor.snippetKey.win] = () => {
         this.snippet()
