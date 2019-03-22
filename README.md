@@ -36,10 +36,10 @@ npm run serve
 npm run build
 
 # run unit tests
-npm run test
+npm run test:unit
 
 # run e2e tests
-npm run e2e
+npm run test:e2e
 ```
 
 ## Other
