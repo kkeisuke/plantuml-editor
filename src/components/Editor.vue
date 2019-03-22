@@ -14,6 +14,7 @@ import 'codemirror/keymap/vim.js'
 import 'codemirror/keymap/emacs.js'
 import 'codemirror/addon/selection/active-line.js'
 import 'codemirror/addon/hint/show-hint.js'
+import 'codemirror/addon/comment/comment.js'
 import '../lib/codemirror/mode/plantuml/plantuml.js'
 
 import 'codemirror/lib/codemirror.css'

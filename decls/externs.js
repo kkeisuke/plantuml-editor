@@ -14,6 +14,10 @@ declare module 'codemirror/addon/hint/show-hint.js' {
   declare module.exports: any;
 }
 
+declare module 'codemirror/addon/comment/comment.js' {
+  declare module.exports: any;
+}
+
 declare module 'codemirror/keymap/sublime.js' {
   declare module.exports: any;
 }
