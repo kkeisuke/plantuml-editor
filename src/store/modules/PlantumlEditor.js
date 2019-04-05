@@ -227,7 +227,13 @@ const actions: any = {
           downLoadLink.download = `${state.plantuml}.${state.umlExtension}`
           downLoadLink.href = URL.createObjectURL(new Blob([response.data], { type: ext.fileType }))
           downLoadLink.dataset.downloadurl = `${ext.fileType}:${downLoadLink.download}:${downLoadLink.href}`
+          if (document.body) {
+            document.body.appendChild(downLoadLink) // for firefox
+          }
           downLoadLink.click()
+          if (document.body) {
+            document.body.removeChild(downLoadLink) // for firefox
+          }
         }
       })
   }
