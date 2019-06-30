@@ -9,11 +9,11 @@ const _: any = lodash
 const state: any = {
   isHTTPS: location.protocol === 'https:',
   FPS: Math.floor((1000 / 30) * 10), // FPS 30
-  url: 'https://plantuml-editor.kkeisuke.com/',
+  url: process.env.VUE_APP_URL,
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
-  server: 'https://plantuml-server.herokuapp.com/',
-  cdn: 'https://plantuml-server.kkeisuke.app/',
+  server: process.env.VUE_APP_SERVER,
+  cdn: process.env.VUE_APP_CDN,
   startuml: '@startuml',
   enduml: '@enduml',
   defaultText:

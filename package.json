@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "flow": "flow",
+    "flow-typed": "flow-typed install",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
@@ -43,6 +44,7 @@
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-flowtype-errors": "^3.6.0",
     "flow-bin": "^0.95.1",
+    "flow-typed": "^2.5.2",
     "node-sass": "^4.11.0",
     "sass-loader": "^6.0.6",
     "vue-template-compiler": "^2.6.10"
@@ -60,6 +62,9 @@
   },
   "eslintConfig": {
     "root": true,
+    "env": {
+      "node": true
+    },
     "extends": [
       "plugin:vue/essential",
       "@vue/prettier"

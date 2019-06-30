@@ -21,13 +21,12 @@
 
 ## Build Setup
 
-``` bash
+```
 # install dependencies
 npm install
 
 # install flow-typed
-npm install -g flow-typed
-flow-typed install
+npm run flow-typed
 
 # serve with hot reload at localhost:8080
 npm run serve
@@ -41,6 +40,16 @@ npm run test:unit
 # run e2e tests
 npm run test:e2e
 ```
+
+## For development
+
+[PlantUML Server with Docker](https://hub.docker.com/r/plantuml/plantuml-server/)
+
+```
+docker run -d -p 4000:8080 plantuml/plantuml-server:jetty
+```
+
+> **Notice:** The specification of the port number follows `.env.development`
 
 ## Other
 
