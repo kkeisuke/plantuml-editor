@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
-    "axios": "^0.17.1",
+    "axios": "^0.19.0",
     "bootstrap": "^3.4.1",
     "clipboard": "^1.7.1",
     "dexie": "^2.0.4",
