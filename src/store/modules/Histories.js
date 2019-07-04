@@ -29,13 +29,8 @@ const mutations: any = {
       plantuml: state.schemes[0]
     })
   },
-  getHistories(state: any) {
-    state.db.plantuml
-      .reverse()
-      .toArray()
-      .then(function(data: any[]) {
-        state.data = data
-      })
+  setHistories(state: any, data: any[]) {
+    state.data = data || []
   },
   save(state: any, { text, encodedText }: any) {
     state.db.plantuml.add({
@@ -53,16 +48,21 @@ const actions: any = {
   defineScheme(context: any) {
     context.commit('defineScheme')
   },
-  getHistories(context: any) {
-    context.commit('getHistories')
+  async getHistories(context: any): any {
+    const data: any[] = await state.db.plantuml
+      .reverse()
+      .toArray()
+      .then()
+    context.commit('setHistories', data)
+    return data
   },
   save(context: any, { text, encodedText }: any) {
     context.commit('save', { text, encodedText })
-    context.commit('getHistories')
+    context.dispatch('getHistories')
   },
   delete(context: any, id: number) {
     context.commit('delete', id)
-    context.commit('getHistories')
+    context.dispatch('getHistories')
   }
 }
 

@@ -12,6 +12,7 @@ import cheatSheet from './modules/CheatSheet'
 import gistApi from './modules/GistApi'
 
 export default new Vuex.Store({
+  strict: process.env.NODE_ENV !== 'production',
   modules: {
     plantumlEditor,
     layout,
