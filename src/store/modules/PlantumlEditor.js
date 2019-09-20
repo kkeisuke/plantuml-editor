@@ -25,7 +25,7 @@ const state: any = {
   afterMarkdown: '',
   codemirrorOptions: {
     mode: 'plantuml',
-    theme: 'solarized dark',
+    theme: '',
     indentUnit: 2,
     tabSize: 2,
     indentWithTabs: false,
@@ -33,6 +33,49 @@ const state: any = {
     styleActiveLine: true,
     keyMap: ''
   },
+  themes: [
+    {
+      name: 'base16-dark',
+      color: '#151515'
+    },
+    {
+      name: 'hopscotch',
+      color: '#322931'
+    },
+    {
+      name: 'material',
+      color: '#263238'
+    },
+    {
+      name: 'mbo',
+      color: '#2c2c2c'
+    },
+    {
+      name: 'paraiso-dark',
+      color: '#2f1e2e'
+    },
+    {
+      name: 'railscasts',
+      color: '#2b2b2b'
+    },
+    {
+      name: 'seti',
+      color: '#151718'
+    },
+    {
+      name: 'shadowfox',
+      color: '#2a2a2e'
+    },
+    {
+      name: 'solarized dark',
+      color: '#002b36'
+    },
+    {
+      name: 'tomorrow-night-eighties',
+      color: '#000000'
+    }
+  ],
+  defaultTheme: 'solarized dark',
   defaultKeyMap: 'sublime',
   defaultIndent: 'space2',
   codemirrorIndent: 'space2',
@@ -84,6 +127,14 @@ const getters: any = {
   },
   isTab(state: any): boolean {
     return state.codemirrorIndent === 'tab'
+  },
+  themeColor(state: any): string {
+    const current: any = state.themes.find(
+      (theme: any): boolean => {
+        return theme.name === state.codemirrorOptions.theme
+      }
+    )
+    return current.color
   }
 }
 
@@ -112,6 +163,9 @@ const mutations: any = {
       default:
         break
     }
+  },
+  setCodeMirrorTheme(state: any, theme: string) {
+    state.codemirrorOptions.theme = theme
   },
   getUmlWidthFromLocalStorage() {
     if (window.localStorage && window.localStorage.getItem('umlWidth')) {
@@ -160,6 +214,11 @@ const mutations: any = {
       window.localStorage.setItem('codemirrorIndent', indent)
     }
   },
+  setThemeLocalStrage(state: any, theme: string) {
+    if (window.localStorage) {
+      window.localStorage.setItem('codemirrorOptions.theme', theme)
+    }
+  },
   getKeyMapFromLocalStrage(state: any) {
     const keyMap: string = window.localStorage ? window.localStorage.getItem('codemirrorOptions.keyMap') : ''
     state.codemirrorOptions.keyMap = keyMap || state.defaultKeyMap
@@ -167,6 +226,10 @@ const mutations: any = {
   getIndentFromLocalStrage(state: any) {
     const indent: string = window.localStorage ? window.localStorage.getItem('codemirrorIndent') : ''
     state.codemirrorIndent = indent || state.defaultIndent
+  },
+  getThemeFromLocalStrage(state: any) {
+    const theme: string = window.localStorage ? window.localStorage.getItem('codemirrorOptions.theme') : ''
+    state.codemirrorOptions.theme = theme || state.defaultTheme
   },
   setIsLoading(state: any, isLoading: boolean) {
     state.isLoading = isLoading
@@ -182,6 +245,10 @@ const actions: any = {
     context.commit('setCodeMirrorIndent', indent)
     context.commit('setIndentLocalStrage', indent)
   },
+  syncCodeMirrorTheme(context: any, theme: string) {
+    context.commit('setCodeMirrorTheme', theme)
+    context.commit('setThemeLocalStrage', theme)
+  },
   setUmlWidth(context: any, umlWidth: number) {
     context.commit('setUmlWidth', umlWidth)
   },
@@ -196,6 +263,7 @@ const actions: any = {
     context.commit('getUmlWidthFromLocalStorage')
     context.commit('getKeyMapFromLocalStrage')
     context.commit('getIndentFromLocalStrage')
+    context.commit('getThemeFromLocalStrage')
     context.dispatch('syncCodeMirrorIndent', state.codemirrorIndent)
   },
   syncText(context: any, text: string) {

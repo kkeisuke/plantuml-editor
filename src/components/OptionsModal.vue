@@ -28,6 +28,14 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="col-sm-2 control-label">theme</label>
+              <div class="col-sm-10">
+                <select class="form-control theme" v-model="theme">
+                  <option v-for="theme in themes" :key="theme.name" :value="theme.name">{{ theme.name }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
               <label class="col-sm-2 control-label">indent</label>
               <div class="col-sm-10">
                 <label class="radio-inline">
@@ -77,10 +85,27 @@ export default {
       set(value: string) {
         this.$store.dispatch('plantumlEditor/syncCodeMirrorIndent', value)
       }
+    },
+    themes(): { name: string; color: string } {
+      return this.$store.state.plantumlEditor.themes
+    },
+    theme: {
+      get(): string {
+        return this.$store.state.plantumlEditor.codemirrorOptions.theme
+      },
+      set(value: string) {
+        this.$store.dispatch('plantumlEditor/syncCodeMirrorTheme', value)
+      }
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style lang="scss" scoped>
+#options {
+  .theme {
+    width: 220px;
+  }
+}
+</style>

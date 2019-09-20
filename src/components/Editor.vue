@@ -18,7 +18,20 @@ import 'codemirror/addon/comment/comment.js'
 import '../lib/codemirror/mode/plantuml/plantuml.js'
 
 import 'codemirror/lib/codemirror.css'
+
+// theme
+import 'codemirror/theme/base16-dark.css'
+import 'codemirror/theme/hopscotch.css'
+import 'codemirror/theme/material.css'
+import 'codemirror/theme/mbo.css'
+import 'codemirror/theme/paraiso-dark.css'
+import 'codemirror/theme/railscasts.css'
+import 'codemirror/theme/seti.css'
+import 'codemirror/theme/shadowfox.css'
 import 'codemirror/theme/solarized.css'
+import 'codemirror/theme/tomorrow-night-eighties.css'
+
+// addon
 import 'codemirror/addon/hint/show-hint.css'
 
 export default {

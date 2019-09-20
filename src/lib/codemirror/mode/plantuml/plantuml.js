@@ -45,7 +45,7 @@ CodeMirror.defineSimpleMode('plantuml', {
     },
     // 単語
     {
-      regex: /[a-z$][\w$]*/,
+      regex: /[a-zA-Z$][\w$]*/,
       token: 'variable'
     },
     // -->

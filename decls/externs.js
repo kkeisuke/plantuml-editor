@@ -34,7 +34,43 @@ declare module 'codemirror/lib/codemirror.css' {
   declare module.exports: any;
 }
 
+declare module 'codemirror/theme/base16-dark.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/hopscotch.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/material.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/mbo.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/paraiso-dark.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/railscasts.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/seti.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/shadowfox.css' {
+  declare module.exports: any;
+}
+
 declare module 'codemirror/theme/solarized.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/theme/tomorrow-night-eighties.css' {
   declare module.exports: any;
 }
 

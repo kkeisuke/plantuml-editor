@@ -1,5 +1,5 @@
 <template>
-  <div class="row historyList" :style="{ height: height }">
+  <div class="row historyList" :style="style">
     <div class="col-sm-12">
       <div class="alert alert-default" v-if="!histories.length">
         When you press the Save button, it will be added to the history.
@@ -55,6 +55,12 @@ export default {
   computed: {
     histories(): any {
       return this.$store.state.histories.data
+    },
+    style(): any {
+      return {
+        height: this.height,
+        '--color': this.$store.getters['plantumlEditor/themeColor']
+      }
     }
   },
   mounted() {
@@ -87,22 +93,26 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .historyList {
+  --color: #000;
+
   margin-top: -20px;
   padding-top: 20px;
   overflow-y: auto;
-  background-color: #002b36;
-}
-.historyList .thumbnail {
-  background-color: #ffffff;
-  border-color: #002b36;
-}
-.historyList img {
-  cursor: pointer;
-  &[lazy='loading'] {
-    background-color: #f5f5f5;
-  }
-  &[lazy='loaded'] {
-    background-color: none;
+  background-color: var(--color);
+
+  .thumbnail {
+    background-color: #ffffff;
+    border-color: var(--color);
+
+    img {
+      cursor: pointer;
+      &[lazy='loading'] {
+        background-color: #f5f5f5;
+      }
+      &[lazy='loaded'] {
+        background-color: unset;
+      }
+    }
   }
 }
 </style>
