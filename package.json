@@ -46,6 +46,7 @@
     "eslint": "^4.19.1",
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-flowtype-errors": "^3.6.0",
+    "eslint-plugin-vue": "^5.2.3",
     "flow-bin": "^0.95.1",
     "flow-typed": "^2.6.2",
     "gulp": "^4.0.2",
@@ -117,7 +118,7 @@
       "jest-serializer-vue"
     ],
     "testMatch": [
-      "<rootDir>/(tests/unit/**/*.spec.(ts|tsx|js)|**/__tests__/*.(ts|tsx|js))"
+      "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
     ]
   },
   "eslintIgnore": [
