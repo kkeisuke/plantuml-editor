@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "flow": "flow",
-    "flow-typed": "flow-typed install",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:production": "gulp build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:production": "gulp build",
+    "flow": "flow",
+    "flow-typed": "flow-typed install"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "axios": "^0.19.0",
     "bootstrap": "^3.4.1",
     "clipboard": "^2.0.4",
+    "core-js": "^3.3.2",
     "dexie": "^2.0.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
@@ -32,16 +33,17 @@
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0",
-    "@vue/cli-plugin-babel": "^3.12.1",
-    "@vue/cli-plugin-e2e-cypress": "^3.12.1",
-    "@vue/cli-plugin-eslint": "^3.12.1",
-    "@vue/cli-plugin-unit-jest": "^3.12.1",
-    "@vue/cli-service": "^3.12.1",
+    "@vue/cli-plugin-babel": "^4.0.5",
+    "@vue/cli-plugin-e2e-cypress": "^4.0.5",
+    "@vue/cli-plugin-eslint": "^4.0.5",
+    "@vue/cli-plugin-unit-jest": "^4.0.5",
+    "@vue/cli-service": "^4.0.5",
     "@vue/eslint-config-prettier": "^3.0.5",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^23.6.0",
+    "eslint": "^4.19.1",
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-flowtype-errors": "^3.6.0",
     "flow-bin": "^0.95.1",
@@ -50,17 +52,6 @@
     "node-sass": "^4.13.0",
     "sass-loader": "^6.0.6",
     "vue-template-compiler": "^2.6.10"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@vue/app",
-        {
-          "useBuiltIns": "entry"
-        }
-      ],
-      "@babel/preset-flow"
-    ]
   },
   "eslintConfig": {
     "root": true,
@@ -92,11 +83,6 @@
       "parser": "babel-eslint"
     }
   },
-  "eslintIgnore": [
-    "tests/*",
-    "gulpfile.js",
-    "vue.config.js"
-  ],
   "prettier": {
     "singleQuote": true,
     "semi": false,
@@ -133,5 +119,10 @@
     "testMatch": [
       "<rootDir>/(tests/unit/**/*.spec.(ts|tsx|js)|**/__tests__/*.(ts|tsx|js))"
     ]
-  }
+  },
+  "eslintIgnore": [
+    "tests/*",
+    "gulpfile.js",
+    "vue.config.js"
+  ]
 }
