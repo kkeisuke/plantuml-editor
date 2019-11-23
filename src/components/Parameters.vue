@@ -1,11 +1,11 @@
 <template>
   <form class="form-inline">
     <div class="form-group">
-      <label for="umlWidth">size&nbsp;</label>
+      <label for="umlWidth">size</label>
       <input type="number" id="umlWidth" step="10" max="300" min="10" v-model="umlWidth" class="form-control" :disabled="!isSvg" />
     </div>
     <div class="form-group">
-      <label for="umlExtension">img&nbsp;</label>
+      <label for="umlExtension">img</label>
       <select id="umlExtension" v-model="umlExtension" class="form-control">
         <option v-for="option in umlExtensions" :value="option.value" :key="option.value">
           {{ option.text }}
@@ -134,8 +134,16 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.form-inline .form-group {
-  margin-right: 10px;
+<style lang="scss" scoped>
+.form-inline {
+  .form-group {
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+    label {
+      margin-right: 3px;
+    }
+  }
 }
 </style>
