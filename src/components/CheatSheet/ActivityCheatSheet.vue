@@ -46,7 +46,7 @@
 import cheatSheetMixin from './CheatSheetMixin'
 
 export default {
-  name: 'activityCheatSheet',
+  name: 'ActivityCheatSheet',
   mixins: [cheatSheetMixin],
   data(): any {
     return {

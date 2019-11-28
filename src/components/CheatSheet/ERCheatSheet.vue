@@ -58,7 +58,7 @@
 import cheatSheetMixin from './CheatSheetMixin'
 
 export default {
-  name: 'erCheatSheet',
+  name: 'ErCheatSheet',
   mixins: [cheatSheetMixin],
   data(): any {
     return {

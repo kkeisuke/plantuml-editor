@@ -46,7 +46,7 @@ import Uml from './components/Uml'
 import Editor from './components/Editor'
 
 export default {
-  name: 'app',
+  name: 'App',
   store,
   directive,
   components: {
@@ -60,6 +60,12 @@ export default {
     Uml,
     Editor
   },
+  data(): any {
+    return {
+      height: '0px',
+      umlH: '0px'
+    }
+  },
   computed: {
     historyCol(): number {
       return this.$store.state.layout.colSize.history
@@ -72,12 +78,6 @@ export default {
     },
     umlCol(): number {
       return this.$store.state.layout.colSize.uml
-    }
-  },
-  data(): any {
-    return {
-      height: '0px',
-      umlH: '0px'
     }
   },
   created() {

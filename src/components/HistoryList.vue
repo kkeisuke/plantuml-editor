@@ -39,7 +39,7 @@
 /* @flow */
 
 export default {
-  name: 'historyList',
+  name: 'HistoryList',
   props: {
     height: {
       type: String,

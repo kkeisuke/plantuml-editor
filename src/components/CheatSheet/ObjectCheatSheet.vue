@@ -40,7 +40,7 @@
 import cheatSheetMixin from './CheatSheetMixin'
 
 export default {
-  name: 'objectCheatSheet',
+  name: 'ObjectCheatSheet',
   mixins: [cheatSheetMixin],
   data(): any {
     return {

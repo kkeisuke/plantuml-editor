@@ -60,7 +60,7 @@
 import cheatSheetMixin from './CheatSheetMixin'
 
 export default {
-  name: 'sequenceCheatSheet',
+  name: 'SequenceCheatSheet',
   mixins: [cheatSheetMixin],
   data(): any {
     return {

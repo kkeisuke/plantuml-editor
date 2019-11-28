@@ -220,7 +220,7 @@
 import cheatSheetMixin from './CheatSheetMixin'
 
 export default {
-  name: 'commonCheatSheet',
+  name: 'CommonCheatSheet',
   mixins: [cheatSheetMixin],
   data(): any {
     return {

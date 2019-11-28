@@ -77,7 +77,7 @@
 import cheatSheetMixin from './CheatSheetMixin'
 
 export default {
-  name: 'classCheatSheet',
+  name: 'ClassCheatSheet',
   mixins: [cheatSheetMixin],
   data(): any {
     return {

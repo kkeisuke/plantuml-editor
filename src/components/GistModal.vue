@@ -89,6 +89,11 @@
 
 export default {
   name: 'GistModal',
+  data(): any {
+    return {
+      fileName: ''
+    }
+  },
   computed: {
     description: {
       get(): string {
@@ -130,11 +135,6 @@ export default {
       // 「ファイル名が空 or GistのURL取得済み or バリデーションエラーがある or 送信中」場合は投稿できない
       const result: boolean = this.fileName === '' || Boolean(this.$store.state.gistApi.gistUrl) || Boolean(this.$validator.errors.count()) || this.$store.state.gistApi.isSending
       return result
-    }
-  },
-  data(): any {
-    return {
-      fileName: ''
     }
   },
   mounted() {

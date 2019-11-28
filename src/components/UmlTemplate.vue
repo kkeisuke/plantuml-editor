@@ -22,7 +22,7 @@
 /* @flow */
 
 export default {
-  name: 'umlTemplate',
+  name: 'UmlTemplate',
   data(): any {
     return {
       selectMessage: 'Do you want to select a template?'

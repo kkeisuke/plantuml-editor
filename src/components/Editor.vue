@@ -35,14 +35,20 @@ import 'codemirror/theme/tomorrow-night-eighties.css'
 import 'codemirror/addon/hint/show-hint.css'
 
 export default {
+  name: 'Editor',
   components: {
     codemirror
   },
-  name: 'editor',
   props: {
     height: {
       type: String,
       default: '100%'
+    }
+  },
+  data(): any {
+    return {
+      codemirror: null,
+      snippets: this.$store.getters['cheatSheet/snippets']
     }
   },
   computed: {
@@ -51,12 +57,6 @@ export default {
     },
     options(): any {
       return this.$store.state.plantumlEditor.codemirrorOptions
-    }
-  },
-  data(): any {
-    return {
-      codemirror: null,
-      snippets: this.$store.getters['cheatSheet/snippets']
     }
   },
   methods: {

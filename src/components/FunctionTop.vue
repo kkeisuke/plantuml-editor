@@ -27,20 +27,20 @@ export default {
   components: {
     Parameters
   },
-  computed: {
-    isHTTPS(): boolean {
-      return this.$store.state.plantumlEditor.isHTTPS
-    },
-    url(): string {
-      return this.$store.state.plantumlEditor.url
-    }
-  },
   data(): any {
     return {
       winKey: this.$store.state.plantumlEditor.renderUMLKey.win,
       macKey: this.$store.state.plantumlEditor.renderUMLKey.mac,
       snippetWinKey: this.$store.state.plantumlEditor.snippetKey.win,
       snippetMacKey: this.$store.state.plantumlEditor.snippetKey.mac
+    }
+  },
+  computed: {
+    isHTTPS(): boolean {
+      return this.$store.state.plantumlEditor.isHTTPS
+    },
+    url(): string {
+      return this.$store.state.plantumlEditor.url
     }
   }
 }

@@ -80,7 +80,7 @@
 import UmlTemplate from './UmlTemplate'
 
 export default {
-  name: 'headerNavbar',
+  name: 'HeaderNavbar',
   components: {
     UmlTemplate
   },

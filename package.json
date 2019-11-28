@@ -54,36 +54,6 @@
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/prettier"
-    ],
-    "plugins": [
-      "flowtype",
-      "flowtype-errors"
-    ],
-    "rules": {
-      "flowtype-errors/show-errors": 2,
-      "flowtype-errors/show-warnings": 1,
-      "flowtype/boolean-style": 2,
-      "flowtype/define-flow-type": 2,
-      "flowtype/no-dupe-keys": 2,
-      "flowtype/no-primitive-constructor-types": 2,
-      "flowtype/require-parameter-type": 2,
-      "flowtype/require-return-type": 2,
-      "flowtype/require-valid-file-annotation": 2,
-      "flowtype/require-variable-type": 2,
-      "flowtype/use-flow-type": 2
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
   "prettier": {
     "singleQuote": true,
     "semi": false,

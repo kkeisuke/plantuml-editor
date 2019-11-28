@@ -76,7 +76,7 @@ import PopoverBtn from './common/PopoverBtn'
 import printjs from 'print-js'
 
 export default {
-  name: 'parameters',
+  name: 'Parameters',
   components: {
     PopoverBtn
   },

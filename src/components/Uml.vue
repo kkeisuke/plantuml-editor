@@ -19,11 +19,16 @@
 /* @flow */
 
 export default {
-  name: 'uml',
+  name: 'Uml',
   props: {
     height: {
       type: String,
       default: '100%'
+    }
+  },
+  data(): any {
+    return {
+      loadingDelay: 500
     }
   },
   computed: {
@@ -43,21 +48,16 @@ export default {
       return this.$store.state.plantumlEditor.umlWidth
     }
   },
-  data(): any {
-    return {
-      loadingDelay: 500
-    }
-  },
-  created() {
-    this.$store.dispatch('plantumlEditor/setMarked')
-    this.$store.dispatch('plantumlEditor/setIsLoading', true)
-  },
   watch: {
     src() {
       if (this.src) {
         this.$store.dispatch('plantumlEditor/setIsLoading', true)
       }
     }
+  },
+  created() {
+    this.$store.dispatch('plantumlEditor/setMarked')
+    this.$store.dispatch('plantumlEditor/setIsLoading', true)
   },
   methods: {
     loadedImg() {

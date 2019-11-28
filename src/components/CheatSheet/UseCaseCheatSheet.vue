@@ -46,7 +46,7 @@
 import cheatSheetMixin from './CheatSheetMixin'
 
 export default {
-  name: 'useCaseCheatSheet',
+  name: 'UseCaseCheatSheet',
   mixins: [cheatSheetMixin],
   data(): any {
     return {

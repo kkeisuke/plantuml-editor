@@ -24,7 +24,7 @@ import ClassCheatSheet from './CheatSheet/ClassCheatSheet'
 import ErCheatSheet from './CheatSheet/ERCheatSheet'
 
 export default {
-  name: 'cheatSheet',
+  name: 'CheatSheet',
   components: {
     CommonCheatSheet,
     UseCaseCheatSheet,

@@ -31,7 +31,7 @@
               <label class="col-sm-2 control-label">theme</label>
               <div class="col-sm-10">
                 <select class="form-control theme" v-model="theme">
-                  <option v-for="theme in themes" :key="theme.name" :value="theme.name">{{ theme.name }}</option>
+                  <option v-for="themeVal in themes" :key="themeVal.name" :value="themeVal.name">{{ themeVal.name }}</option>
                 </select>
               </div>
             </div>
