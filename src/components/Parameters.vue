@@ -2,7 +2,7 @@
   <form class="form-inline">
     <div class="form-group">
       <label for="umlWidth">size</label>
-      <input type="number" id="umlWidth" step="10" max="300" min="10" v-model="umlWidth" class="form-control" :disabled="!isSvg" />
+      <input type="number" id="umlWidth" step="10" max="300" min="10" style="width:70px;" v-model="umlWidth" class="form-control" :disabled="!isSvg" />
     </div>
     <div class="form-group">
       <label for="umlExtension">img</label>
