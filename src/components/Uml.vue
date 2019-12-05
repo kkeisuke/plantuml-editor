@@ -6,7 +6,7 @@
         <div class="text-center" align="center">
           <p>
             <img :src="src" @load="loadedImg" v-if="!isSvg" />
-            <object type="image/svg+xml" :data="src" :width="`${umlWidth}%`" @load="loadedImg" v-if="isSvg"></object>
+            <UmlSvg :src="src" :size="`${umlWidth}%`" @load="loadedImg" v-if="isSvg" />
           </p>
         </div>
         <div v-html="afterMarkdown"></div>
@@ -17,9 +17,13 @@
 
 <script lang="js">
 /* @flow */
+import UmlSvg from './UmlSvg'
 
 export default {
   name: 'Uml',
+  components: {
+    UmlSvg
+  },
   props: {
     height: {
       type: String,
