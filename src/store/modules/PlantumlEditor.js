@@ -4,6 +4,7 @@ import plantumlEncoder from 'plantuml-encoder'
 import axios from 'axios'
 import lodash from 'lodash'
 import marked from 'marked'
+import DOMPurify from 'dompurify'
 const _: any = lodash
 
 const state: any = {
@@ -192,8 +193,8 @@ const mutations: any = {
   renderMarkdown(state: any, text: string) {
     const pre: string = text.split(state.startuml)[0] || ''
     const after: string = text.split(state.enduml)[1] || ''
-    state.preMarkdown = marked(pre)
-    state.afterMarkdown = marked(after)
+    state.preMarkdown = DOMPurify.sanitize(marked(pre))
+    state.afterMarkdown = DOMPurify.sanitize(marked(after))
   },
   setLocalStrage(state: any, text: string) {
     if (window.localStorage) {

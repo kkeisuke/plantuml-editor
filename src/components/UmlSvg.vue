@@ -5,6 +5,7 @@
 <script lang="js">
 /* @flow */
 import axios from 'axios'
+import DOMPurify from 'dompurify'
 
 export default {
   name: 'UmlSvg',
@@ -26,9 +27,9 @@ export default {
         if (src) {
           try {
             const { data }: any = await axios.get(src)
-            this.$el.innerHTML = data
+            this.$el.innerHTML = DOMPurify.sanitize(data)
           } catch (error) {
-            this.$el.innerHTML = error.response.data
+            this.$el.innerHTML = DOMPurify.sanitize(error.response.data)
           }
           this.$emit('load')
           this.resize(this.size)
