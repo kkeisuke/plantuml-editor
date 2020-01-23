@@ -15,8 +15,8 @@ const state: any = {
   plantuml: 'plantuml',
   server: process.env.VUE_APP_SERVER,
   cdn: process.env.VUE_APP_CDN,
-  startuml: '@startuml',
-  enduml: '@enduml',
+  startuml: ['@startuml', '@startmindmap', '@startditaa', '@startgantt', '@startwbs'],
+  enduml: ['@enduml', '@endmindmap', '@endditaa', '@endgantt', '@endwbs'],
   defaultText:
     '# PlantUML Editor\n\n1. select template\n2. write uml diagram\n\n@startuml\n\nleft to right direction\n\nactor User\n\nUser --> (1. select template)\nUser --> (2. write uml diagram)\n\n@enduml',
   text: '',
@@ -186,15 +186,25 @@ const mutations: any = {
     state.text = text
   },
   renderUML(state: any, text: string) {
-    const uml: string = `${state.startuml}${String(text.split(state.startuml)[1]).split(state.enduml)[0] || ''}${state.enduml}`
-    state.encodedText = plantumlEncoder.encode(uml)
-    state.src = `${state.cdn}${state.umlExtension}/${state.encodedText}.${state.umlExtension}`
+    const start: string = findKey(state.startuml, text)
+    const end: string = findKey(state.enduml, text)
+
+    if (start && end) {
+      const uml: string = `${start}${String(text.split(start)[1]).split(end)[0] || ''}${end}`
+      state.encodedText = plantumlEncoder.encode(uml)
+      state.src = `${state.cdn}${state.umlExtension}/${state.encodedText}.${state.umlExtension}`
+    }
   },
   renderMarkdown(state: any, text: string) {
-    const pre: string = text.split(state.startuml)[0] || ''
-    const after: string = text.split(state.enduml)[1] || ''
-    state.preMarkdown = DOMPurify.sanitize(marked(pre))
-    state.afterMarkdown = DOMPurify.sanitize(marked(after))
+    const start: string = findKey(state.startuml, text)
+    const end: string = findKey(state.enduml, text)
+
+    if (start && end) {
+      const pre: string = text.split(start)[0] || ''
+      const after: string = text.split(end)[1] || ''
+      state.preMarkdown = DOMPurify.sanitize(marked(pre))
+      state.afterMarkdown = DOMPurify.sanitize(marked(after))
+    }
   },
   setLocalStrage(state: any, text: string) {
     if (window.localStorage) {
@@ -235,6 +245,19 @@ const mutations: any = {
   setIsLoading(state: any, isLoading: boolean) {
     state.isLoading = isLoading
   }
+}
+
+function findKey(keys: string[], text: string): string {
+  let result: string = ''
+  keys.some(
+    (key: string): boolean => {
+      if (text.includes(key)) {
+        result = key
+      }
+      return Boolean(result)
+    }
+  )
+  return result
 }
 
 const actions: any = {
