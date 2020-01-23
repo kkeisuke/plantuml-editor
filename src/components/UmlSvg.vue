@@ -1,5 +1,5 @@
 <template>
-  <span></span>
+  <span class="umlSvg"></span>
 </template>
 
 <script lang="js">
@@ -58,3 +58,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.umlSvg {
+  svg {
+    text {
+      // https://qiita.com/RinoTsuka/items/b30e03ce10aa38ac2a10
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Sans Emoji';
+    }
+  }
+}
+</style>
