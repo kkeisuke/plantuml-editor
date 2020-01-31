@@ -44,15 +44,17 @@ export default {
     resize(size: string) {
       if (size) {
         const svg: HTMLElement = this.$el.getElementsByTagName('svg')[0]
-        svg.style.width = size
-        svg.style.height = size
-        // for safari
-        // force render
-        const display: string = svg.style.display
-        svg.style.display = 'none'
-        setTimeout(() => {
-          svg.style.display = display
-        })
+        if (svg) {
+          svg.style.width = size
+          svg.style.height = size
+          // for safari
+          // force render
+          const display: string = svg.style.display
+          svg.style.display = 'none'
+          setTimeout(() => {
+            svg.style.display = display
+          })
+        }
       }
     }
   }
