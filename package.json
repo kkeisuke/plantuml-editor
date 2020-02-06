@@ -19,7 +19,7 @@
     "clipboard": "^2.0.4",
     "core-js": "^3.6.4",
     "dexie": "^2.0.4",
-    "dompurify": "^2.0.7",
+    "dompurify": "^2.0.8",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
