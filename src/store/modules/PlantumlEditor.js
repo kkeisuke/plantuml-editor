@@ -130,11 +130,9 @@ const getters: any = {
     return state.codemirrorIndent === 'tab'
   },
   themeColor(state: any): string {
-    const current: any = state.themes.find(
-      (theme: any): boolean => {
-        return theme.name === state.codemirrorOptions.theme
-      }
-    )
+    const current: any = state.themes.find((theme: any): boolean => {
+      return theme.name === state.codemirrorOptions.theme
+    })
     return current.color
   }
 }
@@ -249,14 +247,12 @@ const mutations: any = {
 
 function findKey(keys: string[], text: string): string {
   let result: string = ''
-  keys.some(
-    (key: string): boolean => {
-      if (text.includes(key)) {
-        result = key
-      }
-      return Boolean(result)
+  keys.some((key: string): boolean => {
+    if (text.includes(key)) {
+      result = key
     }
-  )
+    return Boolean(result)
+  })
   return result
 }
 
