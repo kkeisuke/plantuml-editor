@@ -21,7 +21,7 @@
     "dexie": "^2.0.4",
     "dompurify": "^2.0.12",
     "font-awesome": "^4.7.0",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "lodash": "^4.17.15",
     "marked": "^0.8.2",
     "plantuml-encoder": "^1.4.0",
