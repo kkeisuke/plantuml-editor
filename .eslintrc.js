@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
   extends: ['plugin:vue/recommended', '@vue/prettier'],
   plugins: ['flowtype', 'flowtype-errors'],
@@ -24,9 +24,9 @@ module.exports = {
     'vue/singleline-html-element-content-newline': 'off',
     'vue/no-v-html': 'off', // 仕方なく
     'no-debugger': process.env.NODE_ENV === 'development' ? 'off' : 'error', // ローカル環境のみ off
-    'no-console': process.env.NODE_ENV === 'development' ? 'off' : 'error' // ローカル環境のみ off
+    'no-console': process.env.NODE_ENV === 'development' ? 'off' : 'error', // ローカル環境のみ off
   },
   parserOptions: {
-    parser: 'babel-eslint'
-  }
+    parser: 'babel-eslint',
+  },
 }

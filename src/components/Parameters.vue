@@ -2,7 +2,7 @@
   <form class="form-inline">
     <div class="form-group">
       <label for="umlWidth">size</label>
-      <input type="number" id="umlWidth" step="10" max="300" min="10" style="width:70px;" v-model="umlWidth" class="form-control" :disabled="!isSvg" />
+      <input type="number" id="umlWidth" step="10" max="300" min="10" style="width: 70px;" v-model="umlWidth" class="form-control" :disabled="!isSvg" />
     </div>
     <div class="form-group">
       <label for="umlExtension">img</label>
@@ -41,7 +41,7 @@
           <div slot="popover-content" class="row">
             <div class="col-sm-12">
               <div class="input-group">
-                <input type="text" class="form-control" v-model="src" v-clipboard readonly style="width:auto;" />
+                <input type="text" class="form-control" v-model="src" v-clipboard readonly style="width: auto;" />
                 <span class="input-group-btn">
                   <a :href="src" target="_blank" class="btn btn-default"><i class="fa fa-external-link"></i></a>
                 </span>

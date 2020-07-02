@@ -32,49 +32,49 @@ const state: any = {
     indentWithTabs: false,
     lineNumbers: true,
     styleActiveLine: true,
-    keyMap: ''
+    keyMap: '',
   },
   themes: [
     {
       name: 'base16-dark',
-      color: '#151515'
+      color: '#151515',
     },
     {
       name: 'hopscotch',
-      color: '#322931'
+      color: '#322931',
     },
     {
       name: 'material',
-      color: '#263238'
+      color: '#263238',
     },
     {
       name: 'mbo',
-      color: '#2c2c2c'
+      color: '#2c2c2c',
     },
     {
       name: 'paraiso-dark',
-      color: '#2f1e2e'
+      color: '#2f1e2e',
     },
     {
       name: 'railscasts',
-      color: '#2b2b2b'
+      color: '#2b2b2b',
     },
     {
       name: 'seti',
-      color: '#151718'
+      color: '#151718',
     },
     {
       name: 'shadowfox',
-      color: '#2a2a2e'
+      color: '#2a2a2e',
     },
     {
       name: 'solarized dark',
-      color: '#002b36'
+      color: '#002b36',
     },
     {
       name: 'tomorrow-night-eighties',
-      color: '#000000'
-    }
+      color: '#000000',
+    },
   ],
   defaultTheme: 'solarized dark',
   defaultKeyMap: 'sublime',
@@ -87,24 +87,24 @@ const state: any = {
       text: 'svg',
       value: 'svg',
       fileType: 'image/svg+xml',
-      responseType: 'text'
+      responseType: 'text',
     },
     {
       text: 'png',
       value: 'png',
       fileType: 'image/png',
-      responseType: 'arraybuffer'
-    }
+      responseType: 'arraybuffer',
+    },
   ],
   isLoading: false,
   renderUMLKey: {
     win: 'Ctrl-Enter',
-    mac: 'Cmd-Enter'
+    mac: 'Cmd-Enter',
   },
   snippetKey: {
     win: 'Ctrl-E',
-    mac: 'Cmd-E'
-  }
+    mac: 'Cmd-E',
+  },
 }
 
 const getters: any = {
@@ -134,7 +134,7 @@ const getters: any = {
       return theme.name === state.codemirrorOptions.theme
     })
     return current.color
-  }
+  },
 }
 
 const mutations: any = {
@@ -242,7 +242,7 @@ const mutations: any = {
   },
   setIsLoading(state: any, isLoading: boolean) {
     state.isLoading = isLoading
-  }
+  },
 }
 
 function findKey(keys: string[], text: string): string {
@@ -292,7 +292,7 @@ const actions: any = {
   },
   setMarked() {
     const renderer: any = new marked.Renderer()
-    renderer.table = function(header: string, body: string): string {
+    renderer.table = function (header: string, body: string): string {
       return `<table class="table table-striped table-bordered"><thead>${header}</thead><tbody>${body}</tbody></table>`
     }
     marked.setOptions({ renderer: renderer })
@@ -307,7 +307,7 @@ const actions: any = {
     const ext: any = _.find(state.umlExtensions, { text: state.umlExtension })
     axios
       .get(state.src || '', {
-        responseType: ext.responseType
+        responseType: ext.responseType,
       })
       .then((response: any) => {
         if (response && response.data) {
@@ -324,7 +324,7 @@ const actions: any = {
           }
         }
       })
-  }
+  },
 }
 
 export default {
@@ -332,5 +332,5 @@ export default {
   state,
   getters,
   mutations,
-  actions
+  actions,
 }

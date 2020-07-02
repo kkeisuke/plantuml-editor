@@ -5,8 +5,8 @@ const state: any = {
     history: 2,
     editor: 4,
     cheatSheet: 0,
-    uml: 6
-  }
+    uml: 6,
+  },
 }
 
 const mutations: any = {
@@ -23,13 +23,13 @@ const mutations: any = {
     if (colSize.uml || colSize.uml === 0) {
       state.colSize.uml = colSize.uml
     }
-  }
+  },
 }
 
 const getters: any = {
   isCloseHistory({ colSize }: any): boolean {
     return colSize.history === 0
-  }
+  },
 }
 
 const actions: any = {
@@ -41,7 +41,7 @@ const actions: any = {
       history: 0,
       editor: 5,
       cheatSheet: 0,
-      uml: 7
+      uml: 7,
     })
   },
   setCheatSheetColSize(context: any) {
@@ -49,7 +49,7 @@ const actions: any = {
       history: 0,
       editor: 4,
       cheatSheet: 3,
-      uml: 5
+      uml: 5,
     })
   },
   resetColSize(context: any) {
@@ -57,9 +57,9 @@ const actions: any = {
       history: 2,
       editor: 4,
       cheatSheet: 0,
-      uml: 6
+      uml: 6,
     })
-  }
+  },
 }
 
 export default {
@@ -67,5 +67,5 @@ export default {
   state,
   mutations,
   getters,
-  actions
+  actions,
 }

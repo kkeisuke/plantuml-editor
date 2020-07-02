@@ -3,9 +3,9 @@
 const actions: any = {
   selectTemplate(context: any, prop: string) {
     context.dispatch('plantumlEditor/renderUML', context.state[prop], {
-      root: true
+      root: true,
     })
-  }
+  },
 }
 
 const state: any = {
@@ -131,11 +131,11 @@ entity "Order Detail" as OrderDetail {
 Customer -right-o{ Order
 Order ||-right-|{ OrderDetail
 
-@enduml`
+@enduml`,
 }
 
 export default {
   namespaced: true,
   state,
-  actions
+  actions,
 }

@@ -19,6 +19,6 @@ export default new Vuex.Store({
     histories,
     umlTemplate,
     cheatSheet,
-    gistApi
-  }
+    gistApi,
+  },
 })

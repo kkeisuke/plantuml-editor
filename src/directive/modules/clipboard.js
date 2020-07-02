@@ -8,14 +8,14 @@ export default Vue.directive('clipboard', {
   inserted(element: any) {
     $(element)
       .css({
-        cursor: 'pointer'
+        cursor: 'pointer',
       })
       .data('toggle', 'tooltip')
       .prop('title', 'Copied')
       .tooltip({
-        trigger: 'manual'
+        trigger: 'manual',
       })
-      .on('click', function() {
+      .on('click', function () {
         const $this: jQuery = $(this)
         $this.tooltip('show')
         setTimeout(() => {
@@ -25,7 +25,7 @@ export default Vue.directive('clipboard', {
     new Clipboard(element, {
       target(): any {
         return element
-      }
+      },
     })
-  }
+  },
 })
