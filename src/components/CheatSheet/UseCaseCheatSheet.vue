@@ -1,8 +1,6 @@
 <template>
   <div id="UseCaseCheatSheet">
-    <div class="h4">
-      Use Case
-    </div>
+    <div class="h4">Use Case</div>
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>

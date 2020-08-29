@@ -1,8 +1,6 @@
 <template>
   <div id="ERCheatSheet">
-    <div class="h4">
-      ER diagram
-    </div>
+    <div class="h4">ER diagram</div>
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>

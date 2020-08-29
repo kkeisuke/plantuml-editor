@@ -1,8 +1,6 @@
 <template>
   <div id="SequenceCheatSheet">
-    <div class="h4">
-      Sequence
-    </div>
+    <div class="h4">Sequence</div>
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>

@@ -1,8 +1,6 @@
 <template>
   <div id="ClassCheatSheet">
-    <div class="h4">
-      Class
-    </div>
+    <div class="h4">Class</div>
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>

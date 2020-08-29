@@ -1,8 +1,6 @@
 <template>
   <div id="CommonCheatSheet">
-    <div class="h4">
-      Common
-    </div>
+    <div class="h4">Common</div>
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>

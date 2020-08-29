@@ -1,8 +1,6 @@
 <template>
   <div id="ObjectCheatSheet">
-    <div class="h4">
-      Object
-    </div>
+    <div class="h4">Object</div>
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>

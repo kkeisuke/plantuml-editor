@@ -1,8 +1,6 @@
 <template>
   <div id="ActivityCheatSheet">
-    <div class="h4">
-      Activity
-    </div>
+    <div class="h4">Activity</div>
     <table class="table table-bordered table-hover">
       <tbody>
         <tr>
