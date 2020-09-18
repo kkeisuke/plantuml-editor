@@ -11,7 +11,8 @@ import umlTemplate from './modules/UmlTemplate'
 import cheatSheet from './modules/CheatSheet'
 import gistApi from './modules/GistApi'
 
-export default new Vuex.Store({
+// https://flow.org/en/docs/lang/types-first/
+export default (new Vuex.Store({
   strict: process.env.NODE_ENV !== 'production',
   modules: {
     plantumlEditor,
@@ -21,4 +22,4 @@ export default new Vuex.Store({
     cheatSheet,
     gistApi,
   },
-})
+}): any)
