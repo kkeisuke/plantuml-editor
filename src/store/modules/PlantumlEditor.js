@@ -33,6 +33,8 @@ const state: any = {
     lineNumbers: true,
     styleActiveLine: true,
     keyMap: '',
+    foldGutter: true,
+    gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
   },
   themes: [
     {

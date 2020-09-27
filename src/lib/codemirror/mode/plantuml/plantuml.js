@@ -123,4 +123,7 @@ CodeMirror.defineSimpleMode('plantuml', {
       token: 'comment',
     },
   ],
+  meta: {
+    fold: 'indent',
+  },
 })

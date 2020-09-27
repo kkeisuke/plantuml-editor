@@ -18,6 +18,14 @@ declare module 'codemirror/addon/comment/comment.js' {
   declare module.exports: any;
 }
 
+declare module 'codemirror/addon/fold/foldgutter.js' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/addon/fold/indent-fold.js' {
+  declare module.exports: any;
+}
+
 declare module 'codemirror/keymap/sublime.js' {
   declare module.exports: any;
 }
@@ -75,5 +83,9 @@ declare module 'codemirror/theme/tomorrow-night-eighties.css' {
 }
 
 declare module 'codemirror/addon/hint/show-hint.css' {
+  declare module.exports: any;
+}
+
+declare module 'codemirror/addon/fold/foldgutter.css' {
   declare module.exports: any;
 }

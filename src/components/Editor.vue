@@ -15,6 +15,8 @@ import 'codemirror/keymap/emacs.js'
 import 'codemirror/addon/selection/active-line.js'
 import 'codemirror/addon/hint/show-hint.js'
 import 'codemirror/addon/comment/comment.js'
+import 'codemirror/addon/fold/foldgutter.js'
+import 'codemirror/addon/fold/indent-fold.js'
 import '../lib/codemirror/mode/plantuml/plantuml.js'
 
 import 'codemirror/lib/codemirror.css'
@@ -33,6 +35,7 @@ import 'codemirror/theme/tomorrow-night-eighties.css'
 
 // addon
 import 'codemirror/addon/hint/show-hint.css'
+import 'codemirror/addon/fold/foldgutter.css'
 
 export default {
   name: 'Editor',
