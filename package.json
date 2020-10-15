@@ -25,7 +25,7 @@
     "lodash": "^4.17.20",
     "marked": "^1.2.0",
     "plantuml-encoder": "^1.4.0",
-    "print-js": "^1.4.0",
+    "print-js": "^1.5.0",
     "vee-validate": "^2.2.15",
     "vue": "^2.6.12",
     "vue-codemirror": "^4.0.6",
@@ -44,7 +44,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.2",
-    "eslint": "^7.10.0",
+    "eslint": "^7.11.0",
     "eslint-plugin-flowtype": "^4.7.0",
     "eslint-plugin-flowtype-errors": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.4",
@@ -54,7 +54,7 @@
     "gulp": "^4.0.2",
     "prettier": "^2.1.2",
     "sass": "^1.27.0",
-    "sass-loader": "^10.0.2",
+    "sass-loader": "^10.0.3",
     "vue-template-compiler": "^2.6.12"
   },
   "prettier": {
