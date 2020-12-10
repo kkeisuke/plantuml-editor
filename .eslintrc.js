@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['plugin:vue/recommended', '@vue/prettier'],
+  extends: ['eslint:recommended', 'plugin:vue/recommended', '@vue/prettier'],
   plugins: ['flowtype', 'flowtype-errors'],
   rules: {
     'flowtype-errors/show-errors': 'error',
