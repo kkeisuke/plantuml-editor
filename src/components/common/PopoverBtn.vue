@@ -5,7 +5,7 @@
     </button>
     <div class="popover" :class="position" role="tooltip" :style="{ top: style.top, left: style.left, display: style.display }">
       <div class="arrow"></div>
-      <h3 class="popover-title" v-show="this.$slots['popover-title']">
+      <h3 class="popover-title" v-show="$slots['popover-title']">
         <slot name="popover-title"></slot>
       </h3>
       <div class="popover-content">
