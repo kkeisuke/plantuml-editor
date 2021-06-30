@@ -15,8 +15,8 @@ const state: any = {
   plantuml: 'plantuml',
   server: process.env.VUE_APP_SERVER,
   cdn: process.env.VUE_APP_CDN,
-  startuml: ['@startuml', '@startmindmap', '@startditaa', '@startgantt', '@startwbs'],
-  enduml: ['@enduml', '@endmindmap', '@endditaa', '@endgantt', '@endwbs'],
+  startuml: ['@startuml', '@startmindmap', '@startditaa', '@startgantt', '@startwbs', '@startjson', 'startsalt'],
+  enduml: ['@enduml', '@endmindmap', '@endditaa', '@endgantt', '@endwbs', '@endjson', '@endsalt'],
   defaultText:
     '# PlantUML Editor\n\n1. select template\n2. write uml diagram\n\n@startuml\n\nleft to right direction\n\nactor User\n\nUser --> (1. select template)\nUser --> (2. write uml diagram)\n\n@enduml',
   text: '',
