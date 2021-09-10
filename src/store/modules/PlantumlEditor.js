@@ -13,7 +13,6 @@ const state: any = {
   url: process.env.VUE_APP_URL,
   official: 'http://plantuml.com/',
   plantuml: 'plantuml',
-  server: process.env.VUE_APP_SERVER,
   cdn: process.env.VUE_APP_CDN,
   startuml: ['@startuml', '@startmindmap', '@startditaa', '@startgantt', '@startwbs'],
   enduml: ['@enduml', '@endmindmap', '@endditaa', '@endgantt', '@endwbs'],
