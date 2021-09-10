@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 
 module.exports = {
+  publicPath: process.env.VUE_APP_URL ? process.env.VUE_APP_URL : '.',
   configureWebpack: {
     resolve: {
       alias: {
