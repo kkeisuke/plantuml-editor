@@ -191,7 +191,7 @@ const mutations: any = {
     if (start && end) {
       const uml: string = `${start}${String(text.split(start)[1]).split(end)[0] || ''}${end}`
       state.encodedText = plantumlEncoder.encode(uml)
-      state.src = `${state.cdn}${state.umlExtension}/${state.encodedText}.${state.umlExtension}`
+      state.src = `${state.cdn}/${state.umlExtension}/${state.encodedText}.${state.umlExtension}`
     }
   },
   renderMarkdown(state: any, text: string) {

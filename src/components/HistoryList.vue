@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     createUrl(encodedText: string, extension: string = 'png'): string {
-      return `${this.$store.state.plantumlEditor.cdn}${extension}/${encodedText}.${extension}`
+      return `${this.$store.state.plantumlEditor.cdn}/${extension}/${encodedText}.${extension}`
     },
     setLazyloadEvent() {
       this.$Lazyload.$on('loaded', ({ el, naturalHeight }: any) => {
