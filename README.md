@@ -45,13 +45,22 @@ npm run test:e2e
 
 ## For development
 
-[PlantUML Server with Docker](https://hub.docker.com/r/plantuml/plantuml-server/)
+### [PlantUML Server with Docker](https://hub.docker.com/r/plantuml/plantuml-server/)
 
 ```
 docker run -d -p 4000:8080 plantuml/plantuml-server:jetty
 ```
 
 > **Notice:** The specification of the port number follows `.env.development`
+
+### [Kroki with Docker](https://hub.docker.com/r/yuzutech/kroki) as alternative to PlantUML Server:
+
+```
+docker run -d -p 4000:8000 yuzutech/kroki
+```
+
+> **Notice:** Kroki uses for PlantUML the relative path `plantuml`.
+> `VUE_APP_CDN` in `.env.development` would in this case be for example: `VUE_APP_CDN="http://localhost:4000/plantuml"`
 
 ## Other
 
