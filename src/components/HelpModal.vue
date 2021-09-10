@@ -23,10 +23,10 @@
             <dd>
               <ul>
                 <li>
-                  <a href="http://qiita.com/ogomr/items/0b5c4de7f38fd1482a48" target="_blank">Japanese</a>
+                  <a href="https://qiita.com/ogomr/items/0b5c4de7f38fd1482a48" target="_blank">Japanese</a>
                 </li>
                 <li>
-                  <a href="http://ogom.github.io/draw_uml/plantuml" target="_blank">English</a>
+                  <a href="https://ogom.github.io/draw_uml/plantuml" target="_blank">English</a>
                 </li>
               </ul>
             </dd>
@@ -64,7 +64,7 @@
             <dd>
               <ul>
                 <li>
-                  <a href="http://qiita.com/kkeisuke/items/45f4725d41dd789061a2" target="_blank">vue-cli (vuex) で PlantUML エディターを作ってみた</a>
+                  <a href="https://qiita.com/kkeisuke/items/45f4725d41dd789061a2" target="_blank">vue-cli (vuex) で PlantUML エディターを作ってみた</a>
                 </li>
               </ul>
             </dd>
@@ -72,10 +72,10 @@
             <dd>
               <ul>
                 <li>
-                  <a href="http://kkeisuke.hatenablog.com/entry/2017/08/07/160845" target="_blank">PlantUML Editor の要求/要件定義</a>
+                  <a href="https://kkeisuke.hatenablog.com/entry/2017/08/07/160845" target="_blank">PlantUML Editor の要求/要件定義</a>
                 </li>
                 <li>
-                  <a href="http://kkeisuke.hatenablog.com/entry/2018/02/06/054803" target="_blank">PlantUML を導入するのに適したケースとは</a>
+                  <a href="https://kkeisuke.hatenablog.com/entry/2018/02/06/054803" target="_blank">PlantUML を導入するのに適したケースとは</a>
                 </li>
               </ul>
             </dd>
@@ -85,7 +85,7 @@
           </div>
           <ul>
             <li>
-              <a href="http://kkeisuke.com" target="_blank">kkeisuke.com</a>
+              <a href="https://kkeisuke.com" target="_blank">kkeisuke.com</a>
             </li>
           </ul>
           <div class="page-header">
@@ -93,11 +93,11 @@
           </div>
           <p>
             Pen graphic by
-            <a href="http://www.flaticon.com/authors/freepik" target="_blank">freepik</a>
+            <a href="https://www.flaticon.com/authors/freepik" target="_blank">freepik</a>
             from
-            <a href="http://www.flaticon.com/" target="_blank">Flaticon</a> is licensed under
-            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a>. Check out the new logo that I created on
-            <a href="http://logomakr.com" title="Logo Maker" target="_blank">LogoMaker.com</a>
+            <a href="https://www.flaticon.com" target="_blank">Flaticon</a> is licensed under
+            <a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a>. Check out the new logo that I created on
+            <a href="https://logomakr.com" title="Logo Maker" target="_blank">LogoMaker.com</a>
             https://logomakr.com/7Gn1Ck
           </p>
         </div>

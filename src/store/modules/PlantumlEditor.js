@@ -11,7 +11,7 @@ const state: any = {
   isHTTPS: location.protocol === 'https:',
   FPS: Math.floor((1000 / 30) * 10), // FPS 30
   url: process.env.VUE_APP_URL,
-  official: 'http://plantuml.com/',
+  official: 'https://plantuml.com',
   plantuml: 'plantuml',
   server: process.env.VUE_APP_SERVER,
   cdn: process.env.VUE_APP_CDN,

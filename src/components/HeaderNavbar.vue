@@ -66,7 +66,7 @@
             <a href="https://twitter.com/kkeisuke" class="navbar-link" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
           </li>
           <li>
-            <a href="http://kkeisuke.com/" class="navbar-link" target="_blank"><i class="fa fa-home fa-lg"></i></a>
+            <a href="https://kkeisuke.com" class="navbar-link" target="_blank"><i class="fa fa-home fa-lg"></i></a>
           </li>
         </ul>
       </div>

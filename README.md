@@ -55,4 +55,4 @@ docker run -d -p 4000:8080 plantuml/plantuml-server:jetty
 
 ## Other
 
-Pen graphic by [freepik](http://www.flaticon.com/authors/freepik) from [Flaticon](http://www.flaticon.com/) is licensed under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/). Check out the new logo that I created on [LogoMaker.com](http://logomakr.com) https://logomakr.com/7Gn1Ck
+Pen graphic by [freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com) is licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). Check out the new logo that I created on [LogoMaker.com](https://logomakr.com) https://logomakr.com/7Gn1Ck
