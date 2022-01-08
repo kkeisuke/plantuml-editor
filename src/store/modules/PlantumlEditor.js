@@ -3,7 +3,7 @@
 import plantumlEncoder from 'plantuml-encoder'
 import axios from 'axios'
 import lodash from 'lodash'
-import marked from 'marked'
+import { marked } from 'marked'
 import DOMPurify from 'dompurify'
 const _: any = lodash
 
