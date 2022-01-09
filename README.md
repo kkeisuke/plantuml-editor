@@ -1,4 +1,9 @@
+:rocket: Version 2 made with Vue3 / TypeScript / Vite
+
+https://github.com/kkeisuke/plantuml-editor2
+
 # PlantUML Editor
+
 
 > A Vue.js, Vuex project
 

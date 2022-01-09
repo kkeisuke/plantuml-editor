@@ -11,6 +11,10 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#" @click.prevent>PlantUML Editor <span class="h6">beta</span></a>
       </div>
+      <div class="navbar-text">
+        <span>Please use the next version </span>
+        <a href="https://plantuml-editor.kkeisuke.dev">https://plantuml-editor.kkeisuke.dev</a>
+      </div>
       <umlTemplate></umlTemplate>
       <ul class="nav navbar-nav">
         <li class="dropdown">
