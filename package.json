@@ -23,7 +23,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
-    "marked": "^4.0.9",
+    "marked": "^4.0.10",
     "plantuml-encoder": "^1.4.0",
     "print-js": "^1.6.0",
     "vee-validate": "^2.2.15",
