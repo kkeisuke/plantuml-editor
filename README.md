@@ -48,6 +48,50 @@ npm run test:unit
 npm run test:e2e
 ```
 
+or build with docker
+
+```bash
+# build with docker
+docker build \ 
+       -t plantuml-editor \
+       --build-arg VUE_APP_URL=http://localhost:8080/ \
+       --build-arg VUE_APP_SERVER=http://localhost:4000/ \
+       --build-arg VUE_APP_CDN=http://localhost:4000/ \
+       .
+
+# or with PR#19
+# https://github.com/kkeisuke/plantuml-editor/pull/19
+docker build \ 
+       -t plantuml-editor \
+       --build-arg VUE_APP_URL=http://localhost:8080 \
+       --build-arg VUE_APP_CDN=http://localhost:4000 \
+       .
+
+# run plantuml-editor server with docker
+docker run -d -p 8080:80 --name plantuml-editor plantuml-editor
+```
+
+or with docker compose
+
+```yaml
+version: "3.9"
+services:
+  plantuml-editor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VUE_APP_URL=http://localhost:8080
+        - VUE_APP_SERVER=http://localhost:4000/
+        - VUE_APP_CDN=http://localhost:4000/
+    restart: always
+    container_name: plantuml-editor
+    #environment:
+    #  - TZ=...
+    ports: 
+      - 8080:80
+```
+
 ## For development
 
 [PlantUML Server with Docker](https://hub.docker.com/r/plantuml/plantuml-server/)
